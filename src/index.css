@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/*
+  Pulsar Medical — design tokens
+  Use `pm-dark` / `pm-light` on section wrappers, or reference variables in custom CSS.
+*/
+@theme {
+  /* Dunkler Abschnitt */
+  --color-pm-dark-bg: #02344e;
+  --color-pm-dark-container: #0a4a6a;
+  --color-pm-dark-container-border: #136c9b;
+  --color-pm-dark-icon-bg: #02344e;
+  --color-pm-dark-icon: #4db8e8;
+  --color-pm-dark-headline: #ffffff;
+  --color-pm-dark-tag: #4db8e8;
+  --color-pm-dark-tag-glow: rgb(77 184 232 / 0.2);
+  --color-pm-dark-text-1: #7aaec4;
+  --color-pm-dark-text-2: #e0f4fa;
+  --color-pm-dark-button: #136c9b;
+  --color-pm-dark-divider: #136c9b;
+
+  /* Heller Abschnitt */
+  --color-pm-light-bg: #ffffff;
+  --color-pm-light-container: #f4fafd;
+  --color-pm-light-container-border: #b8d8ea;
+  --color-pm-light-icon-bg: #dcf0f8;
+  --color-pm-light-icon-border: #a0c8de;
+  --color-pm-light-icon: #02344e;
+  --color-pm-light-headline: #011f2f;
+  --color-pm-light-tag: #02344e;
+  --color-pm-light-tag-glow: rgb(2 52 78 / 0.1);
+  --color-pm-light-text-1: #1a5272;
+  --color-pm-light-text-2: #136c9b;
+  --color-pm-light-button: #02344e;
+  --color-pm-light-bg-glow: rgb(19 108 155 / 0.07);
+
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* Display serif for hero emphasis (matches reference: Instrument Serif) */
+  --font-display-serif: "Instrument Serif", ui-serif, Georgia, "Times New Roman",
+    serif;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-pm-light-text-1 antialiased;
+    font-family: var(--font-sans);
+  }
+
+  a:not([class*="no-underline"]) {
+    @apply underline-offset-4 transition-colors hover:opacity-90;
+  }
+}
+
+@layer utilities {
+  @keyframes pm-slide-from-right {
+    from {
+      opacity: 0;
+      transform: translateX(1.25rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes pm-slide-from-left {
+    from {
+      opacity: 0;
+      transform: translateX(-1.25rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-pm-slide-from-right {
+    animation: pm-slide-from-right 0.4s ease-out both;
+  }
+
+  .animate-pm-slide-from-left {
+    animation: pm-slide-from-left 0.4s ease-out both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pm-slide-from-right,
+    .animate-pm-slide-from-left {
+      animation: none;
+    }
+  }
+}

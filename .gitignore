@@ -1,0 +1,23 @@
+# Dependencies
+node_modules
+
+# Build
+dist
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.DS_Store
+*.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Env (keep local secrets out of git)
+.env
+.env.*.local
+
+# Vite
+.vite
