@@ -19,9 +19,6 @@ export function SectionLight({
       />
       <div className="relative mx-auto max-w-5xl px-4">
         <div className="rounded-xl border border-pm-light-container-border bg-pm-light-container p-8 shadow-[0_0_40px_var(--color-pm-light-tag-glow)]">
-          <p className="mb-2 inline-block rounded-full bg-pm-light-tag/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-pm-light-tag shadow-[0_0_16px_var(--color-pm-light-tag-glow)]">
-            Abschnitt
-          </p>
           <h1 className="mb-4 text-3xl font-bold text-pm-light-headline md:text-4xl">
             {title}
           </h1>

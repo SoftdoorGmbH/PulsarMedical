@@ -88,18 +88,18 @@ export function Footer() {
             © {year} Pulsar Medical. Alle Rechte vorbehalten.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <a
-              href="#impressum"
+            <Link
+              to="/impressum"
               className="text-pm-light-text-1 no-underline transition-colors hover:text-pm-light-text-2"
             >
               Impressum
-            </a>
-            <a
-              href="#datenschutz"
+            </Link>
+            <Link
+              to="/datenschutz"
               className="text-pm-light-text-1 no-underline transition-colors hover:text-pm-light-text-2"
             >
               Datenschutz
-            </a>
+            </Link>
           </div>
         </div>
       </div>

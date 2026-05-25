@@ -84,10 +84,81 @@
     animation: pm-slide-from-left 0.4s ease-out both;
   }
 
+  @keyframes pm-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-pm-marquee {
+    animation: pm-marquee 70s linear infinite;
+  }
+
+  .about-team-card__photo {
+    top: 1.5rem;
+    left: 1.5rem;
+    width: calc(100% - 3rem);
+    height: 18rem;
+    border-radius: 1rem;
+    transition:
+      width 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      height 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-radius 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: width, height;
+  }
+
+  .about-team-card[data-expanded="true"] .about-team-card__photo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 0.75rem;
+  }
+
+  .about-team-card__header {
+    padding: calc(1.5rem + 18rem + 1rem) 1.5rem 1.25rem;
+    transition: padding 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .about-team-card[data-expanded="true"] .about-team-card__header {
+    padding: 1.5rem 1.5rem 1rem calc(1.5rem + 5rem + 1rem);
+  }
+
+  .about-team-card__arrow {
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .about-team-card[data-expanded="true"] .about-team-card__arrow {
+    transform: rotate(90deg);
+  }
+
+  .about-team-card__details {
+    transition:
+      grid-template-rows 550ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 450ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .about-team-card[data-expanded="true"] .about-team-card__details {
+    transition-delay: 180ms, 180ms;
+  }
+
+  .about-team-card[data-expanded="false"] .about-team-card__details {
+    transition-delay: 0ms, 0ms;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .animate-pm-slide-from-right,
-    .animate-pm-slide-from-left {
+    .animate-pm-slide-from-left,
+    .animate-pm-marquee {
       animation: none;
+    }
+
+    .about-team-card__photo,
+    .about-team-card__header,
+    .about-team-card__arrow,
+    .about-team-card__details {
+      transition: none;
     }
   }
 }

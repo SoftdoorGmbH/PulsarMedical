@@ -1,9 +1,15 @@
-import { SectionLight } from "@/components/SectionLight";
+import { HomeCta } from "@/components/home/HomeCta";
+import { JobCenterHero } from "@/components/jobcenter/JobCenterHero";
+import { JobCenterLogoMarquee } from "@/components/jobcenter/JobCenterLogoMarquee";
+import { JobCenterServicesSection } from "@/components/jobcenter/JobCenterServicesSection";
 
 export function JobCenterPage() {
   return (
-    <SectionLight title="Für Jobcenter">
-      <p>Platzhalter — Inhalte für Jobcenter-Partner folgen hier.</p>
-    </SectionLight>
+    <>
+      <JobCenterHero />
+      <JobCenterLogoMarquee />
+      <JobCenterServicesSection />
+      <HomeCta />
+    </>
   );
 }

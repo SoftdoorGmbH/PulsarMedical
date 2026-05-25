@@ -1,9 +1,9 @@
-import { HomeCta } from "@/components/HomeCta";
-import { HomeFaq } from "@/components/HomeFaq";
-import { HomeFeatureCards } from "@/components/HomeFeatureCards";
-import { HomeHero } from "@/components/HomeHero";
-import { HomeTabbedSection } from "@/components/HomeTabbedSection";
-import { HomeTestimonialSlider } from "@/components/HomeTestimonialSlider";
+import { HomeCta } from "@/components/home/HomeCta";
+import { HomeFaq } from "@/components/home/HomeFaq";
+import { HomeFeatureCards } from "@/components/home/HomeFeatureCards";
+import { HomeHero } from "@/components/home/HomeHero";
+import { HomeTabbedSection } from "@/components/home/HomeTabbedSection";
+import { HomeTestimonialSlider } from "@/components/home/HomeTestimonialSlider";
 
 export function HomePage() {
   return (

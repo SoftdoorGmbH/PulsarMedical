@@ -32,7 +32,7 @@ function ArrowRightIcon() {
 export function HomeHero() {
   return (
     <section
-      className="relative my-6 overflow-hidden pt-28 pb-24 after:pointer-events-none after:absolute after:inset-0 after:rounded-none after:ring-1 after:ring-white/30 md:pt-36 md:pb-56 lg:mx-5 lg:mb-24 lg:rounded-[2.5rem] lg:pt-[clamp(8.5rem,18vw,12rem)] lg:pb-40 lg:after:rounded-[2.5rem]"
+      className="relative my-6 overflow-hidden pt-28 pb-24 after:pointer-events-none after:absolute after:inset-0 after:rounded-none after:ring-1 after:ring-white/30 md:pt-36 md:pb-56 lg:mx-5 lg:mb-24 lg:rounded-[2.5rem] lg:pt-[clamp(8.5rem,18vw,12rem)] lg:pb-40 lg:after:rounded-[2.5rem] lg:min-h-[788px]"
       aria-label="Einstieg"
     >
       <picture>

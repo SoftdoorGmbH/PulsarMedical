@@ -1,9 +1,15 @@
-import { SectionLight } from "@/components/SectionLight";
+import { AboutCta } from "@/components/about/AboutCta";
+import { AboutHero } from "@/components/about/AboutHero";
+import { AboutMissionSection } from "@/components/about/AboutMissionSection";
+import { AboutTeamSection } from "@/components/about/AboutTeamSection";
 
 export function AboutPage() {
   return (
-    <SectionLight title="Über uns">
-      <p>Platzhalter — Team, Geschichte und Werte folgen hier.</p>
-    </SectionLight>
+    <>
+      <AboutHero />
+      <AboutMissionSection />
+      <AboutTeamSection />
+      <AboutCta />
+    </>
   );
 }
