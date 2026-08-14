@@ -1,56 +1,163 @@
-import { useState, type SVGProps } from "react";
-import { NavLink } from "react-router-dom";
+import { useEffect, useId, useRef, useState, type ComponentType } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import {
+  Brain,
+  Building2,
+  ChevronDown,
+  ClipboardCheck,
+  HeartPulse,
+  Landmark,
+  Layers,
+  Shield,
+  Stethoscope,
+} from "lucide-react";
 
-const nav = [
-  { to: "/", label: "Home" },
-  { to: "/jobcenter", label: "Für Jobcenter" },
-  { to: "/unternehmen", label: "Für Unternehmen" },
-  { to: "/karriere", label: "Karriere" },
+type MegaItem = {
+  to: string;
+  label: string;
+  icon: ComponentType<{ className?: string; strokeWidth?: number }>;
+};
+
+type MegaColumn = {
+  title: string;
+  items: MegaItem[];
+};
+
+const MEGA_COLUMNS: MegaColumn[] = [
+  {
+    title: "Wen wir unterstützen",
+    items: [
+      { to: "/jobcenter", label: "Jobcenter", icon: Building2 },
+      {
+        to: "/unternehmen",
+        label: "Berufsgenossenschaften",
+        icon: Shield,
+      },
+      { to: "/unternehmen", label: "Rückversicherer", icon: Landmark },
+    ],
+  },
+  {
+    title: "Unser Angebot",
+    items: [
+      {
+        to: "/jobcenter",
+        label: "Medizinische Begutachtungen",
+        icon: Stethoscope,
+      },
+      {
+        to: "/jobcenter",
+        label: "Psychologische & psychiatrische Begutachtungen",
+        icon: Brain,
+      },
+      {
+        to: "/jobcenter",
+        label: "Arbeits- & sozialmedizinische Begutachtungen",
+        icon: HeartPulse,
+      },
+      {
+        to: "/jobcenter",
+        label: "Fachübergreifende Begutachtungen",
+        icon: Layers,
+      },
+      {
+        to: "/jobcenter",
+        label: "Fachliche Einschätzung bei Meldeversäumnissen",
+        icon: ClipboardCheck,
+      },
+    ],
+  },
+];
+
+const NAV_LINKS = [
+  { to: "/", label: "Warum PULSAR Medical" },
   { to: "/ueber-uns", label: "Über uns" },
-  { to: "/blog", label: "Blog" },
 ] as const;
 
 function navItemClassName({ isActive }: { isActive: boolean }) {
   return [
-    "relative rounded-2xl px-4 py-2 text-sm font-medium text-pm-light-headline no-underline transition-colors duration-300 xl:px-5",
-    isActive
-      ? "bg-pm-light-icon-bg/90 ring-1 ring-pm-light-container-border/80"
-      : "hover:bg-pm-light-icon-bg/70",
+    "relative px-4 py-2 text-sm text-pm-light-headline no-underline transition-[font-weight] duration-150 xl:px-5",
+    isActive ? "font-semibold" : "font-medium hover:font-semibold",
   ].join(" ");
 }
 
-function ArrowUpRightIcon(props: SVGProps<SVGSVGElement>) {
+function MegaMenuLink({
+  item,
+  onNavigate,
+}: {
+  item: MegaItem;
+  onNavigate: () => void;
+}) {
+  const Icon = item.icon;
   return (
-    <svg viewBox="0 0 20 20" fill="none" aria-hidden {...props}>
-      <path
-        d="M5 15L15 5M15 5H8M15 5V12"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <NavLink
+      to={item.to}
+      className="relative -ml-5 flex items-center gap-3 rounded-2xl bg-transparent px-5 py-2.5 text-sm font-medium leading-snug text-pm-light-headline no-underline transition-colors duration-300 ease-linear hover:bg-pm-light-icon-bg/80"
+      onClick={onNavigate}
+    >
+      <span className="flex size-6 shrink-0 items-center justify-center text-pm-light-text-2">
+        <Icon className="size-5" strokeWidth={1.75} />
+      </span>
+      {item.label}
+    </NavLink>
   );
 }
 
 export function Navbar() {
+  const { pathname } = useLocation();
+  const megaId = useId();
+  const megaRegionId = `${megaId}-panel`;
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [megaOpen, setMegaOpen] = useState(false);
+  const [mobileMegaOpen, setMobileMegaOpen] = useState(false);
+  const megaWrapRef = useRef<HTMLLIElement>(null);
+
+  useEffect(() => {
+    setMegaOpen(false);
+    setMobileOpen(false);
+    setMobileMegaOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!megaOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMegaOpen(false);
+    };
+    const onPointerDown = (event: PointerEvent) => {
+      if (!megaWrapRef.current?.contains(event.target as Node)) {
+        setMegaOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [megaOpen]);
+
+  const closeAll = () => {
+    setMegaOpen(false);
+    setMobileOpen(false);
+    setMobileMegaOpen(false);
+  };
 
   return (
     <header
       className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-12"
       id="primary-nav"
     >
-      <div className="pointer-events-auto w-full max-w-[1316px]">
+      <div className="pointer-events-auto relative w-full max-w-330">
         <div
-          className="flex items-center justify-between gap-3 rounded-full border border-white/50 bg-white/60 py-2.5 pl-4 pr-3 shadow-[0_8px_32px_-12px_rgb(2_52_78_/0.25)] backdrop-blur-xl supports-backdrop-filter:bg-white/55 md:pl-6 md:pr-4"
+          className="flex items-center justify-between gap-3 overflow-visible rounded-full border border-white/50 bg-white/60 py-2.5 pl-4 pr-3 shadow-[0_8px_32px_-12px_rgb(2_52_78_/0.25)] backdrop-blur-xl supports-backdrop-filter:bg-white/55 md:pl-6 md:pr-4"
           role="presentation"
         >
-          <div className="z-20 shrink-0 lg:mr-6">
+          <div className="z-20 flex min-w-0 items-center gap-2 lg:gap-6 xl:gap-16">
             <NavLink
               to="/"
-              className="flex items-center gap-2 no-underline"
-              onClick={() => setMobileOpen(false)}
+              className="flex shrink-0 items-center gap-2 no-underline"
+              onClick={closeAll}
             >
               <img
                 src="/Pulsar_Logo.png"
@@ -60,40 +167,90 @@ export function Navbar() {
                 className="h-8 w-auto md:h-9"
               />
             </NavLink>
-          </div>
 
-          <nav
-            className="absolute left-1/2 hidden w-[min(52rem,calc(100%-12rem))] -translate-x-1/2 justify-center lg:flex"
-            aria-label="Hauptnavigation"
-          >
-            <ul className="flex list-none flex-wrap items-center justify-center gap-0.5 p-0">
-              {nav.map((item) => (
-                <li key={item.to} className="m-0 list-none p-0">
-                  <NavLink
-                    to={item.to}
-                    end={item.to === "/"}
-                    className={navItemClassName}
+            <nav className="hidden lg:flex" aria-label="Hauptnavigation">
+              <ul className="flex list-none items-center gap-0.5 p-0">
+                <li
+                  ref={megaWrapRef}
+                  className="group/loesungen m-0 list-none p-0"
+                  onMouseEnter={() => setMegaOpen(true)}
+                  onMouseLeave={() => setMegaOpen(false)}
+                >
+                  <button
+                    type="button"
+                    className="relative flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-pm-light-headline transition-[font-weight] duration-150 group-hover/loesungen:font-semibold xl:px-5"
+                    aria-expanded={megaOpen}
+                    aria-controls={megaRegionId}
+                    aria-haspopup="true"
+                    onClick={() => setMegaOpen((open) => !open)}
                   >
-                    {item.label}
-                  </NavLink>
+                    Lösungen
+                    <ChevronDown
+                      className={`size-4 shrink-0 opacity-70 transition-transform duration-300 group-hover/loesungen:rotate-180 group-focus-within/loesungen:rotate-180 ${megaOpen ? "rotate-180" : ""}`}
+                      strokeWidth={2}
+                      aria-hidden
+                    />
+                  </button>
+
+                  <div
+                    id={megaRegionId}
+                    className={`absolute top-full left-0 z-30 w-full pt-3 before:absolute before:-top-3 before:left-0 before:h-3 before:w-full ${
+                      megaOpen ? "block" : "hidden"
+                    } group-hover/loesungen:block group-focus-within/loesungen:block`}
+                    role="region"
+                    aria-label="Lösungen"
+                  >
+                    <div className="rounded-3xl border border-white/60 bg-white px-8 py-8 shadow-[0_8px_32px_-12px_rgb(2_52_78_/0.28)] backdrop-blur-xl xl:px-12 xl:py-10">
+                      <div className="flex flex-wrap gap-x-10 gap-y-8 xl:gap-x-16">
+                        {MEGA_COLUMNS.map((column) => (
+                          <div
+                            key={column.title}
+                            className="flex min-w-50 max-w-[20rem] flex-col gap-y-1 xl:min-w-71"
+                          >
+                            <p className="mb-1 font-display-serif text-2xl text-pm-light-headline">
+                              {column.title}
+                            </p>
+                            <ul className="m-0 flex list-none flex-col p-0">
+                              {column.items.map((item) => (
+                                <li
+                                  key={item.label}
+                                  className="m-0 list-none p-0"
+                                >
+                                  <MegaMenuLink
+                                    item={item}
+                                    onNavigate={closeAll}
+                                  />
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </li>
-              ))}
-            </ul>
-          </nav>
+
+                {NAV_LINKS.map((item) => (
+                  <li key={item.to} className="m-0 list-none p-0">
+                    <NavLink
+                      to={item.to}
+                      end={item.to === "/"}
+                      className={navItemClassName}
+                    >
+                      {item.label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
 
           <div className="z-20 flex items-center gap-2 sm:gap-3 md:gap-4">
             <NavLink
               to="/ueber-uns"
-              className="hidden items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium text-pm-light-headline no-underline hover:bg-pm-light-icon-bg/60 lg:inline-flex"
-            >
-              Kontakt
-              <ArrowUpRightIcon className="size-4 shrink-0 opacity-80" />
-            </NavLink>
-            <NavLink
-              to="/unternehmen"
               className="hidden rounded-full bg-pm-light-button px-4 py-2.5 text-sm font-semibold text-white shadow-sm no-underline transition-[transform,box-shadow] hover:brightness-110 sm:inline-flex"
             >
-              Beratung anfragen
+              Beratungstermin anfragen
             </NavLink>
             <button
               type="button"
@@ -103,7 +260,7 @@ export function Navbar() {
               aria-label={
                 mobileOpen ? "Navigation schließen" : "Navigation öffnen"
               }
-              onClick={() => setMobileOpen((v) => !v)}
+              onClick={() => setMobileOpen((open) => !open)}
             >
               <span
                 className={`block h-0.5 w-6 rounded-full bg-pm-light-headline transition-transform duration-300 ${mobileOpen ? "translate-y-2 rotate-45" : ""}`}
@@ -121,25 +278,79 @@ export function Navbar() {
 
       <div
         id="mobile-primary-nav"
-        className={`pointer-events-auto fixed inset-x-0 top-22 z-40 mx-4 overflow-hidden rounded-3xl border border-pm-light-container-border bg-white/95 shadow-xl backdrop-blur-xl transition-all duration-300 ease-out lg:hidden ${mobileOpen ? "visible max-h-[min(28rem,calc(100dvh-7rem))] opacity-100" : "invisible max-h-0 opacity-0"}`}
+        className={`pointer-events-auto fixed inset-x-0 top-22 z-40 mx-4 overflow-hidden rounded-3xl border border-pm-light-container-border bg-white/95 shadow-xl backdrop-blur-xl transition-all duration-300 ease-out lg:hidden ${mobileOpen ? "visible max-h-[min(36rem,calc(100dvh-7rem))] opacity-100" : "invisible max-h-0 opacity-0"}`}
         aria-hidden={!mobileOpen}
       >
-        <nav className="max-h-[min(28rem,calc(100dvh-7rem))] overflow-y-auto p-4" aria-label="Mobile Navigation">
+        <nav
+          className="max-h-[min(36rem,calc(100dvh-7rem))] overflow-y-auto p-4"
+          aria-label="Mobile Navigation"
+        >
           <ul className="m-0 list-none space-y-1 p-0">
-            {nav.map((item) => (
+            <li className="m-0 list-none p-0">
+              <button
+                type="button"
+                className="flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-base font-medium text-pm-light-headline"
+                aria-expanded={mobileMegaOpen}
+                onClick={() => setMobileMegaOpen((open) => !open)}
+              >
+                Lösungen
+                <ChevronDown
+                  className={`size-5 shrink-0 opacity-70 transition-transform duration-300 ${mobileMegaOpen ? "rotate-180" : ""}`}
+                  strokeWidth={2}
+                  aria-hidden
+                />
+              </button>
+              <div
+                className={`grid transition-[grid-template-rows] duration-300 ease-out ${mobileMegaOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+              >
+                <div className="overflow-hidden">
+                  <div className="space-y-5 px-2 pb-3 pt-1">
+                    {MEGA_COLUMNS.map((column) => (
+                      <div key={column.title}>
+                        <p className="px-2 font-display-serif text-lg text-pm-light-headline">
+                          {column.title}
+                        </p>
+                        <ul className="mt-1 list-none p-0">
+                          {column.items.map((item) => {
+                            const Icon = item.icon;
+                            return (
+                              <li key={item.label} className="m-0 p-0">
+                                <NavLink
+                                  to={item.to}
+                                  className="flex items-center gap-3 rounded-2xl px-2 py-2.5 text-sm font-medium leading-snug text-pm-light-headline no-underline hover:bg-pm-light-container"
+                                  onClick={closeAll}
+                                >
+                                  <Icon
+                                    className="size-5 shrink-0 text-pm-light-text-2"
+                                    strokeWidth={1.75}
+                                  />
+                                  {item.label}
+                                </NavLink>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            {NAV_LINKS.map((item) => (
               <li key={item.to} className="m-0 list-none p-0">
                 <NavLink
                   to={item.to}
                   end={item.to === "/"}
                   className={({ isActive }) =>
                     [
-                      "block rounded-2xl px-4 py-3 text-base font-medium no-underline",
+                      "block px-4 py-3 text-base text-pm-light-headline no-underline transition-[font-weight] duration-150",
                       isActive
-                        ? "bg-pm-light-icon-bg text-pm-light-headline"
-                        : "text-pm-light-headline hover:bg-pm-light-container",
+                        ? "font-semibold"
+                        : "font-medium hover:font-semibold",
                     ].join(" ")
                   }
-                  onClick={() => setMobileOpen(false)}
+                  onClick={closeAll}
                 >
                   {item.label}
                 </NavLink>
@@ -149,18 +360,10 @@ export function Navbar() {
           <div className="mt-4 flex flex-col gap-3 border-t border-pm-light-container-border pt-4">
             <NavLink
               to="/ueber-uns"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-pm-light-container-border bg-white px-4 py-3 text-sm font-semibold text-pm-light-headline no-underline hover:bg-pm-light-container"
-              onClick={() => setMobileOpen(false)}
-            >
-              Kontakt
-              <ArrowUpRightIcon className="size-4" />
-            </NavLink>
-            <NavLink
-              to="/unternehmen"
               className="rounded-full bg-pm-light-button py-3 text-center text-sm font-semibold text-white no-underline hover:brightness-110"
-              onClick={() => setMobileOpen(false)}
+              onClick={closeAll}
             >
-              Beratung anfragen
+              Beratungstermin anfragen
             </NavLink>
           </div>
         </nav>

@@ -16,17 +16,20 @@ const FAQ_ITEMS: FaqItem[] = [
     body: (
       <>
         <p>
-          Pulsar Medical unterstützt Jobcenter, Unternehmen und Fachkräfte dabei,
-          medizinische und pflegerische Besetzung schneller, transparenter und
-          qualitätsbewusster zu organisieren — von der Bedarfsklärung bis zur
-          passenden Vermittlung.
+          Pulsar Medical unterstützt Jobcenter, Unternehmen und Fachkräfte
+          dabei, medizinische und pflegerische Besetzung schneller,
+          transparenter und qualitätsbewusster zu organisieren — von der
+          Bedarfsklärung bis zur passenden Vermittlung.
         </p>
         <p>
           Unser Ansatz verbindet fachliche Expertise mit digitalen Prozessen,
           damit offene Stellen zielgenau besetzt werden und Versorgung in
           Praxen, Kliniken und Einrichtungen sichergestellt bleibt. Lesen Sie
           auf unserem{" "}
-          <Link to="/blog" className="font-medium text-pm-light-text-2 underline decoration-pm-light-text-2/40 underline-offset-4 hover:opacity-90">
+          <Link
+            to="/blog"
+            className="font-medium text-pm-light-text-2 underline decoration-pm-light-text-2/40 underline-offset-4 hover:opacity-90"
+          >
             Blog
           </Link>{" "}
           mehr zu aktuellen Themen rund um den Gesundheitsarbeitsmarkt.
@@ -53,7 +56,8 @@ const FAQ_ITEMS: FaqItem[] = [
         </p>
         <p>
           <strong className="text-pm-light-text-1">Für Fachkräfte:</strong>{" "}
-          Orientierung auf dem Arbeitsmarkt und passende Karriereoptionen — siehe{" "}
+          Orientierung auf dem Arbeitsmarkt und passende Karriereoptionen —
+          siehe{" "}
           <Link
             to="/karriere"
             className="font-medium text-pm-light-text-2 underline decoration-pm-light-text-2/40 underline-offset-4 hover:opacity-90"
@@ -165,7 +169,7 @@ export function HomeFaq() {
 
   return (
     <section
-      className="relative my-14 lg:my-24"
+      className="relative my-14 lg:myq-24"
       aria-labelledby={`${baseId}-faq-heading`}
     >
       <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-10">
@@ -203,7 +207,7 @@ export function HomeFaq() {
                     }
                   >
                     <span
-                      className={`mb-0 text-2xl leading-snug tracking-tight transition-colors duration-300 ease-linear md:text-3xl ${
+                      className={`mb-0 text-2xl leading-snug tracking-tight transition-colors duration-300 ease-linear md:text-2xl ${
                         isOpen
                           ? "text-pm-light-text-2"
                           : "text-pm-light-headline group-hover:text-pm-light-text-2"

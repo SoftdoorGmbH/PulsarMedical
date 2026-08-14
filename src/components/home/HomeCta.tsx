@@ -15,22 +15,19 @@ export function HomeCta() {
           id="home-cta-heading"
           className="mt-3 text-3xl font-semibold leading-snug tracking-tight text-pm-dark-headline md:text-4xl"
         >
-          Versorgung, die zu{" "}
-          <em className="font-display-serif text-[1.02em] font-normal italic text-pm-dark-headline">
-            echten Lebenslagen passt
-          </em>
+          Planen Sie ein Begutachtungsprojekt?
         </h2>
         <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-pm-dark-text-1 md:mt-6 md:text-lg">
-          Entdecken Sie einen klaren Weg für Besetzung, Qualität und
-          Zusammenarbeit — mit messbarer Wirkung für Teams und Patientinnen
-          und Patienten.
+          Wir klären mit Ihnen, welche Begutachtungsform, fachliche Expertise
+          und Umsetzungsstruktur zu Ihrer Fragestellung passen – vom ersten
+          Pilotprojekt bis zum langfristigen Auftrag.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-6 md:mt-10">
           <Link
             to="/unternehmen"
             className="inline-flex rounded-full bg-white px-8 py-3.5 text-center text-base font-semibold text-pm-light-button no-underline shadow-md transition-[filter,transform] hover:brightness-95 active:scale-[0.99]"
           >
-            Beratung anfragen
+            Beratungstermin anfragen
           </Link>
         </div>
       </div>

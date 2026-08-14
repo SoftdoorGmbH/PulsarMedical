@@ -97,6 +97,10 @@
     animation: pm-marquee 70s linear infinite;
   }
 
+  .animate-pm-marquee-reverse {
+    animation: pm-marquee 70s linear infinite reverse;
+  }
+
   .about-team-card__photo {
     top: 1.5rem;
     left: 1.5rem;
@@ -150,7 +154,8 @@
   @media (prefers-reduced-motion: reduce) {
     .animate-pm-slide-from-right,
     .animate-pm-slide-from-left,
-    .animate-pm-marquee {
+    .animate-pm-marquee,
+    .animate-pm-marquee-reverse {
       animation: none;
     }
 
