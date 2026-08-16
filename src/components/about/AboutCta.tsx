@@ -7,7 +7,7 @@ export function AboutCta() {
       className="bg-pm-dark-bg py-16 md:py-24"
       aria-labelledby="about-cta-heading"
     >
-      <div className="mx-auto max-w-3xl px-6 text-center md:px-8">
+      <div className="mx-auto max-w-3xl px-6 text-left md:text-center md:px-8">
         <p className="text-xs font-semibold uppercase tracking-widest text-pm-dark-icon">
           Nächster Schritt
         </p>
@@ -27,13 +27,13 @@ export function AboutCta() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:mt-10">
           <a
             href="mailto:kontakt@pulsarmed.de"
-            className="inline-flex rounded-full bg-white px-8 py-3.5 text-center text-base font-semibold text-pm-light-button no-underline shadow-md transition-[filter,transform] hover:brightness-95 active:scale-[0.99]"
+            className="inline-flex max-md:w-full max-md:justify-center rounded-full bg-white px-8 py-3.5 text-center text-base font-semibold text-pm-light-button no-underline shadow-md transition-[filter,transform] hover:brightness-95 active:scale-[0.99]"
           >
             Kontakt aufnehmen
           </a>
           <Link
             to="/karriere"
-            className="inline-flex rounded-full border border-pm-dark-divider px-8 py-3.5 text-base font-semibold text-pm-dark-text-2 no-underline transition-colors hover:bg-white/10"
+            className="inline-flex max-md:w-full max-md:justify-center rounded-full border border-pm-dark-divider px-8 py-3.5 text-base font-semibold text-pm-dark-text-2 no-underline transition-colors hover:bg-white/10"
           >
             Karriere entdecken
           </Link>

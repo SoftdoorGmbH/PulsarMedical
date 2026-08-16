@@ -1,16 +1,8 @@
 import { useEffect, useId, useRef, useState, type ComponentType } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import {
-  Brain,
-  Building2,
-  ChevronDown,
-  ClipboardCheck,
-  HeartPulse,
-  Landmark,
-  Layers,
-  Shield,
-  Stethoscope,
-} from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { AUDIENCE_NAV_LINKS } from "@/content/audiencePages";
+import { OFFER_NAV_ITEMS } from "@/content/offerPages";
 
 type MegaItem = {
   to: string;
@@ -25,51 +17,13 @@ type MegaColumn = {
 
 const MEGA_COLUMNS: MegaColumn[] = [
   {
-    title: "Wen wir unterstützen",
-    items: [
-      { to: "/jobcenter", label: "Jobcenter", icon: Building2 },
-      {
-        to: "/unternehmen",
-        label: "Berufsgenossenschaften",
-        icon: Shield,
-      },
-      { to: "/unternehmen", label: "Rückversicherer", icon: Landmark },
-    ],
-  },
-  {
     title: "Unser Angebot",
-    items: [
-      {
-        to: "/jobcenter",
-        label: "Medizinische Begutachtungen",
-        icon: Stethoscope,
-      },
-      {
-        to: "/jobcenter",
-        label: "Psychologische & psychiatrische Begutachtungen",
-        icon: Brain,
-      },
-      {
-        to: "/jobcenter",
-        label: "Arbeits- & sozialmedizinische Begutachtungen",
-        icon: HeartPulse,
-      },
-      {
-        to: "/jobcenter",
-        label: "Fachübergreifende Begutachtungen",
-        icon: Layers,
-      },
-      {
-        to: "/jobcenter",
-        label: "Fachliche Einschätzung bei Meldeversäumnissen",
-        icon: ClipboardCheck,
-      },
-    ],
+    items: OFFER_NAV_ITEMS,
   },
 ];
 
 const NAV_LINKS = [
-  { to: "/", label: "Warum PULSAR Medical" },
+  ...AUDIENCE_NAV_LINKS,
   { to: "/ueber-uns", label: "Über uns" },
 ] as const;
 
@@ -145,15 +99,19 @@ export function Navbar() {
 
   return (
     <header
-      className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-12"
+      className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-6 lg:pt-12"
       id="primary-nav"
     >
-      <div className="pointer-events-auto relative w-full max-w-330">
+      <div className="pointer-events-auto relative z-50 w-full max-w-330">
         <div
-          className="flex items-center justify-between gap-3 overflow-visible rounded-full border border-white/50 bg-white/60 py-2.5 pl-4 pr-3 shadow-[0_8px_32px_-12px_rgb(2_52_78_/0.25)] backdrop-blur-xl supports-backdrop-filter:bg-white/55 md:pl-6 md:pr-4"
+          className={`flex items-center justify-between gap-3 overflow-visible rounded-full border py-2.5 pl-4 pr-3 shadow-[0_8px_32px_-12px_rgb(2_52_78_/0.25)] md:pl-6 md:pr-4 ${
+            mobileOpen
+              ? "border-white bg-white lg:border-white/50 lg:bg-white/60 lg:backdrop-blur-xl lg:supports-backdrop-filter:bg-white/55"
+              : "border-white/50 bg-white/60 backdrop-blur-xl supports-backdrop-filter:bg-white/55"
+          }`}
           role="presentation"
         >
-          <div className="z-20 flex min-w-0 items-center gap-2 lg:gap-6 xl:gap-16">
+          <div className="flex min-w-0 items-center gap-2 lg:gap-6 xl:gap-16">
             <NavLink
               to="/"
               className="flex shrink-0 items-center gap-2 no-underline"
@@ -184,7 +142,7 @@ export function Navbar() {
                     aria-haspopup="true"
                     onClick={() => setMegaOpen((open) => !open)}
                   >
-                    Lösungen
+                    Unsere Angebote
                     <ChevronDown
                       className={`size-4 shrink-0 opacity-70 transition-transform duration-300 group-hover/loesungen:rotate-180 group-focus-within/loesungen:rotate-180 ${megaOpen ? "rotate-180" : ""}`}
                       strokeWidth={2}
@@ -231,12 +189,8 @@ export function Navbar() {
                 </li>
 
                 {NAV_LINKS.map((item) => (
-                  <li key={item.to} className="m-0 list-none p-0">
-                    <NavLink
-                      to={item.to}
-                      end={item.to === "/"}
-                      className={navItemClassName}
-                    >
+                  <li key={item.label} className="m-0 list-none p-0">
+                    <NavLink to={item.to} className={navItemClassName}>
                       {item.label}
                     </NavLink>
                   </li>
@@ -245,7 +199,7 @@ export function Navbar() {
             </nav>
           </div>
 
-          <div className="z-20 flex items-center gap-2 sm:gap-3 md:gap-4">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
             <NavLink
               to="/ueber-uns"
               className="hidden rounded-full bg-pm-light-button px-4 py-2.5 text-sm font-semibold text-white shadow-sm no-underline transition-[transform,box-shadow] hover:brightness-110 sm:inline-flex"
@@ -276,9 +230,18 @@ export function Navbar() {
         </div>
       </div>
 
+      {mobileOpen ? (
+        <button
+          type="button"
+          className="pointer-events-auto fixed inset-0 z-30 bg-pm-light-headline/20 backdrop-blur-[2px] lg:hidden"
+          aria-label="Menü schließen"
+          onClick={() => setMobileOpen(false)}
+        />
+      ) : null}
+
       <div
         id="mobile-primary-nav"
-        className={`pointer-events-auto fixed inset-x-0 top-22 z-40 mx-4 overflow-hidden rounded-3xl border border-pm-light-container-border bg-white/95 shadow-xl backdrop-blur-xl transition-all duration-300 ease-out lg:hidden ${mobileOpen ? "visible max-h-[min(36rem,calc(100dvh-7rem))] opacity-100" : "invisible max-h-0 opacity-0"}`}
+        className={`pointer-events-auto fixed inset-x-0 top-32 z-40 mx-4 overflow-hidden rounded-3xl border border-pm-light-container-border bg-white shadow-xl transition-all duration-300 ease-out lg:hidden ${mobileOpen ? "visible max-h-[min(36rem,calc(100dvh-7rem))] opacity-100" : "invisible max-h-0 opacity-0"}`}
         aria-hidden={!mobileOpen}
       >
         <nav
@@ -338,10 +301,9 @@ export function Navbar() {
             </li>
 
             {NAV_LINKS.map((item) => (
-              <li key={item.to} className="m-0 list-none p-0">
+              <li key={item.label} className="m-0 list-none p-0">
                 <NavLink
                   to={item.to}
-                  end={item.to === "/"}
                   className={({ isActive }) =>
                     [
                       "block px-4 py-3 text-base text-pm-light-headline no-underline transition-[font-weight] duration-150",
@@ -368,15 +330,6 @@ export function Navbar() {
           </div>
         </nav>
       </div>
-
-      {mobileOpen ? (
-        <button
-          type="button"
-          className="pointer-events-auto fixed inset-0 z-30 bg-pm-light-headline/20 backdrop-blur-[2px] lg:hidden"
-          aria-label="Menü schließen"
-          onClick={() => setMobileOpen(false)}
-        />
-      ) : null}
     </header>
   );
 }

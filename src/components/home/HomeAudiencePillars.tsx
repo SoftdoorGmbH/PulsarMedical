@@ -18,7 +18,7 @@ const PILLARS = [
     headline: "Arbeitsfähigkeit nach einem Unfall klar beurteilen.",
     body: "PULSAR Medical ordnet Unfallfolgen, funktionelle Einschränkungen und die weitere Entwicklung fachlich ein – für eine gezielte Reha-Planung und berufliche Wiedereingliederung.",
     cta: "Mehr erfahren",
-    to: "/unternehmen",
+    to: "/berufsgenossenschaften",
     icon: Shield,
   },
   {
@@ -27,7 +27,7 @@ const PILLARS = [
     headline: "Leistungsfälle sicher und nachvollziehbar bewerten.",
     body: "PULSAR Medical bewertet die berufliche Leistungsfähigkeit, relevante funktionelle Einschränkungen und die Prognose – damit Leistungsentscheidungen auf einer fundierten medizinischen Grundlage entstehen.",
     cta: "Mehr erfahren",
-    to: "/unternehmen",
+    to: "/rueckversicherer",
     icon: Landmark,
   },
 ] as const;
@@ -115,8 +115,8 @@ export function HomeAudiencePillars() {
       className="bg-pm-light-bg py-16 sm:py-20 md:py-24"
       aria-labelledby="audience-pillars-heading"
     >
-      <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-10">
-        <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-10">
+        <div className="mx-auto max-w-3xl text-left md:text-center">
           <h2
             id="audience-pillars-heading"
             className="text-3xl font-semibold leading-tight tracking-tight text-pm-light-headline md:text-4xl lg:text-[2.5rem] lg:leading-[1.15]"

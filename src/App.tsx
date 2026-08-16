@@ -6,10 +6,10 @@ import { BlogPage } from "@/pages/BlogPage";
 import { BlogPostPage } from "@/pages/BlogPostPage";
 import { CareerPage } from "@/pages/CareerPage";
 import { DatenschutzPage } from "@/pages/DatenschutzPage";
-import { CompaniesPage } from "@/pages/CompaniesPage";
+import { AudiencePage } from "@/pages/AudiencePage";
+import { OfferPage } from "@/pages/OfferPage";
 import { HomePage } from "@/pages/HomePage";
 import { ImpressumPage } from "@/pages/ImpressumPage";
-import { JobCenterPage } from "@/pages/JobCenterPage";
 
 export default function App() {
   return (
@@ -18,8 +18,41 @@ export default function App() {
       <Routes>
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
-        <Route path="jobcenter" element={<JobCenterPage />} />
-        <Route path="unternehmen" element={<CompaniesPage />} />
+        <Route path="jobcenter" element={<AudiencePage slug="jobcenter" />} />
+        <Route
+          path="berufsgenossenschaften"
+          element={<AudiencePage slug="berufsgenossenschaften" />}
+        />
+        <Route
+          path="rueckversicherer"
+          element={<AudiencePage slug="rueckversicherer" />}
+        />
+        <Route
+          path="unternehmen"
+          element={<Navigate to="/rueckversicherer" replace />}
+        />
+        <Route
+          path="medizinische-begutachtungen"
+          element={<OfferPage slug="medizinische-begutachtungen" />}
+        />
+        <Route
+          path="psychologische-begutachtungen"
+          element={<OfferPage slug="psychologische-begutachtungen" />}
+        />
+        <Route
+          path="arbeits-sozialmedizinische-begutachtungen"
+          element={
+            <OfferPage slug="arbeits-sozialmedizinische-begutachtungen" />
+          }
+        />
+        <Route
+          path="fachuebergreifende-begutachtungen"
+          element={<OfferPage slug="fachuebergreifende-begutachtungen" />}
+        />
+        <Route
+          path="meldeversaeumnisse"
+          element={<OfferPage slug="meldeversaeumnisse" />}
+        />
         <Route path="karriere" element={<CareerPage />} />
         <Route path="ueber-uns" element={<AboutPage />} />
         <Route path="blog" element={<BlogPage />} />

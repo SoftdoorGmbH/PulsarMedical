@@ -1,9 +1,15 @@
-import { JOB_CENTER_LOGOS } from "@/content/jobCenterLogos";
+import type { AudienceLogoMarqueeContent } from "@/content/audiencePages";
 
-function LogoTrack({ ariaHidden }: { ariaHidden?: boolean }) {
+function LogoTrack({
+  logos,
+  ariaHidden,
+}: {
+  logos: AudienceLogoMarqueeContent["logos"];
+  ariaHidden?: boolean;
+}) {
   return (
     <>
-      {JOB_CENTER_LOGOS.map((logo) => (
+      {logos.map((logo) => (
         <div
           key={logo.src}
           className="flex shrink-0 items-center px-8 md:px-12"
@@ -24,18 +30,19 @@ function LogoTrack({ ariaHidden }: { ariaHidden?: boolean }) {
   );
 }
 
-export function JobCenterLogoMarquee() {
+export function AudienceLogoMarquee({
+  headingId,
+  heading,
+  logos,
+}: AudienceLogoMarqueeContent) {
   return (
-    <section
-      className="bg-white py-16 md:py-20"
-      aria-labelledby="jobcenter-logos-heading"
-    >
+    <section className="bg-white py-16 md:py-20" aria-labelledby={headingId}>
       <div className="mx-auto max-w-6xl px-6 md:px-8">
         <h2
-          id="jobcenter-logos-heading"
+          id={headingId}
           className="text-center text-3xl font-semibold tracking-tight text-pm-light-headline md:text-4xl lg:text-[2.5rem]"
         >
-          Diese Jobcenter vertrauen uns bereits
+          {heading}
         </h2>
       </div>
 
@@ -48,10 +55,10 @@ export function JobCenterLogoMarquee() {
       >
         <div className="flex w-max animate-pm-marquee motion-reduce:w-auto motion-reduce:max-w-6xl motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-x-8 motion-reduce:gap-y-6 motion-reduce:px-6 motion-reduce:animate-none">
           <div className="flex shrink-0">
-            <LogoTrack />
+            <LogoTrack logos={logos} />
           </div>
           <div className="flex shrink-0 motion-reduce:hidden" aria-hidden>
-            <LogoTrack ariaHidden />
+            <LogoTrack logos={logos} ariaHidden />
           </div>
         </div>
       </div>

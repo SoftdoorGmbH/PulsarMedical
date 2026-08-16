@@ -24,11 +24,7 @@ function FeatureCard({
       className={`min-h-64 max-h-72 relative rounded-[1.75rem] p-6 shadow-[0_14px_44px_-14px_rgb(2_52_78_/0.22)] md:p-8 ${dark ? "bg-pm-dark-container border-6 border-pm-dark-container-border" : "bg-pm-light-container border-6 border-pm-light-container-border"} ${className}`}
     >
       <div className="inline-flex rounded-xl bg-white p-2.5 shadow-sm ring-1 ring-black/6">
-        <span
-          className={
-            dark ? "text-pm-dark-icon" : "text-pm-light-icon"
-          }
-        >
+        <span className={dark ? "text-pm-dark-icon" : "text-pm-light-icon"}>
           {icon}
         </span>
       </div>
@@ -56,32 +52,28 @@ const CARDS: {
     id: "process",
     variant: "dark",
     icon: <BarChart3 {...iconProps} />,
-    text:
-      "Klare Abläufe und belastbare Kennzahlen: Wir strukturieren Diagnostik, Dokumentation und Übergaben so, dass Teams schneller die richtigen Entscheidungen treffen — ohne bürokratische Brüche.",
+    text: "Klare Abläufe und belastbare Kennzahlen: Wir strukturieren Diagnostik, Dokumentation und Übergaben so, dass Teams schneller die richtigen Entscheidungen treffen — ohne bürokratische Brüche.",
     overlap: "z-10 md:z-20",
   },
   {
     id: "people",
     variant: "light",
     icon: <Heart {...iconProps} />,
-    text:
-      "Menschen stehen im Mittelpunkt — ob Bewerbung, Einarbeitung oder langfristige Betreuung. Unser Ansatz bleibt respektvoll, transparent und auf echte Bedarfe zugeschnitten.",
+    text: "Menschen stehen im Mittelpunkt — ob Bewerbung, Einarbeitung oder langfristige Betreuung. Unser Ansatz bleibt respektvoll, transparent und auf echte Bedarfe zugeschnitten.",
     overlap: "z-20 md:-ml-4 md:mt-1 lg:-ml-6 lg:mt-8",
   },
   {
     id: "innovation",
     variant: "light",
     icon: <Sparkles {...iconProps} />,
-    text:
-      "Moderne Methoden und pragmatische Standards verbinden wir zu Lösungen, die im Klinikalltag funktionieren — von digitalen Schnittstellen bis zu bewährten Qualitätsritualen im Team.",
+    text: "Moderne Methoden und pragmatische Standards verbinden wir zu Lösungen, die im Klinikalltag funktionieren — von digitalen Schnittstellen bis zu bewährten Qualitätsritualen im Team.",
     overlap: "z-10 md:-mt-4 md:mr-1 lg:-mt-6 lg:mr-2",
   },
   {
     id: "network",
     variant: "dark",
     icon: <Users {...iconProps} />,
-    text:
-      "Ein eingespieltes Netzwerk aus Fach- und Führungskräften steht Ihnen zur Seite: Wir bringen die richtigen Profile zusammen — schnell, verlässlich und regelkonform.",
+    text: "Ein eingespieltes Netzwerk aus Fach- und Führungskräften steht Ihnen zur Seite: Wir bringen die richtigen Profile zusammen — schnell, verlässlich und regelkonform.",
     overlap: "z-30 md:-ml-4 md:-mt-4 lg:-ml-12 lg:-mt-5",
   },
 ];

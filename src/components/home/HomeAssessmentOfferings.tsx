@@ -16,7 +16,7 @@ function StepEyebrow({
   note?: string;
 }) {
   return (
-    <div className="inline-flex w-fit flex-wrap items-center gap-2.5 rounded-full border border-pm-light-container-border bg-pm-light-icon-bg px-3.5 py-2">
+    <div className="hidden md:inline-flex w-fit flex-wrap items-center gap-2.5 rounded-full border border-pm-light-container-border bg-pm-light-icon-bg px-3.5 py-2">
       <Icon
         className="size-4 shrink-0 text-pm-light-icon"
         strokeWidth={1.75}
@@ -60,12 +60,12 @@ function OfferingBlock({
       }`}
     >
       <div className="grid items-stretch lg:grid-cols-2">
-        <div className="flex flex-col p-7 sm:p-8 lg:p-10 xl:p-12">
+        <div className="flex flex-col px-7 py-6 sm:p-8 lg:p-10 xl:p-12">
           <StepEyebrow icon={icon} label={stageLabel} note={note} />
 
           <h3
             id={headingId}
-            className="mt-5 max-w-xl text-2xl font-semibold leading-snug tracking-tight text-pm-light-headline sm:text-[1.65rem]"
+            className="md:mt-5 max-w-xl text-2xl font-semibold leading-snug tracking-tight text-pm-light-headline sm:text-[1.65rem]"
           >
             {title}
           </h3>
@@ -88,7 +88,7 @@ function OfferingBlock({
           <div className="mt-8 lg:mt-auto lg:pt-8">
             <Link
               to={to}
-              className="inline-flex rounded-full bg-pm-light-button px-6 py-3.5 text-sm font-semibold text-white no-underline shadow-md transition-[filter,transform] hover:brightness-110 active:scale-[0.99] sm:text-base"
+              className="inline-flex w-full justify-center rounded-full bg-pm-light-button px-6 py-3.5 text-sm font-semibold text-white no-underline shadow-md transition-[filter,transform] hover:brightness-110 active:scale-[0.99] sm:text-base"
             >
               {cta}
             </Link>
@@ -96,7 +96,7 @@ function OfferingBlock({
         </div>
 
         <div
-          className={`relative flex min-h-56 items-center justify-center overflow-hidden p-6 sm:min-h-64 sm:p-8 lg:min-h-full lg:p-10 ${panelClassName}`}
+          className={`relative hidden md:flex min-h-56 items-center justify-center overflow-hidden p-6 sm:min-h-64 sm:p-8 lg:min-h-full lg:p-10 ${panelClassName}`}
         >
           <div className="relative aspect-4/3 w-full max-w-md overflow-hidden rounded-2xl border-6 border-white/25 bg-white shadow-[0_24px_48px_-16px_rgb(0_0_0_/0.35)]">
             <img
@@ -120,8 +120,8 @@ export function HomeAssessmentOfferings() {
       className="border-y border-pm-light-container-border bg-pm-light-container py-16 sm:py-20 md:py-24"
       aria-labelledby="assessment-offerings-heading"
     >
-      <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-10">
-        <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-10">
+        <div className="mx-auto max-w-3xl text-left md:text-center">
           <h2
             id="assessment-offerings-heading"
             className="text-3xl font-semibold leading-tight tracking-tight text-pm-light-headline md:text-4xl lg:text-[2.5rem] lg:leading-[1.15]"

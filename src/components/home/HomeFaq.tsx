@@ -172,8 +172,8 @@ export function HomeFaq() {
       className="relative my-14 lg:myq-24"
       aria-labelledby={`${baseId}-faq-heading`}
     >
-      <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-10">
-        <header className="mb-8 text-center md:mb-12">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-10">
+        <header className="mb-8 text-left md:text-center md:mb-12">
           <h2
             id={`${baseId}-faq-heading`}
             className="text-3xl font-semibold tracking-tight text-pm-light-headline md:text-4xl"

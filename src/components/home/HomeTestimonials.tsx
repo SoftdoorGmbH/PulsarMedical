@@ -184,7 +184,7 @@ export function HomeTestimonials() {
       aria-labelledby="home-testimonials-heading"
     >
       <div className="mx-auto max-w-[min(90rem,calc(100%-2rem))] px-5 sm:px-6 lg:px-10">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl text-left md:text-center">
           <h2
             id="home-testimonials-heading"
             className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-pm-light-headline md:text-4xl lg:text-[2.5rem] lg:leading-[1.15]"

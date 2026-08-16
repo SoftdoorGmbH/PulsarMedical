@@ -7,7 +7,7 @@ export function HomeCta() {
       className="bg-pm-dark-bg py-16 md:py-24"
       aria-labelledby="home-cta-heading"
     >
-      <div className="mx-auto max-w-3xl px-6 text-center md:px-8">
+      <div className="mx-auto max-w-3xl px-6 text-left md:text-center md:px-8">
         <p className="text-xs font-semibold uppercase tracking-widest text-pm-dark-icon">
           Nächster Schritt
         </p>
@@ -22,10 +22,10 @@ export function HomeCta() {
           und Umsetzungsstruktur zu Ihrer Fragestellung passen – vom ersten
           Pilotprojekt bis zum langfristigen Auftrag.
         </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-6 md:mt-10">
+        <div className="mt-8 flex flex-wrap items-start justify-start md:items-center md:justify-center gap-x-4 gap-y-6 md:mt-10">
           <Link
             to="/unternehmen"
-            className="inline-flex rounded-full bg-white px-8 py-3.5 text-center text-base font-semibold text-pm-light-button no-underline shadow-md transition-[filter,transform] hover:brightness-95 active:scale-[0.99]"
+            className="inline-flex w-full justify-center rounded-full bg-white px-8 py-3.5 text-center text-base font-semibold text-pm-light-button no-underline shadow-md transition-[filter,transform] hover:brightness-95 active:scale-[0.99]"
           >
             Beratungstermin anfragen
           </Link>

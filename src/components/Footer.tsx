@@ -3,7 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 const mainNav = [
   { to: "/", label: "Home" },
   { to: "/jobcenter", label: "Für Jobcenter" },
-  { to: "/unternehmen", label: "Für Unternehmen" },
+  { to: "/berufsgenossenschaften", label: "Für Berufsgenossenschaften" },
+  { to: "/rueckversicherer", label: "Für Rückversicherer" },
   { to: "/karriere", label: "Karriere" },
   { to: "/ueber-uns", label: "Über uns" },
   { to: "/blog", label: "Blog" },
