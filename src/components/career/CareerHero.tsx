@@ -1,3 +1,5 @@
+import { Button } from "@/components/Button";
+
 /** Karriere-Hero — Lyra-inspiriertes Layout mit Heading, CTAs und Bild. */
 export function CareerHero() {
   return (
@@ -16,18 +18,13 @@ export function CareerHero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="#offene-stellen"
-              className="inline-flex rounded-full bg-pm-light-button px-7 py-3.5 text-base font-semibold text-white no-underline shadow-md transition-[filter,transform] hover:brightness-110 active:scale-[0.99]"
-            >
-              Offene Stellen
-            </a>
-            <a
+            <Button href="#offene-stellen">Offene Stellen</Button>
+            <Button
               href="mailto:kontakt@pulsarmed.de?subject=Initiativbewerbung%20Pulsar%20Medical"
-              className="inline-flex rounded-full bg-pm-light-headline px-7 py-3.5 text-base font-semibold text-white no-underline shadow-md transition-[filter,transform] hover:brightness-110 active:scale-[0.99]"
+              variant="navy"
             >
               Initiativbewerbung
-            </a>
+            </Button>
           </div>
 
           <p className="mt-6 text-sm leading-relaxed text-pm-light-text-1">

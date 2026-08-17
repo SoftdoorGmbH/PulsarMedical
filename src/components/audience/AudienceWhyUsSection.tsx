@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Minus, Plus } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/Button";
 import type {
   AudienceWhyUsContent,
   AudienceWhyUsItem,
@@ -98,12 +98,9 @@ export function AudienceWhyUsSection({
             <DarkAccordion items={items} className="mt-10" />
 
             <div className="mt-8">
-              <Link
-                to={cta.to}
-                className="inline-flex max-md:w-full max-md:justify-center rounded-full bg-pm-dark-button px-7 py-3.5 text-base font-semibold text-white shadow-md no-underline transition-[filter,transform] hover:brightness-110 active:scale-[0.99]"
-              >
+              <Button to={cta.to} variant="dark" fullWidth="md">
                 {cta.label}
-              </Link>
+              </Button>
             </div>
           </div>
 

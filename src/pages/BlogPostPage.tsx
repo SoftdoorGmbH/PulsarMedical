@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from "react-router-dom";
+import { Button } from "@/components/Button";
 import { BLOG_CARD_GRADIENTS, formatBlogDate, formatReadTime } from "@/components/blog/blogUtils";
 import { BLOG_CATEGORIES, getPostBySlug } from "@/content/blog/blogs";
 
@@ -60,12 +61,7 @@ export function BlogPostPage() {
         </div>
 
         <div className="mt-10">
-          <a
-            href="mailto:kontakt@pulsarmed.de"
-            className="inline-flex rounded-full bg-pm-light-button px-7 py-3.5 text-base font-semibold text-white no-underline shadow-md transition-[filter,transform] hover:brightness-110 active:scale-[0.99]"
-          >
-            Kontakt aufnehmen
-          </a>
+          <Button to="/kontakt">Kontakt aufnehmen</Button>
         </div>
       </div>
     </article>

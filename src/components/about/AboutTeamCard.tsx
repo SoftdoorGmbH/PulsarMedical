@@ -3,12 +3,7 @@ import type { TeamMember } from "@/content/teamMembers";
 
 function ArrowRightIcon() {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      className="size-4"
-      aria-hidden
-    >
+    <svg viewBox="0 0 24 24" fill="none" className="size-4" aria-hidden>
       <path
         d="M5 12h14M13 6l6 6-6 6"
         stroke="currentColor"
@@ -35,7 +30,7 @@ export function AboutTeamCard({
     <article
       data-expanded={expanded}
       className={[
-        "about-team-card flex flex-col overflow-hidden rounded-2xl border border-pm-light-container-border bg-white shadow-[0_8px_24px_-12px_rgb(2_52_78_/0.1)] lg:min-h-[500px]",
+        "about-team-card flex flex-col overflow-hidden rounded-2xl border border-pm-light-container-border bg-white shadow-[0_8px_24px_-12px_rgb(2_52_78_/0.1)] lg:min-h-125",
         expanded
           ? "shadow-[0_16px_40px_-12px_rgb(2_52_78_/0.18)] ring-1 ring-pm-light-container-border"
           : "",
@@ -88,7 +83,9 @@ export function AboutTeamCard({
         id={detailsId}
         className={[
           "about-team-card__details grid",
-          expanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
+          expanded
+            ? "grid-rows-[1fr] opacity-100"
+            : "grid-rows-[0fr] opacity-0",
         ].join(" ")}
         aria-hidden={!expanded}
       >

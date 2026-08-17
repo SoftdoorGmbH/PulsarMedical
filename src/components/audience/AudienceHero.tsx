@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/Button";
 import type { AudienceHeroContent } from "@/content/audiencePages";
 
 export function AudienceHero({
@@ -32,18 +32,10 @@ export function AudienceHero({
 
           <div className="mt-6 md:mt-8">
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:justify-start sm:gap-6 md:gap-x-4">
-              <Link
-                to="/ueber-uns"
-                className="inline-flex rounded-full bg-pm-light-button px-7 py-3.5 text-base font-semibold text-white shadow-md no-underline transition-[filter,transform] hover:brightness-110 active:scale-[0.99]"
-              >
-                Beratungstermin anfragen
-              </Link>
-              <Link
-                to="/jobcenter"
-                className="group inline-flex items-center gap-3 rounded-full bg-white px-7 py-3.5 text-base font-semibold text-pm-light-headline no-underline"
-              >
-                <span>Lösungen entdecken</span>
-              </Link>
+              <Button to="/kontakt">Beratungstermin anfragen</Button>
+              <Button to="/jobcenter" variant="secondary">
+                Lösungen entdecken
+              </Button>
             </div>
           </div>
         </div>

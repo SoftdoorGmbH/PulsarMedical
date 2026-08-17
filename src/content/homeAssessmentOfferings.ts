@@ -39,7 +39,7 @@ export const HOME_ASSESSMENT_OFFERINGS: AssessmentOffering[] = [
     icon: Stethoscope,
     imageSrc: "/pulsarmedical-jobcenter-1.jpg",
     imageAlt: "Medizinische Begutachtung im Beratungsgespräch",
-    panelClassName: "bg-pm-dark-button",
+    panelClassName: "bg-pm-dark-container",
   },
   {
     id: "psychologisch",
@@ -58,7 +58,7 @@ export const HOME_ASSESSMENT_OFFERINGS: AssessmentOffering[] = [
     icon: Brain,
     imageSrc: "/pulsarmedical-jobcenter-2.jpg",
     imageAlt: "Psychologische Begutachtung in der Beratung",
-    panelClassName: "bg-pm-dark-bg",
+    panelClassName: "bg-pm-dark-button",
   },
   {
     id: "arbeitsmedizinisch",
@@ -77,7 +77,7 @@ export const HOME_ASSESSMENT_OFFERINGS: AssessmentOffering[] = [
     icon: HeartPulse,
     imageSrc: "/pulsarmedical-jobcenter-3.jpg",
     imageAlt: "Arbeits- und sozialmedizinische Einschätzung",
-    panelClassName: "bg-pm-dark-container",
+    panelClassName: "bg-pm-dark-button",
   },
   {
     id: "fachuebergreifend",
@@ -96,7 +96,7 @@ export const HOME_ASSESSMENT_OFFERINGS: AssessmentOffering[] = [
     icon: Layers,
     imageSrc: "/3.png.webp",
     imageAlt: "Fachübergreifende Begutachtung im Team",
-    panelClassName: "bg-[#1a5272]",
+    panelClassName: "bg-pm-dark-button",
   },
   {
     id: "meldeversaeumnisse",
@@ -115,6 +115,6 @@ export const HOME_ASSESSMENT_OFFERINGS: AssessmentOffering[] = [
     icon: ClipboardCheck,
     imageSrc: "/5.png.webp",
     imageAlt: "Fachliche Ersteinschätzung bei Meldeversäumnissen",
-    panelClassName: "bg-pm-dark-button",
+    panelClassName: "bg-pm-dark-container",
   },
 ];

@@ -1,6 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/Button";
 import { HOME_ASSESSMENT_OFFERINGS } from "@/content/homeAssessmentOfferings";
 
 const checkClassName =
@@ -86,12 +86,9 @@ function OfferingBlock({
           </ul>
 
           <div className="mt-8 lg:mt-auto lg:pt-8">
-            <Link
-              to={to}
-              className="inline-flex w-full justify-center rounded-full bg-pm-light-button px-6 py-3.5 text-sm font-semibold text-white no-underline shadow-md transition-[filter,transform] hover:brightness-110 active:scale-[0.99] sm:text-base"
-            >
+            <Button to={to} fullWidth>
               {cta}
-            </Link>
+            </Button>
           </div>
         </div>
 

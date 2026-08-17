@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState, type ComponentType } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
+import { Button } from "@/components/Button";
 import { AUDIENCE_NAV_LINKS } from "@/content/audiencePages";
 import { OFFER_NAV_ITEMS } from "@/content/offerPages";
 
@@ -21,6 +22,11 @@ const MEGA_COLUMNS: MegaColumn[] = [
     items: OFFER_NAV_ITEMS,
   },
 ];
+
+const MEGA_MENU_IMAGES = [
+  { src: "/pulsarmedical-jobcenter-2.jpg", alt: "" },
+  { src: "/pulsarmedical-jobcenter-1.jpg", alt: "" },
+] as const;
 
 const NAV_LINKS = [
   ...AUDIENCE_NAV_LINKS,
@@ -159,30 +165,54 @@ export function Navbar() {
                     aria-label="Lösungen"
                   >
                     <div className="rounded-3xl border border-white/60 bg-white px-8 py-8 shadow-[0_8px_32px_-12px_rgb(2_52_78_/0.28)] backdrop-blur-xl xl:px-12 xl:py-10">
-                      <div className="flex flex-wrap gap-x-10 gap-y-8 xl:gap-x-16">
-                        {MEGA_COLUMNS.map((column) => (
-                          <div
-                            key={column.title}
-                            className="flex min-w-50 max-w-[20rem] flex-col gap-y-1 xl:min-w-71"
-                          >
-                            <p className="mb-1 font-display-serif text-2xl text-pm-light-headline">
-                              {column.title}
-                            </p>
-                            <ul className="m-0 flex list-none flex-col p-0">
-                              {column.items.map((item) => (
-                                <li
-                                  key={item.label}
-                                  className="m-0 list-none p-0"
-                                >
-                                  <MegaMenuLink
-                                    item={item}
-                                    onNavigate={closeAll}
-                                  />
-                                </li>
-                              ))}
-                            </ul>
+                      <div className="flex items-stretch gap-8 xl:gap-10">
+                        <div className="min-w-0 flex-1">
+                          <div className="flex flex-wrap gap-x-10 gap-y-8 xl:gap-x-16">
+                            {MEGA_COLUMNS.map((column) => (
+                              <div
+                                key={column.title}
+                                className="flex min-w-50 max-w-[20rem] flex-col gap-y-1 xl:min-w-71"
+                              >
+                                <p className="mb-1 font-display-serif text-2xl text-pm-light-headline">
+                                  {column.title}
+                                </p>
+                                <ul className="m-0 flex list-none flex-col p-0">
+                                  {column.items.map((item) => (
+                                    <li
+                                      key={item.label}
+                                      className="m-0 list-none p-0"
+                                    >
+                                      <MegaMenuLink
+                                        item={item}
+                                        onNavigate={closeAll}
+                                      />
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
                           </div>
-                        ))}
+                        </div>
+
+                        <div className="hidden shrink-0 items-stretch gap-4 lg:flex xl:gap-5">
+                          {MEGA_MENU_IMAGES.map((image) => (
+                            <div
+                              key={image.src}
+                              className="relative min-h-64 w-80 overflow-hidden rounded-2xl ring-1 ring-pm-light-container-border xl:min-h-72 xl:w-96 2xl:min-h-80 2xl:w-md"
+                              aria-hidden
+                            >
+                              <img
+                                src={image.src}
+                                alt={image.alt}
+                                width={448}
+                                height={320}
+                                loading="lazy"
+                                decoding="async"
+                                className="absolute inset-0 size-full object-cover"
+                              />
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -200,12 +230,11 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
-            <NavLink
-              to="/ueber-uns"
-              className="hidden rounded-full bg-pm-light-button px-4 py-2.5 text-sm font-semibold text-white shadow-sm no-underline transition-[transform,box-shadow] hover:brightness-110 sm:inline-flex"
-            >
-              Beratungstermin anfragen
-            </NavLink>
+            <div className="hidden sm:contents">
+              <Button to="/kontakt" size="sm">
+                Beratungstermin anfragen
+              </Button>
+            </div>
             <button
               type="button"
               className="inline-flex flex-col gap-1.5 rounded-full p-2 lg:hidden"
@@ -320,13 +349,9 @@ export function Navbar() {
             ))}
           </ul>
           <div className="mt-4 flex flex-col gap-3 border-t border-pm-light-container-border pt-4">
-            <NavLink
-              to="/ueber-uns"
-              className="rounded-full bg-pm-light-button py-3 text-center text-sm font-semibold text-white no-underline hover:brightness-110"
-              onClick={closeAll}
-            >
+            <Button to="/kontakt" size="sm" fullWidth onClick={closeAll}>
               Beratungstermin anfragen
-            </NavLink>
+            </Button>
           </div>
         </nav>
       </div>

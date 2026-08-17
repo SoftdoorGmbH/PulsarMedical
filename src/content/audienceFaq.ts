@@ -28,7 +28,7 @@ export const JOBCENTER_FAQ_ITEMS: readonly AudienceFaqItem[] = [
     question: "Wie läuft eine Begutachtung ab?",
     answer:
       "Nach Ihrer Anfrage koordinieren wir den Ablauf, stimmen Termine ab und führen die Begutachtung mit passenden Expert:innen durch. Anschließend erfolgt eine Qualitätssicherung, bevor Sie das Gutachten erhalten. Rückfragen klären wir bei Bedarf im Teamgespräch.",
-    cta: { to: "/ueber-uns", label: "Ablauf besprechen" },
+    cta: { to: "/kontakt", label: "Ablauf besprechen" },
   },
   {
     id: "jobcenter-dauer",
@@ -47,6 +47,6 @@ export const JOBCENTER_FAQ_ITEMS: readonly AudienceFaqItem[] = [
     question: "Wie können wir starten?",
     answer:
       "Kontaktieren Sie uns für ein unverbindliches Erstgespräch. Wir klären Ihre Fragestellung, empfehlen eine passende Begutachtungsform und skizzieren den weiteren Ablauf für Ihr Jobcenter.",
-    cta: { to: "/ueber-uns", label: "Beratungstermin anfragen" },
+    cta: { to: "/kontakt", label: "Beratungstermin anfragen" },
   },
 ];

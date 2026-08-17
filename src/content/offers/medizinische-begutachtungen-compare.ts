@@ -3,7 +3,7 @@ import type { OfferCompareContent } from "@/content/offerCompare";
 export const MEDIZINISCHE_BEGUTACHTUNGEN_COMPARE: OfferCompareContent = {
   headingId: "medizinische-begutachtungen-compare-heading",
   title:
-    "Medizinische Begutachtungen, die entlasten statt zusätzlichen Aufwand schaffen",
+    "Medizinische Begutachtungen, die entlasten, statt zusätzlichen Aufwand schaffen",
   description:
     "Die Durchführung medizinischer Begutachtungen ist ein komplexes Projekt. Wir unterstützen Sie dabei, die Kapazitäten optimal zu nutzen und die Durchführung zu optimieren.",
   alternative: {

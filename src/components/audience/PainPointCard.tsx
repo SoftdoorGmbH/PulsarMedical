@@ -1,8 +1,4 @@
 import type { AudiencePainPoint } from "@/content/audiencePainPoints";
-import {
-  DEFAULT_PAIN_LABEL,
-  DEFAULT_SOLUTION_EYEBROW,
-} from "@/content/audiencePainPoints";
 
 type PainPointCardProps = {
   item: AudiencePainPoint;

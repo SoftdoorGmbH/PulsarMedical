@@ -5,6 +5,7 @@ import { AboutPage } from "@/pages/AboutPage";
 import { BlogPage } from "@/pages/BlogPage";
 import { BlogPostPage } from "@/pages/BlogPostPage";
 import { CareerPage } from "@/pages/CareerPage";
+import { ContactPage } from "@/pages/ContactPage";
 import { DatenschutzPage } from "@/pages/DatenschutzPage";
 import { AudiencePage } from "@/pages/AudiencePage";
 import { OfferPage } from "@/pages/OfferPage";
@@ -55,6 +56,7 @@ export default function App() {
         />
         <Route path="karriere" element={<CareerPage />} />
         <Route path="ueber-uns" element={<AboutPage />} />
+        <Route path="kontakt" element={<ContactPage />} />
         <Route path="blog" element={<BlogPage />} />
         <Route path="blog/:slug" element={<BlogPostPage />} />
         <Route path="impressum" element={<ImpressumPage />} />

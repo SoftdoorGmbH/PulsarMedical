@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Button } from "@/components/Button";
 
 /** Abschluss-CTA für die Über-uns-Seite. */
 export function AboutCta() {
@@ -25,18 +25,12 @@ export function AboutCta() {
           Unternehmen oder Einzelpersonen — wir freuen uns auf Ihre Nachricht.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:mt-10">
-          <a
-            href="mailto:kontakt@pulsarmed.de"
-            className="inline-flex max-md:w-full max-md:justify-center rounded-full bg-white px-8 py-3.5 text-center text-base font-semibold text-pm-light-button no-underline shadow-md transition-[filter,transform] hover:brightness-95 active:scale-[0.99]"
-          >
+          <Button to="/kontakt" variant="inverse" size="lg" fullWidth="md">
             Kontakt aufnehmen
-          </a>
-          <Link
-            to="/karriere"
-            className="inline-flex max-md:w-full max-md:justify-center rounded-full border border-pm-dark-divider px-8 py-3.5 text-base font-semibold text-pm-dark-text-2 no-underline transition-colors hover:bg-white/10"
-          >
+          </Button>
+          <Button to="/karriere" variant="outline" size="lg" fullWidth="md">
             Karriere entdecken
-          </Link>
+          </Button>
         </div>
       </div>
     </section>

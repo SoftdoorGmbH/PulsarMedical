@@ -50,13 +50,6 @@ function ProcessStep({
 
   return (
     <div className={`relative ${isLast ? "" : "pb-10 sm:pb-12 lg:pb-20"}`}>
-      {!isLast ? (
-        <div
-          aria-hidden
-          className="absolute top-7.5 bottom-0 left-2.75 w-0.5 bg-pm-light-container-border lg:hidden"
-        />
-      ) : null}
-
       <article
         aria-labelledby={headingId}
         className="relative grid items-center gap-10 pl-9 lg:grid-cols-2 lg:gap-14 lg:pl-0 xl:gap-16"
@@ -125,7 +118,11 @@ export function OfferProcessSection({
           </p>
         </div>
 
-        <div className="mt-10 sm:mt-12">
+        <div className="relative mt-10 sm:mt-12">
+          <div
+            aria-hidden
+            className="absolute top-7.5 bottom-0 left-2.75 w-0.5 bg-pm-light-container-border lg:hidden"
+          />
           {steps.map((step, index) => (
             <ProcessStep
               key={step.title}

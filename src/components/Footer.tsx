@@ -7,6 +7,7 @@ const mainNav = [
   { to: "/rueckversicherer", label: "Für Rückversicherer" },
   { to: "/karriere", label: "Karriere" },
   { to: "/ueber-uns", label: "Über uns" },
+  { to: "/kontakt", label: "Kontakt" },
   { to: "/blog", label: "Blog" },
 ] as const;
 
@@ -76,7 +77,7 @@ export function Footer() {
               Nachricht.
             </p>
             <Link
-              to="/ueber-uns"
+              to="/kontakt"
               className="mt-4 inline-flex text-sm font-semibold text-pm-light-text-2 no-underline transition-colors hover:text-pm-light-button hover:underline"
             >
               Zum Kontakt →

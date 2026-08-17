@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Button } from "@/components/Button";
 
 /** Schließt die Seite ab: durchgehend dunkler Band, kein „helle Karte“-Layout. */
 export function HomeCta() {
@@ -23,12 +23,9 @@ export function HomeCta() {
           Pilotprojekt bis zum langfristigen Auftrag.
         </p>
         <div className="mt-8 flex flex-wrap items-start justify-start md:items-center md:justify-center gap-x-4 gap-y-6 md:mt-10">
-          <Link
-            to="/unternehmen"
-            className="inline-flex w-full justify-center rounded-full bg-white px-8 py-3.5 text-center text-base font-semibold text-pm-light-button no-underline shadow-md transition-[filter,transform] hover:brightness-95 active:scale-[0.99]"
-          >
+          <Button to="/kontakt" variant="inverse" size="lg" fullWidth>
             Beratungstermin anfragen
-          </Link>
+          </Button>
         </div>
       </div>
     </section>

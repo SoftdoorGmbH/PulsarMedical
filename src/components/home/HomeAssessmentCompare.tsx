@@ -10,7 +10,7 @@ import {
   X,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/Button";
 import {
   HOME_ASSESSMENT_BENEFITS,
   HOME_ASSESSMENT_COMPARE,
@@ -225,12 +225,13 @@ export function HomeAssessmentCompare() {
           </div>
 
           <div className="mt-12 flex justify-center sm:mt-14 lg:mt-16">
-            <Link
+            <Button
               to={HOME_ASSESSMENT_BENEFITS.cta.to}
-              className="inline-flex rounded-full bg-white px-8 py-3.5 text-base font-semibold text-pm-light-button no-underline shadow-md transition-[filter,transform] hover:brightness-95 active:scale-[0.99]"
+              variant="inverse"
+              size="lg"
             >
               {HOME_ASSESSMENT_BENEFITS.cta.label}
-            </Link>
+            </Button>
           </div>
         </div>
       </div>

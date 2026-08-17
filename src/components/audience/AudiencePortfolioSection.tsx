@@ -1,6 +1,6 @@
 import { useId, useState } from "react";
 import { CheckCircle2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/Button";
 import type { AudiencePortfolioContent } from "@/content/audiencePortfolio";
 
 const checkClassName =
@@ -138,12 +138,9 @@ export function AudiencePortfolioSection({
               </ul>
 
               <div className="mt-5 sm:mt-6">
-                <Link
-                  to={cta.to}
-                  className="inline-flex w-full justify-center rounded-full bg-pm-light-button px-6 py-3 text-sm font-semibold text-white shadow-md no-underline transition-[filter,transform] hover:brightness-110 active:scale-[0.99] sm:px-7 sm:py-3.5 sm:text-base"
-                >
+                <Button to={cta.to} fullWidth>
                   {cta.label}
-                </Link>
+                </Button>
               </div>
             </div>
 

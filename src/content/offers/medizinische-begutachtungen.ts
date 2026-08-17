@@ -12,7 +12,9 @@ export const medizinischeBegutachtungen: OfferPageContent = {
   hero: {
     ariaLabel: "Medizinische Begutachtungen",
     title: "Medizinische Begutachtungen",
-    paragraphs: ["Inhalt folgt."],
+    paragraphs: [
+      "Die medizinische Begutachtung ist ein wichtiger Teil der Gesundheitsberatung. Sie dient dazu, die Gesundheit eines Menschen zu evaluieren und eine Einschätzung der Gesundheit zu erstellen.",
+    ],
     badges: ["DSGVO", "Bundesweit verfügbar", "Persönlich"],
   },
   useCases: {
@@ -21,20 +23,8 @@ export const medizinischeBegutachtungen: OfferPageContent = {
       "Medizinische Begutachtungen, wenn belastbare Einschätzungen gefragt sind",
     description:
       "Hier finden Sie alle Informationen zur medizinischen Begutachtung. Bitte beachten Sie, dass die medizinische Begutachtung nur in der Praxis durchgeführt werden kann.",
-    images: [
-      {
-        src: "/pulsarmedical-jobcenter-1.jpg",
-        alt: "Medizinische Begutachtung im Beratungsgespräch",
-      },
-      {
-        src: "/pulsarmedical-jobcenter-2.jpg",
-        alt: "Ärztliche Untersuchung und Befundung",
-      },
-      {
-        src: "/pulsarmedical-jobcenter-3.jpg",
-        alt: "Medizinische Dokumentation und Auswertung",
-      },
-    ],
+    imageSrc: "/pulsarmedical-jobcenter-1.jpg",
+    imageAlt: "Medizinische Begutachtung im Beratungsgespräch",
     items: [
       {
         title: "Gesundheitliche Einschränkungen fachlich einordnen",

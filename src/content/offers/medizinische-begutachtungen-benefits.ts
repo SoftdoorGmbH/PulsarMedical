@@ -4,7 +4,7 @@ import type { OfferBenefitsContent } from "@/content/offerBenefits";
 export const MEDIZINISCHE_BEGUTACHTUNGEN_BENEFITS: OfferBenefitsContent = {
   headingId: "medizinische-begutachtungen-benefits-heading",
   title: "Weitere Vorteile mit PULSAR Medical",
-  cta: { label: "Unverbindlich anfragen", to: "/ueber-uns" },
+  cta: { label: "Unverbindlich anfragen", to: "/kontakt" },
   items: [
     {
       title: "Bundesweites Expertennetzwerk",

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Building2, Landmark, Shield } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/Button";
 
 const PILLARS = [
   {
@@ -162,12 +162,9 @@ export function HomeAudiencePillars() {
                 </p>
 
                 <div className="mt-6 md:mt-8">
-                  <Link
-                    to={pillar.to}
-                    className="inline-flex w-full items-center justify-center rounded-full bg-pm-dark-button px-6 py-3.5 text-center text-sm font-semibold text-white no-underline shadow-md transition-[filter,transform] hover:brightness-110 active:scale-[0.99] sm:text-base"
-                  >
+                  <Button to={pillar.to} variant="dark" fullWidth>
                     {pillar.cta}
-                  </Link>
+                  </Button>
                 </div>
               </article>
             );

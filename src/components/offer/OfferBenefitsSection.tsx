@@ -1,5 +1,8 @@
-import { Link } from "react-router-dom";
-import type { OfferBenefitItem, OfferBenefitsContent } from "@/content/offerBenefits";
+import { Button } from "@/components/Button";
+import type {
+  OfferBenefitItem,
+  OfferBenefitsContent,
+} from "@/content/offerBenefits";
 
 function BenefitItem({
   title,
@@ -56,12 +59,9 @@ export function OfferBenefitsSection({
 
         {cta ? (
           <div className="mt-12 flex justify-center sm:mt-14 lg:mt-16">
-            <Link
-              to={cta.to}
-              className="inline-flex rounded-full bg-white px-8 py-3.5 text-base font-semibold text-pm-light-button no-underline shadow-md transition-[filter,transform] hover:brightness-95 active:scale-[0.99]"
-            >
+            <Button to={cta.to} variant="inverse" size="lg">
               {cta.label}
-            </Link>
+            </Button>
           </div>
         ) : null}
       </div>

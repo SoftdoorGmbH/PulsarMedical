@@ -3,15 +3,11 @@ export type OfferUseCaseItem = {
   description: string;
 };
 
-export type OfferUseCaseImage = {
-  src: string;
-  alt: string;
-};
-
 export type OfferUseCasesContent = {
   headingId: string;
   title: string;
   description: string;
-  images: readonly [OfferUseCaseImage, OfferUseCaseImage, OfferUseCaseImage];
+  imageSrc: string;
+  imageAlt: string;
   items: readonly OfferUseCaseItem[];
 };

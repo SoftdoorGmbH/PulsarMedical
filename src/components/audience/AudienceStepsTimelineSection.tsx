@@ -137,20 +137,12 @@ function DesktopTimelineRow({
 function MobileTimelineItem({
   step,
   stepNumber,
-  isLast,
 }: {
   step: AudienceProcessStep;
   stepNumber: number;
-  isLast: boolean;
 }) {
   return (
     <li className="relative pl-10">
-      {!isLast ? (
-        <span
-          className="absolute top-4 left-2.75 h-[calc(100%+1.5rem)] w-px -translate-x-1/2 bg-pm-light-container-border"
-          aria-hidden
-        />
-      ) : null}
       <div className="absolute top-4 left-3 -translate-x-1/2">
         <TimelineDot />
       </div>
@@ -186,12 +178,15 @@ export function AudienceStepsTimelineSection({
 
         <div className="mt-12 md:mt-16">
           <ol className="relative space-y-8 md:hidden">
+            <span
+              className="absolute top-4 bottom-4 left-3 w-px -translate-x-1/2 bg-pm-light-container-border"
+              aria-hidden
+            />
             {steps.map((step, index) => (
               <MobileTimelineItem
                 key={step.title}
                 step={step}
                 stepNumber={index + 1}
-                isLast={index === steps.length - 1}
               />
             ))}
           </ol>

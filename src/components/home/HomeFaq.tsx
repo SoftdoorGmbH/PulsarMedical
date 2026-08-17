@@ -105,19 +105,19 @@ const FAQ_ITEMS: FaqItem[] = [
         unnötige Komplexität.
       </p>
     ),
-    cta: { to: "/ueber-uns", label: "Kontakt und Ablauf" },
+    cta: { to: "/kontakt", label: "Kontakt und Ablauf" },
   },
   {
     id: "jobcenter-start",
     question: "Wie können Jobcenter starten?",
     body: (
       <p>
-        Schreiben Sie uns über die{" "}
+        Schreiben Sie uns über unser{" "}
         <Link
-          to="/ueber-uns"
+          to="/kontakt"
           className="font-medium text-pm-light-text-2 underline decoration-pm-light-text-2/40 underline-offset-4 hover:opacity-90"
         >
-          Kontaktmöglichkeiten auf der Seite „Über uns“
+          Kontaktformular
         </Link>
         . Wir vereinbaren ein kurzes Gespräch und klären Rahmenbedingungen für
         Ihre Region und Ihre Partner.
@@ -136,12 +136,12 @@ const FAQ_ITEMS: FaqItem[] = [
         >
           Für Unternehmen
         </Link>{" "}
-        oder nehmen Sie direkt Kontakt über{" "}
+        oder nehmen Sie direkt Kontakt über unser{" "}
         <Link
-          to="/ueber-uns"
+          to="/kontakt"
           className="font-medium text-pm-light-text-2 underline decoration-pm-light-text-2/40 underline-offset-4 hover:opacity-90"
         >
-          Über uns
+          Kontaktformular
         </Link>{" "}
         auf. Wir melden uns zeitnah mit einem konkreten Vorschlag.
       </p>

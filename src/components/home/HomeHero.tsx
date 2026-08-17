@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/Button";
 
 const HERO_BADGES = [
   "DSGVO-konforme Prozesse",
@@ -64,7 +64,7 @@ function HomeHeroImageCarousel() {
 export function HomeHero() {
   return (
     <section
-      className="relative md:my-6 overflow-hidden bg-linear-to-br from-[#93D9FF] from-65% to-[#D9E8F6] pt-28 pb-10 md:pt-36 md:pb-12 lg:mx-5 lg:mb-8 lg:rounded-[2.5rem] lg:pt-[clamp(8.5rem,18vw,12rem)] lg:pb-14"
+      className="relative md:my-6 overflow-hidden bg-linear-to-br from-[#93D9FF] from-65% to-[#D9E8F6] pt-28 pb-10 md:pt-36 md:pb-12 lg:mx-5 lg:mb-8 lg:rounded-[2.5rem] lg:pt-42 lg:pb-14"
       aria-label="Einstieg"
     >
       <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-10 xl:px-12">
@@ -85,18 +85,10 @@ export function HomeHero() {
 
           <div className="mt-6 md:mt-8">
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:justify-start sm:gap-6 md:gap-x-4">
-              <Link
-                to="/ueber-uns"
-                className="inline-flex rounded-full bg-pm-light-button px-7 py-3.5 text-base font-semibold text-white shadow-md no-underline transition-[filter,transform] hover:brightness-110 active:scale-[0.99]"
-              >
-                Beratungstermin anfragen
-              </Link>
-              <Link
-                to="/jobcenter"
-                className="group inline-flex bg-white rounded-full px-7 py-3.5 items-center gap-3 text-base font-semibold text-pm-light-headline no-underline"
-              >
-                <span>Lösungen entdecken</span>
-              </Link>
+              <Button to="/kontakt">Beratungstermin anfragen</Button>
+              <Button to="/jobcenter" variant="secondary">
+                Lösungen entdecken
+              </Button>
             </div>
           </div>
         </div>

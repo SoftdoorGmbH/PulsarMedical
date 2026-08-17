@@ -8,7 +8,7 @@ export function AboutTeamSection() {
 
   return (
     <section className="py-16 md:py-24" aria-labelledby="about-team-heading">
-      <div className="mx-auto max-w-6xl px-6 md:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-10">
         <h2
           id="about-team-heading"
           className="text-left md:text-center text-3xl font-semibold tracking-tight text-pm-light-headline md:text-4xl"

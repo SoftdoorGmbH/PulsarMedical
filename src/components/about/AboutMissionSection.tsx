@@ -1,13 +1,9 @@
+import { Button } from "@/components/Button";
 import { ABOUT_STATS } from "@/content/teamMembers";
 
 function ArrowRightIcon() {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      className="size-4"
-      aria-hidden
-    >
+    <svg viewBox="0 0 24 24" fill="none" className="size-4" aria-hidden>
       <path
         d="M5 12h14M13 6l6 6-6 6"
         stroke="currentColor"
@@ -26,7 +22,7 @@ export function AboutMissionSection() {
       className="bg-pm-light-container py-16 md:py-24"
       aria-labelledby="about-mission-heading"
     >
-      <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 md:grid-cols-2 md:gap-16 md:px-8 lg:px-10">
+      <div className="mx-auto grid max-w-7xl items-start gap-12 px-6 md:grid-cols-2 md:gap-16 md:px-8 lg:px-10">
         <div>
           <h2
             id="about-mission-heading"
@@ -37,25 +33,21 @@ export function AboutMissionSection() {
           </h2>
           <p className="mt-5 text-base leading-relaxed text-pm-light-text-1 md:text-lg">
             Gesundheit ist mehr als die Abwesenheit von Krankheit — sie ist die
-            Basis für Teilhabe, Arbeit und Lebensqualität. Pulsar Medical
-            bringt ärztliche, psychologische und beraterische Perspektiven
-            zusammen, damit Sie Menschen fundiert und menschlich unterstützen
-            können.
+            Basis für Teilhabe, Arbeit und Lebensqualität. Pulsar Medical bringt
+            ärztliche, psychologische und beraterische Perspektiven zusammen,
+            damit Sie Menschen fundiert und menschlich unterstützen können.
           </p>
           <p className="mt-4 text-base leading-relaxed text-pm-light-text-1 md:text-lg">
-            Ob Jobcenter, Unternehmen oder Einzelberatung: Unser Team steht Ihnen
-            als Partner in Gesundheitsfragen zur Seite — live, online und
+            Ob Jobcenter, Unternehmen oder Einzelberatung: Unser Team steht
+            Ihnen als Partner in Gesundheitsfragen zur Seite — live, online und
             datenschutzkonform.
           </p>
-          <a
-            href="mailto:kontakt@pulsarmed.de"
-            className="group mt-8 inline-flex items-center gap-3 rounded-full bg-pm-light-button px-6 py-3 text-base font-semibold text-white no-underline shadow-md transition-[filter,transform] hover:brightness-110 active:scale-[0.99]"
-          >
+          <Button to="/kontakt" className="group mt-8 gap-3">
             Kontakt aufnehmen
             <span className="flex size-8 items-center justify-center rounded-full bg-white/15 transition-transform group-hover:translate-x-0.5">
               <ArrowRightIcon />
             </span>
-          </a>
+          </Button>
         </div>
 
         <ul className="grid gap-4 sm:gap-5">

@@ -41,7 +41,7 @@ export const JOBCENTER_WHY_US: AudienceWhyUsContent = {
     },
   ],
   cta: {
-    to: "/ueber-uns",
+    to: "/kontakt",
     label: "Beratungstermin anfragen",
   },
   imageSrc: "/pulsarmedical-jobcenter-2.jpg",

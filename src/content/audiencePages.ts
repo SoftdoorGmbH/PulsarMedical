@@ -122,7 +122,7 @@ export const AUDIENCE_PAGES: Record<AudiencePageSlug, AudiencePageContent> = {
         "PULSAR Medical bündelt Begutachtung, Beratung und Wissensvermittlung in einem System — abgestimmt auf Ihre Prozesse, Fälle und Entscheidungswege.",
       ariaLabel: "Leistungsportfolio für Jobcenter",
       cta: {
-        to: "/ueber-uns",
+        to: "/kontakt",
         label: "Beratungstermin anfragen",
       },
       items: [
