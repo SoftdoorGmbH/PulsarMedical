@@ -296,7 +296,7 @@ export function Navbar() {
               >
                 <div className="overflow-hidden">
                   <div className="space-y-1 px-2 pb-3 pt-1">
-                    <p className="px-2 font-display-serif text-lg text-pm-light-headline">
+                    <p className="hidden md:block px-2 font-display-serif text-lg text-pm-light-headline">
                       Unser Angebot
                     </p>
                     <ul className="mt-1 list-none p-0">
