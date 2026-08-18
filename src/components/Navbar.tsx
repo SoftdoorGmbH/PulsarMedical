@@ -284,7 +284,7 @@ export function Navbar() {
                 aria-expanded={mobileMegaOpen}
                 onClick={() => setMobileMegaOpen((open) => !open)}
               >
-                Lösungen
+                Unsere Angebote
                 <ChevronDown
                   className={`size-5 shrink-0 opacity-70 transition-transform duration-300 ${mobileMegaOpen ? "rotate-180" : ""}`}
                   strokeWidth={2}
