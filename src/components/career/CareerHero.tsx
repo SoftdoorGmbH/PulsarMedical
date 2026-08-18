@@ -40,7 +40,7 @@ export function CareerHero() {
 
         <div className="relative mx-auto w-full max-w-xl md:mx-0 md:max-w-none">
           <div
-            className="pointer-events-none absolute -inset-4 rounded-[2rem] opacity-70 blur-2xl"
+            className="pointer-events-none absolute -inset-4 rounded-4xl opacity-70 blur-2xl"
             style={{
               background:
                 "radial-gradient(circle at 70% 50%, var(--color-pm-light-bg-glow), transparent 70%)",
@@ -53,7 +53,7 @@ export function CareerHero() {
             height={480}
             fetchPriority="high"
             decoding="async"
-            className="relative aspect-[4/3] w-full rounded-2xl object-cover shadow-[0_24px_48px_-16px_rgb(2_52_78_/0.2)] ring-1 ring-pm-light-container-border"
+            className="relative aspect-4/3 w-full rounded-2xl object-cover shadow-[0_24px_48px_-16px_rgb(2_52_78_/0.2)] ring-1 ring-pm-light-container-border"
           />
         </div>
       </div>

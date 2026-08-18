@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState, type ComponentType } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/Button";
 import { AUDIENCE_NAV_LINKS } from "@/content/audiencePages";
@@ -8,25 +8,19 @@ import { OFFER_NAV_ITEMS } from "@/content/offerPages";
 type MegaItem = {
   to: string;
   label: string;
+  description: string;
   icon: ComponentType<{ className?: string; strokeWidth?: number }>;
 };
 
-type MegaColumn = {
-  title: string;
-  items: MegaItem[];
-};
+const MEGA_MENU_ITEMS: MegaItem[] = OFFER_NAV_ITEMS;
 
-const MEGA_COLUMNS: MegaColumn[] = [
-  {
-    title: "Unser Angebot",
-    items: OFFER_NAV_ITEMS,
-  },
-];
-
-const MEGA_MENU_IMAGES = [
-  { src: "/pulsarmedical-jobcenter-2.jpg", alt: "" },
-  { src: "/pulsarmedical-jobcenter-1.jpg", alt: "" },
-] as const;
+const MEGA_MENU_CTA = {
+  imageSrc: "/pulsarmedical-jobcenter-2.jpg",
+  eyebrow: "Kostenlose Erstberatung",
+  title: "Unsicher, welches Gutachten Sie benötigen?",
+  linkLabel: "Beratungstermin anfragen",
+  linkTo: "/kontakt",
+} as const;
 
 const NAV_LINKS = [
   ...AUDIENCE_NAV_LINKS,
@@ -48,16 +42,24 @@ function MegaMenuLink({
   onNavigate: () => void;
 }) {
   const Icon = item.icon;
+
   return (
     <NavLink
       to={item.to}
-      className="relative -ml-5 flex items-center gap-3 rounded-2xl bg-transparent px-5 py-2.5 text-sm font-medium leading-snug text-pm-light-headline no-underline transition-colors duration-300 ease-linear hover:bg-pm-light-icon-bg/80"
+      className="group flex gap-4 rounded-2xl p-3 no-underline transition-colors duration-200 hover:bg-pm-light-icon-bg/80"
       onClick={onNavigate}
     >
-      <span className="flex size-6 shrink-0 items-center justify-center text-pm-light-text-2">
-        <Icon className="size-5" strokeWidth={1.75} />
+      <span className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-pm-light-icon-border bg-pm-light-icon-bg text-pm-light-icon">
+        <Icon className="size-5" strokeWidth={1.75} aria-hidden />
       </span>
-      {item.label}
+      <span className="min-w-0 pt-0.5">
+        <span className="block text-sm font-semibold leading-snug text-pm-light-headline transition-colors group-hover:text-pm-light-text-2">
+          {item.label}
+        </span>
+        <span className="mt-1 block text-sm leading-snug text-pm-light-text-1">
+          {item.description}
+        </span>
+      </span>
     </NavLink>
   );
 }
@@ -160,58 +162,55 @@ export function Navbar() {
                     id={megaRegionId}
                     className={`absolute top-full left-0 z-30 w-full pt-3 before:absolute before:-top-3 before:left-0 before:h-3 before:w-full ${
                       megaOpen ? "block" : "hidden"
-                    } group-hover/loesungen:block group-focus-within/loesungen:block`}
+                    }`}
                     role="region"
                     aria-label="Lösungen"
                   >
-                    <div className="rounded-3xl border border-white/60 bg-white px-8 py-8 shadow-[0_8px_32px_-12px_rgb(2_52_78_/0.28)] backdrop-blur-xl xl:px-12 xl:py-10">
-                      <div className="flex items-stretch gap-8 xl:gap-10">
-                        <div className="min-w-0 flex-1">
-                          <div className="flex flex-wrap gap-x-10 gap-y-8 xl:gap-x-16">
-                            {MEGA_COLUMNS.map((column) => (
-                              <div
-                                key={column.title}
-                                className="flex min-w-50 max-w-[20rem] flex-col gap-y-1 xl:min-w-71"
-                              >
-                                <p className="mb-1 font-display-serif text-2xl text-pm-light-headline">
-                                  {column.title}
-                                </p>
-                                <ul className="m-0 flex list-none flex-col p-0">
-                                  {column.items.map((item) => (
-                                    <li
-                                      key={item.label}
-                                      className="m-0 list-none p-0"
-                                    >
-                                      <MegaMenuLink
-                                        item={item}
-                                        onNavigate={closeAll}
-                                      />
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
+                    <div className="overflow-hidden rounded-3xl border border-white/60 bg-white shadow-[0_8px_32px_-12px_rgb(2_52_78_/0.28)] backdrop-blur-xl">
+                      <div className="flex min-h-80 items-stretch">
+                        <div className="min-w-0 flex-3 bg-pm-light-container px-8 py-8 xl:px-10 xl:py-10">
+                          <p className="mb-6 font-display-serif text-2xl text-pm-light-headline xl:mb-8 xl:text-[1.75rem]">
+                            Unser Angebot
+                          </p>
+
+                          <ul className="m-0 grid list-none grid-cols-2 gap-x-4 gap-y-2 p-0 xl:gap-x-6">
+                            {MEGA_MENU_ITEMS.map((item) => (
+                              <li key={item.label} className="m-0 min-w-0 p-0">
+                                <MegaMenuLink
+                                  item={item}
+                                  onNavigate={closeAll}
+                                />
+                              </li>
                             ))}
-                          </div>
+                          </ul>
                         </div>
 
-                        <div className="hidden shrink-0 items-stretch gap-4 lg:flex xl:gap-5">
-                          {MEGA_MENU_IMAGES.map((image) => (
-                            <div
-                              key={image.src}
-                              className="relative min-h-64 w-80 overflow-hidden rounded-2xl ring-1 ring-pm-light-container-border xl:min-h-72 xl:w-96 2xl:min-h-80 2xl:w-md"
-                              aria-hidden
+                        <div className="relative min-w-0 flex-2">
+                          <img
+                            src={MEGA_MENU_CTA.imageSrc}
+                            alt=""
+                            width={480}
+                            height={400}
+                            loading="lazy"
+                            decoding="async"
+                            className="absolute inset-0 size-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-linear-to-t from-white via-white/70 to-white/10" />
+                          <div className="relative flex h-full flex-col justify-end p-6 xl:p-8">
+                            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-pm-light-text-2 xl:text-xs">
+                              {MEGA_MENU_CTA.eyebrow}
+                            </p>
+                            <p className="mt-3 max-w-xs font-display-serif text-xl leading-snug text-pm-light-headline xl:text-2xl">
+                              {MEGA_MENU_CTA.title}
+                            </p>
+                            <Link
+                              to={MEGA_MENU_CTA.linkTo}
+                              className="mt-4 inline-flex w-fit items-center gap-2 text-sm font-semibold text-pm-light-headline no-underline transition-colors hover:text-pm-light-text-2"
+                              onClick={closeAll}
                             >
-                              <img
-                                src={image.src}
-                                alt={image.alt}
-                                width={448}
-                                height={320}
-                                loading="lazy"
-                                decoding="async"
-                                className="absolute inset-0 size-full object-cover"
-                              />
-                            </div>
-                          ))}
+                              {MEGA_MENU_CTA.linkLabel} →
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -296,34 +295,37 @@ export function Navbar() {
                 className={`grid transition-[grid-template-rows] duration-300 ease-out ${mobileMegaOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
               >
                 <div className="overflow-hidden">
-                  <div className="space-y-5 px-2 pb-3 pt-1">
-                    {MEGA_COLUMNS.map((column) => (
-                      <div key={column.title}>
-                        <p className="px-2 font-display-serif text-lg text-pm-light-headline">
-                          {column.title}
-                        </p>
-                        <ul className="mt-1 list-none p-0">
-                          {column.items.map((item) => {
-                            const Icon = item.icon;
-                            return (
-                              <li key={item.label} className="m-0 p-0">
-                                <NavLink
-                                  to={item.to}
-                                  className="flex items-center gap-3 rounded-2xl px-2 py-2.5 text-sm font-medium leading-snug text-pm-light-headline no-underline hover:bg-pm-light-container"
-                                  onClick={closeAll}
-                                >
-                                  <Icon
-                                    className="size-5 shrink-0 text-pm-light-text-2"
-                                    strokeWidth={1.75}
-                                  />
+                  <div className="space-y-1 px-2 pb-3 pt-1">
+                    <p className="px-2 font-display-serif text-lg text-pm-light-headline">
+                      Unser Angebot
+                    </p>
+                    <ul className="mt-1 list-none p-0">
+                      {MEGA_MENU_ITEMS.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                          <li key={item.label} className="m-0 p-0">
+                            <NavLink
+                              to={item.to}
+                              className="flex items-start gap-3 rounded-2xl px-2 py-2.5 text-sm text-pm-light-headline no-underline hover:bg-pm-light-container"
+                              onClick={closeAll}
+                            >
+                              <Icon
+                                className="mt-0.5 size-5 shrink-0 text-pm-light-text-2"
+                                strokeWidth={1.75}
+                              />
+                              <span>
+                                <span className="block font-medium leading-snug">
                                   {item.label}
-                                </NavLink>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    ))}
+                                </span>
+                                <span className="mt-0.5 block text-xs leading-snug text-pm-light-text-1">
+                                  {item.description}
+                                </span>
+                              </span>
+                            </NavLink>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   </div>
                 </div>
               </div>

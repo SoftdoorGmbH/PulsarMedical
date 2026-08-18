@@ -48,7 +48,7 @@ export function AudiencePortfolioSection({
         <div
           role="tablist"
           aria-label="Leistungsbereiche"
-          className="mx-auto mt-10 flex w-full max-w-5xl flex-col items-start gap-2.5 sm:mt-12 sm:gap-3"
+          className="mx-auto mt-10 flex w-full max-w-5xl flex-col items-center gap-2.5 sm:mt-12 sm:gap-3"
         >
           {[firstRow, secondRow].map((row, rowIndex) =>
             row.length === 0 ? null : (

@@ -58,8 +58,30 @@ export const OFFER_PAGES: Record<OfferPageSlug, OfferPageContent> = {
   meldeversaeumnisse,
 };
 
-export const OFFER_NAV_ITEMS = OFFER_PAGE_SLUGS.map((slug) => ({
+export const OFFER_NAV_DESCRIPTIONS: Record<OfferPageSlug, string> = {
+  "medizinische-begutachtungen":
+    "Gesundheit und Leistungsfähigkeit fachlich beurteilen.",
+  "psychologische-begutachtungen":
+    "Psychische Belastungen und Leistungsfähigkeit einschätzen.",
+  "arbeits-sozialmedizinische-begutachtungen":
+    "Arbeitsfähigkeit und Belastbarkeit im beruflichen Kontext.",
+  "fachuebergreifende-begutachtungen":
+    "Komplexe Fälle mit mehreren Fachdisziplinen bewerten.",
+  meldeversaeumnisse:
+    "Meldeversäumnisse schnell und fundiert einordnen.",
+};
+
+export const MEGA_MENU_OFFER_ORDER: readonly OfferPageSlug[] = [
+  "medizinische-begutachtungen",
+  "arbeits-sozialmedizinische-begutachtungen",
+  "meldeversaeumnisse",
+  "psychologische-begutachtungen",
+  "fachuebergreifende-begutachtungen",
+] as const;
+
+export const OFFER_NAV_ITEMS = MEGA_MENU_OFFER_ORDER.map((slug) => ({
   to: `/${slug}`,
   label: OFFER_PAGES[slug].navLabel,
   icon: OFFER_PAGES[slug].icon,
+  description: OFFER_NAV_DESCRIPTIONS[slug],
 }));

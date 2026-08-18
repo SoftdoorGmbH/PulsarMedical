@@ -23,8 +23,10 @@ export const medizinischeBegutachtungen: OfferPageContent = {
       "Medizinische Begutachtungen, wenn belastbare Einschätzungen gefragt sind",
     description:
       "Hier finden Sie alle Informationen zur medizinischen Begutachtung. Bitte beachten Sie, dass die medizinische Begutachtung nur in der Praxis durchgeführt werden kann.",
-    imageSrc: "/pulsarmedical-jobcenter-1.jpg",
-    imageAlt: "Medizinische Begutachtung im Beratungsgespräch",
+    image: {
+      src: "/pulsarmedical-jobcenter-1.jpg",
+      alt: "Medizinische Begutachtung im Beratungsgespräch",
+    },
     items: [
       {
         title: "Gesundheitliche Einschränkungen fachlich einordnen",
