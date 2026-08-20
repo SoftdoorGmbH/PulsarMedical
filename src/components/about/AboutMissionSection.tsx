@@ -28,22 +28,26 @@ export function AboutMissionSection() {
             id="about-mission-heading"
             className="text-3xl font-semibold leading-snug tracking-tight text-pm-light-headline md:text-4xl"
           >
-            Gesundheit verstehen, Menschen{" "}
-            <span className="text-pm-light-text-2">gezielt begleiten</span>
+            Wer wir sind und was uns jeden Tag antreibt
           </h2>
           <p className="mt-5 text-base leading-relaxed text-pm-light-text-1 md:text-lg">
-            Gesundheit ist mehr als die Abwesenheit von Krankheit — sie ist die
-            Basis für Teilhabe, Arbeit und Lebensqualität. Pulsar Medical bringt
-            ärztliche, psychologische und beraterische Perspektiven zusammen,
-            damit Sie Menschen fundiert und menschlich unterstützen können.
+            Hinter PULSAR Medical steht die Überzeugung, dass Menschen nicht auf
+            Diagnosen, Akten oder einzelne Lebensabschnitte reduziert werden
+            sollten.
           </p>
           <p className="mt-4 text-base leading-relaxed text-pm-light-text-1 md:text-lg">
-            Ob Jobcenter, Unternehmen oder Einzelberatung: Unser Team steht
-            Ihnen als Partner in Gesundheitsfragen zur Seite — live, online und
-            datenschutzkonform.
+            Gesundheitliche Belastungen können vieles verändern: den Alltag, die
+            Arbeit, die finanzielle Sicherheit und das Vertrauen in die eigene
+            Zukunft. Gerade dann braucht es Menschen, die genau hinschauen,
+            zuhören und fachlich einordnen, was wirklich gebraucht wird.
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-pm-light-text-1 md:text-lg">
+            Wir bringen medizinische, psychologische und arbeitsbezogene
+            Perspektiven zusammen. Nicht, um Fälle komplizierter zu machen –
+            sondern um sie verständlicher zu machen.
           </p>
           <Button to="/kontakt" className="group mt-8 gap-3">
-            Kontakt aufnehmen
+            Beratungstermin anfragen
             <span className="flex size-8 items-center justify-center rounded-full bg-white/15 transition-transform group-hover:translate-x-0.5">
               <ArrowRightIcon />
             </span>

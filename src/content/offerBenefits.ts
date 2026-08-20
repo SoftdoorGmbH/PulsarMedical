@@ -10,6 +10,7 @@ export type OfferBenefitItem = {
 export type OfferBenefitsContent = {
   headingId: string;
   title: string;
+  subtitle?: string;
   cta?: {
     to: string;
     label: string;

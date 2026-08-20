@@ -33,6 +33,7 @@ function BenefitItem({
 export function OfferBenefitsSection({
   headingId,
   title,
+  subtitle,
   cta,
   items,
 }: OfferBenefitsContent) {
@@ -49,6 +50,11 @@ export function OfferBenefitsSection({
           >
             {title}
           </h2>
+          {subtitle ? (
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-pm-dark-text-1 md:mt-6 md:text-lg">
+              {subtitle}
+            </p>
+          ) : null}
         </div>
 
         <div className="grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-2 lg:gap-x-10 lg:gap-y-10">

@@ -116,6 +116,33 @@
     animation: pm-portfolio-card-in 420ms cubic-bezier(0.25, 1, 0.5, 1) both;
   }
 
+  /* 16s loop: each overline is visible for 8s, with a ~800ms crossfade. */
+  @keyframes pm-overline-swap {
+    0%,
+    45% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    50%,
+    95% {
+      opacity: 0;
+      transform: translateY(0.4rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-pm-overline {
+    animation: pm-overline-swap 16s ease-in-out infinite;
+  }
+
+  .animate-pm-overline-delayed {
+    animation: pm-overline-swap 16s ease-in-out infinite;
+    animation-delay: -8s;
+  }
+
   .about-team-card__photo {
     top: 1.5rem;
     left: 1.5rem;
@@ -170,7 +197,9 @@
     .animate-pm-slide-from-right,
     .animate-pm-slide-from-left,
     .animate-pm-marquee,
-    .animate-pm-marquee-reverse {
+    .animate-pm-marquee-reverse,
+    .animate-pm-overline,
+    .animate-pm-overline-delayed {
       animation: none;
     }
 

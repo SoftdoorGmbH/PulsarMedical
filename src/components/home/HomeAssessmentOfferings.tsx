@@ -124,7 +124,7 @@ export function HomeAssessmentOfferings() {
             className="text-3xl font-semibold leading-tight tracking-tight text-pm-light-headline md:text-4xl lg:text-[2.5rem] lg:leading-[1.15]"
           >
             Für jede gesundheitliche Fragestellung die passende fachliche
-            Perspektive.
+            Perspektive
           </h2>
           <p className="mt-5 text-base leading-relaxed text-pm-light-text-1 md:mt-6 md:text-lg">
             Unser Angebot reicht von medizinischen, psychologischen und

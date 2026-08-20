@@ -36,8 +36,8 @@ export function HomeTrustBy() {
           id="trust-heading"
           className="text-center text-2xl font-semibold leading-tight tracking-tight text-pm-light-headline sm:text-3xl"
         >
-          Führende institutionelle Auftraggeber in ganz Deutschland vertrauen
-          auf PULSAR Medical
+          Institutionelle Auftraggeber in ganz Deutschland vertrauen auf
+          PULSAR Medical
         </h2>
       </div>
 

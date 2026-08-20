@@ -1,12 +1,45 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/Button";
-import type { AudienceHeroContent } from "@/content/audiencePages";
+import type {
+  AudienceHeroContent,
+  AudienceHeroCta,
+} from "@/content/audiencePages";
+
+const DEFAULT_PRIMARY_CTA: AudienceHeroCta = {
+  label: "Beratungstermin anfragen",
+  to: "/kontakt",
+};
+
+function HeroButton({
+  cta,
+  variant,
+}: {
+  cta: AudienceHeroCta;
+  variant?: "primary" | "secondary";
+}) {
+  if (cta.href) {
+    return (
+      <Button href={cta.href} variant={variant}>
+        {cta.label}
+      </Button>
+    );
+  }
+
+  return (
+    <Button to={cta.to ?? "/kontakt"} variant={variant}>
+      {cta.label}
+    </Button>
+  );
+}
 
 export function AudienceHero({
   ariaLabel,
+  overline,
   title,
   paragraphs,
   badges,
+  primaryCta = DEFAULT_PRIMARY_CTA,
+  secondaryCta,
 }: AudienceHeroContent) {
   return (
     <section
@@ -15,6 +48,11 @@ export function AudienceHero({
     >
       <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="flex max-w-3xl flex-col items-start text-left">
+          {overline ? (
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-pm-light-text-2">
+              {overline}
+            </p>
+          ) : null}
           <h1 className="text-4xl font-semibold leading-[1.08] tracking-tight text-pm-light-headline sm:text-5xl">
             {title}
           </h1>
@@ -32,10 +70,10 @@ export function AudienceHero({
 
           <div className="mt-6 md:mt-8">
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:justify-start sm:gap-6 md:gap-x-4">
-              <Button to="/kontakt">Beratungstermin anfragen</Button>
-              <Button to="/jobcenter" variant="secondary">
-                Lösungen entdecken
-              </Button>
+              <HeroButton cta={primaryCta} />
+              {secondaryCta ? (
+                <HeroButton cta={secondaryCta} variant="secondary" />
+              ) : null}
             </div>
           </div>
         </div>

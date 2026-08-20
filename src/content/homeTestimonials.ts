@@ -75,5 +75,5 @@ export const HOME_TESTIMONIALS: readonly HomeTestimonial[] = [
 
 export const HOME_TESTIMONIALS_SECTION = {
   headline: "Feedback, auf das wir stolz sind",
-  subheadline: "Von institutionellen Auftraggebern geschätzt",
+  subheadline: "Von institutionellen Auftraggebern geschätzt.",
 } as const;

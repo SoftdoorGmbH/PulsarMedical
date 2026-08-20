@@ -4,12 +4,10 @@ import { Button } from "@/components/Button";
 const HERO_IMAGE = "/pulsarmedical-jobcenter-1.jpg";
 
 const TRUST_ITEMS = [
-  "Medizinische Expertise",
-  "Psychologie & Beratung",
-  "Bundesweit verfügbar",
+  "Medizinisch. Psychologisch. Menschlich.",
+  "Bundesweit für institutionelle Auftraggeber",
+  "DSGVO konform",
 ] as const;
-
-const TRUST_ITEMS_MOBILE = ["Medizin", "Psychologie", "Beratung"] as const;
 
 const checkClassName =
   "size-5 shrink-0 text-pm-light-text-2 [&>circle]:fill-pm-light-icon-bg [&>circle]:stroke-pm-light-icon-border [&>path]:origin-[12px_12px] [&>path]:scale-[1.18] [&>path]:stroke-[1.75] [&>path]:stroke-pm-light-text-2";
@@ -34,25 +32,25 @@ export function AboutHero() {
       <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-10">
         <div className="grid min-w-0 grid-cols-1 items-center gap-8 md:gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="min-w-0">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-pm-light-text-2">
+              Über uns
+            </p>
             <h1 className="max-w-[min(100%,42ch)] text-4xl font-semibold leading-[1.08] tracking-tight text-pm-light-headline sm:text-5xl">
               Hey, wir sind{" "}
-              <span className="text-pm-light-text-2">PULSAR medical</span>
+              <span className="text-pm-light-text-2">PULSAR Medical</span>
             </h1>
             <p className="mt-4 max-w-[60ch] text-lg leading-relaxed text-pm-light-text-1 md:mt-6 md:text-xl">
-              Wir verbinden Jobcenter, Arbeitgeber im Gesundheitswesen und
-              Fachkräfte — mit medizinischer Expertise, Psychologie und Beratung
-              für Menschen in unterschiedlichen Lebenslagen.
+              Wir glauben, dass gute Entscheidungen dort entstehen, wo
+              medizinische Expertise auf echtes Verständnis für Menschen und
+              ihre individuelle Situation trifft.
             </p>
 
-            <div className="mt-6 mb-8 hidden md:block md:mt-8">
+            <div className="mt-6 mb-8 md:mt-8">
               <TrustRow items={TRUST_ITEMS} />
-            </div>
-            <div className="mt-6 mb-8 md:hidden">
-              <TrustRow items={TRUST_ITEMS_MOBILE} />
             </div>
 
             <Button to="/kontakt" size="lg" fullWidth="sm">
-              Kontakt aufnehmen
+              Beratungstermin anfragen
             </Button>
           </div>
 

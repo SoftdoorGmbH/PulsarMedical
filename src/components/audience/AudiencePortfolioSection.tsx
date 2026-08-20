@@ -28,7 +28,8 @@ export function AudiencePortfolioSection({
 
   return (
     <section
-      className="border-y border-pm-light-container-border bg-pm-light-container py-16 sm:py-20 md:py-24"
+      id="portfolio"
+      className="scroll-mt-24 border-y border-pm-light-container-border bg-pm-light-container py-16 sm:py-20 md:py-24"
       aria-labelledby={headingId}
       aria-label={ariaLabel}
     >
@@ -138,8 +139,8 @@ export function AudiencePortfolioSection({
               </ul>
 
               <div className="mt-5 sm:mt-6">
-                <Button to={cta.to} fullWidth>
-                  {cta.label}
+                <Button to={active.cta?.to ?? cta.to} fullWidth>
+                  {active.cta?.label ?? cta.label}
                 </Button>
               </div>
             </div>

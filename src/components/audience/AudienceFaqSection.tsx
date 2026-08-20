@@ -19,12 +19,28 @@ function ArrowRightSmall() {
   );
 }
 
+function toParagraphs(value: string | readonly string[] | undefined) {
+  if (!value) return [];
+  return Array.isArray(value) ? value : [value];
+}
+
 function FaqAnswer({ item }: { item: AudienceFaqItem }) {
-  const paragraphs = Array.isArray(item.answer) ? item.answer : [item.answer];
+  const paragraphs = toParagraphs(item.answer);
+  const closing = toParagraphs(item.closing);
 
   return (
     <>
       {paragraphs.map((paragraph) => (
+        <p key={paragraph}>{paragraph}</p>
+      ))}
+      {item.bullets && item.bullets.length > 0 ? (
+        <ul className="list-disc space-y-2 pl-5">
+          {item.bullets.map((bullet) => (
+            <li key={bullet}>{bullet}</li>
+          ))}
+        </ul>
+      ) : null}
+      {closing.map((paragraph) => (
         <p key={paragraph}>{paragraph}</p>
       ))}
       {item.cta ? (
@@ -46,7 +62,8 @@ function FaqAnswer({ item }: { item: AudienceFaqItem }) {
 
 export function AudienceFaqSection({
   headingId,
-  title = "Häufig gestellte Fragen",
+  title = "Häufig gestellte Fragen und Antworten",
+  subtitle = "Alles Wichtige zu Angeboten, Abläufen und Datenschutz.",
   items,
 }: AudienceFaqContent) {
   const baseId = useId();
@@ -62,6 +79,11 @@ export function AudienceFaqSection({
           >
             {title}
           </h2>
+          {subtitle ? (
+            <p className="mt-4 text-base leading-relaxed text-pm-light-text-1 md:mt-5 md:text-lg">
+              {subtitle}
+            </p>
+          ) : null}
         </header>
 
         <div className="rounded-4xl border-6 border-pm-light-container-border bg-pm-light-container px-6 pt-8 pb-2 shadow-[inset_0_1px_0_0_rgb(255_255_255_/0.65)] md:rounded-[2.5rem] md:px-12 md:pt-10 lg:px-16 lg:pt-16 lg:pb-10 xl:px-20">

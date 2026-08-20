@@ -2,28 +2,30 @@ import type { OfferCompareContent } from "@/content/offerCompare";
 
 export const MEDIZINISCHE_BEGUTACHTUNGEN_COMPARE: OfferCompareContent = {
   headingId: "medizinische-begutachtungen-compare-heading",
-  title:
-    "Medizinische Begutachtungen, die entlasten, statt zusätzlichen Aufwand schaffen",
+  title: "Was wird bei einer medizinischen Begutachtung beurteilt?",
   description:
-    "Die Durchführung medizinischer Begutachtungen ist ein komplexes Projekt. Wir unterstützen Sie dabei, die Kapazitäten optimal zu nutzen und die Durchführung zu optimieren.",
+    "Beurteilt werden die gesundheitliche Situation, bestehende Einschränkungen, das individuelle Leistungsvermögen und die Auswirkungen auf die konkrete berufliche oder leistungsrechtliche Fragestellung.",
+  variant: "positive",
   alternative: {
-    title: "Klassische Begutachtungen",
-    subtitle: "Einzelne Aufträge, viele Schnittstellen",
+    title: "Was wir betrachten",
     items: [
-      "Geeignete Fachkräfte, Kapazitäten und regionale Durchführung müssen für jeden Auftrag einzeln abgestimmt werden.",
-      "Termine, Unterlagen und Rückfragen müssen über mehrere Stellen koordiniert werden.",
-      "Mit steigenden Fallzahlen müssen Kapazitäten und Abstimmungen für jeden Fall neu organisiert werden.",
-      "Persönliche Termine, Aktenlage und telemedizinische Durchführung müssen jeweils separat organisiert werden.",
+      "Relevante Befunde, Diagnosen und Krankheitsverläufe",
+      "Körperliche und funktionelle Einschränkungen",
+      "Das individuelle Leistungsvermögen",
+      "Berufliche Tätigkeiten und konkrete Anforderungen",
+      "Ressourcen und vorhandene Belastbarkeit",
+      "Voraussichtliche Entwicklung der gesundheitlichen Situation",
     ],
   },
   pulsar: {
-    title: "Mit PULSAR Medical",
-    subtitle: "Ein Partner für Organisation und fachliche Umsetzung",
+    title: "Welche Ergebnisse Sie erhalten",
     items: [
-      "PULSAR stellt passende Fachkräfte aus einem bundesweiten Netzwerk zusammen und plant Kapazitäten zentral.",
-      "Eine feste Projektkoordination steuert Termine, Unterlagen und Kommunikation während des gesamten Auftrags.",
-      "Kapazitäten werden projektbezogen geplant und bei Bedarf über das Expertennetzwerk erweitert.",
-      "Begutachtungen erfolgen persönlich, telemedizinisch oder nach Aktenlage – bundesweit und bei Bedarf vor Ort.",
+      "Eine fachlich eingeordnete Gesamtsicht der gesundheitlichen Situation",
+      "Welche Belastungen möglich sind und wo konkrete Grenzen bestehen",
+      "Wie leistungsfähig eine Person unter den gegebenen Voraussetzungen ist",
+      "Ob und unter welchen Bedingungen eine Tätigkeit realistisch möglich ist",
+      "Welche Einsatzmöglichkeiten oder Entwicklungsperspektiven bestehen",
+      "Welche Veränderungen der Belastbarkeit und Leistungsfähigkeit zu erwarten sind",
     ],
   },
 };

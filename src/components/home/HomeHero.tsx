@@ -1,8 +1,13 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/Button";
 
+const HERO_OVERLINES = [
+  "Für Jobcenter · Berufsgenossenschaften · Rückversicherer",
+  "Medizinische · psychologische · sozialmedizinische · psychiatrische Begutachtungen",
+] as const;
+
 const HERO_BADGES = [
-  "DSGVO-konforme Prozesse",
+  "DSGVO konform",
   "Bundesweit verfügbare Expertise",
   "Persönlich, telemedizinisch oder nach Aktenlage",
 ] as const;
@@ -69,7 +74,21 @@ export function HomeHero() {
     >
       <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="mx-auto flex max-w-3xl flex-col items-start md:items-center text-left md:text-center">
-          <h1 className="text-4xl font-semibold leading-[1.08] tracking-tight text-pm-light-headline sm:text-5xl">
+          <div className="grid motion-reduce:flex motion-reduce:flex-col motion-reduce:gap-2">
+            {HERO_OVERLINES.map((text, index) => (
+              <p
+                key={text}
+                className={`col-start-1 row-start-1 text-sm font-semibold uppercase tracking-[0.14em] text-pm-light-text-2 ${
+                  index === 0
+                    ? "animate-pm-overline"
+                    : "animate-pm-overline-delayed"
+                }`}
+              >
+                {text}
+              </p>
+            ))}
+          </div>
+          <h1 className="mt-3 text-4xl font-semibold leading-[1.08] tracking-tight text-pm-light-headline sm:text-5xl">
             Klare Antworten
             <br />
             <em className="font-display-serif mt-2 block text-[1.05em] font-normal italic text-pm-light-headline md:mt-0 md:inline">

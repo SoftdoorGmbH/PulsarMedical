@@ -100,7 +100,8 @@ export function OfferProcessSection({
 }: OfferProcessContent) {
   return (
     <section
-      className="border-y border-pm-light-container-border bg-pm-light-bg py-16 sm:py-20 md:py-24"
+      id="process"
+      className="scroll-mt-24 border-y border-pm-light-container-border bg-pm-light-bg py-16 sm:py-20 md:py-24"
       aria-labelledby={headingId}
     >
       <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-10">

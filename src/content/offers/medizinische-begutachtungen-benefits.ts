@@ -1,15 +1,24 @@
-import { Globe, Layers, MonitorSmartphone, UserCheck } from "lucide-react";
+import {
+  Globe,
+  MonitorSmartphone,
+  ShieldCheck,
+  Stethoscope,
+  TrendingUp,
+  UserCheck,
+} from "lucide-react";
 import type { OfferBenefitsContent } from "@/content/offerBenefits";
 
 export const MEDIZINISCHE_BEGUTACHTUNGEN_BENEFITS: OfferBenefitsContent = {
   headingId: "medizinische-begutachtungen-benefits-heading",
-  title: "Weitere Vorteile mit PULSAR Medical",
+  title: "Warum mit PULSAR Medical?",
+  subtitle:
+    "PULSAR Medical übernimmt die Organisation medizinischer Begutachtungen – von der Auswahl der passenden Fachrichtung über die Terminplanung bis zur sicheren Bereitstellung der Ergebnisse.",
   cta: { label: "Unverbindlich anfragen", to: "/kontakt" },
   items: [
     {
-      title: "Bundesweites Expertennetzwerk",
+      title: "Bundesweit verfügbares Netzwerk",
       description:
-        "Passende medizinische Fachkräfte für unterschiedliche Fragestellungen – auch bei komplexen Fällen und größeren Auftragsvolumen.",
+        "PULSAR Medical setzt die Fachrichtung ein, die zu Ihrer Fragestellung passt – bundesweit und auch bei komplexen Fällen oder größeren Auftragsvolumen.",
       icon: Globe,
       iconColor: "#4db8e8",
     },
@@ -21,18 +30,32 @@ export const MEDIZINISCHE_BEGUTACHTUNGEN_BENEFITS: OfferBenefitsContent = {
       iconColor: "#93d9ff",
     },
     {
-      title: "Flexible Durchführung",
+      title: "Medizinische Expertise passend zum Fall",
       description:
-        "Persönlich, telemedizinisch oder nach Aktenlage – bundesweit und bei Bedarf direkt vor Ort beim Auftraggeber.",
-      icon: MonitorSmartphone,
+        "Relevante Befunde, Fragestellungen und Anforderungen bestimmen, welche medizinische Fachkraft für den jeweiligen Auftrag eingesetzt wird.",
+      icon: Stethoscope,
       iconColor: "#7aaec4",
     },
     {
-      title: "Individuelle Projektstrukturen",
+      title: "Flexible Durchführungsformen",
       description:
-        "Zielfragen, Formulare, Kapazitäten und Abläufe werden auf Ihren Auftrag und Ihre bestehenden Prozesse abgestimmt.",
-      icon: Layers,
+        "Persönlich, telemedizinisch oder nach Aktenlage: Die Durchführung richtet sich nach der Fragestellung und den fachlichen Anforderungen des einzelnen Falls.",
+      icon: MonitorSmartphone,
       iconColor: "#e0f4fa",
+    },
+    {
+      title: "Planbare Kapazitäten",
+      description:
+        "Vom einzelnen Auftrag bis zu gebündelten Terminen und langfristigen Projekten plant PULSAR Medical die erforderlichen Kapazitäten passend zu Ihrem Bedarf.",
+      icon: TrendingUp,
+      iconColor: "#4db8e8",
+    },
+    {
+      title: "Sichere Datenprozesse",
+      description:
+        "Sensible Gesundheitsdaten werden über abgestimmte, geschützte und datenschutzkonforme Wege verarbeitet und ausschließlich berechtigten Stellen bereitgestellt.",
+      icon: ShieldCheck,
+      iconColor: "#93d9ff",
     },
   ],
 };
