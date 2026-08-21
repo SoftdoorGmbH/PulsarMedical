@@ -6,13 +6,6 @@ import type { AudiencePortfolioContent } from "@/content/audiencePortfolio";
 const checkClassName =
   "mt-0.5 size-7 shrink-0 text-pm-light-text-2 [&>circle]:fill-pm-light-icon-bg [&>circle]:stroke-pm-light-icon-border [&>path]:origin-[12px_12px] [&>path]:scale-[1.18] [&>path]:stroke-[1.75] [&>path]:stroke-pm-light-text-2";
 
-function splitChipRows<T>(items: readonly T[]): [T[], T[]] {
-  if (items.length <= 4) {
-    return [items.slice(), []];
-  }
-  return [items.slice(0, 4), items.slice(4)];
-}
-
 export function AudiencePortfolioSection({
   headingId,
   title,
@@ -24,7 +17,6 @@ export function AudiencePortfolioSection({
   const baseId = useId();
   const [activeIndex, setActiveIndex] = useState(0);
   const active = items[activeIndex]!;
-  const [firstRow, secondRow] = splitChipRows(items);
 
   return (
     <section
@@ -49,66 +41,46 @@ export function AudiencePortfolioSection({
         <div
           role="tablist"
           aria-label="Leistungsbereiche"
-          className="mx-auto mt-10 flex w-full max-w-5xl flex-col items-start md:items-center gap-2.5 sm:mt-12 sm:gap-3"
+          className="mx-auto mt-10 flex w-full max-w-5xl flex-wrap items-center justify-start gap-2.5 sm:mt-12 sm:gap-3 md:justify-center"
         >
-          {[firstRow, secondRow].map((row, rowIndex) =>
-            row.length === 0 ? null : (
-              <div
-                key={
-                  rowIndex === 0
-                    ? "portfolio-chips-row-1"
-                    : "portfolio-chips-row-2"
-                }
-                className="flex flex-wrap items-left justify-left gap-2.5 sm:gap-3"
-              >
-                {row.map((item, rowItemIndex) => {
-                  const index =
-                    rowIndex === 0
-                      ? rowItemIndex
-                      : rowItemIndex + firstRow.length;
-                  const selected = index === activeIndex;
-                  const tabId = `${baseId}-tab-${index}`;
-                  const panelId = `${baseId}-panel-${index}`;
+          {items.map((item, index) => {
+            const selected = index === activeIndex;
+            const tabId = `${baseId}-tab-${index}`;
+            const panelId = `${baseId}-panel-${index}`;
 
-                  return (
-                    <button
-                      key={item.title}
-                      id={tabId}
-                      type="button"
-                      role="tab"
-                      aria-selected={selected}
-                      aria-controls={panelId}
-                      tabIndex={selected ? 0 : -1}
-                      onClick={() => setActiveIndex(index)}
-                      onKeyDown={(event) => {
-                        if (
-                          event.key !== "ArrowRight" &&
-                          event.key !== "ArrowLeft"
-                        ) {
-                          return;
-                        }
-                        event.preventDefault();
-                        const delta = event.key === "ArrowRight" ? 1 : -1;
-                        const next =
-                          (index + delta + items.length) % items.length;
-                        setActiveIndex(next);
-                        document
-                          .getElementById(`${baseId}-tab-${next}`)
-                          ?.focus();
-                      }}
-                      className={`shrink-0 rounded-full border px-3.5 py-2 text-center text-sm font-semibold tracking-wide whitespace-nowrap transition-[color,background-color,border-color,transform] duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pm-light-text-2 sm:px-4 sm:py-2.5 ${
-                        selected
-                          ? "z-10 -rotate-2 border-pm-light-button bg-pm-light-button text-white shadow-md"
-                          : "rotate-0 border-pm-light-container-border bg-white/70 text-pm-light-text-1 hover:border-pm-light-text-2/55 hover:text-pm-light-headline"
-                      }`}
-                    >
-                      {item.title}
-                    </button>
-                  );
-                })}
-              </div>
-            ),
-          )}
+            return (
+              <button
+                key={item.title}
+                id={tabId}
+                type="button"
+                role="tab"
+                aria-selected={selected}
+                aria-controls={panelId}
+                tabIndex={selected ? 0 : -1}
+                onClick={() => setActiveIndex(index)}
+                onKeyDown={(event) => {
+                  if (
+                    event.key !== "ArrowRight" &&
+                    event.key !== "ArrowLeft"
+                  ) {
+                    return;
+                  }
+                  event.preventDefault();
+                  const delta = event.key === "ArrowRight" ? 1 : -1;
+                  const next = (index + delta + items.length) % items.length;
+                  setActiveIndex(next);
+                  document.getElementById(`${baseId}-tab-${next}`)?.focus();
+                }}
+                className={`shrink-0 rounded-full border px-3.5 py-2 text-center text-sm font-semibold tracking-wide whitespace-nowrap transition-[color,background-color,border-color,transform] duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pm-light-text-2 sm:px-4 sm:py-2.5 ${
+                  selected
+                    ? "z-10 -rotate-2 border-pm-light-button bg-pm-light-button text-white shadow-md"
+                    : "rotate-0 border-pm-light-container-border bg-white/70 text-pm-light-text-1 hover:border-pm-light-text-2/55 hover:text-pm-light-headline"
+                }`}
+              >
+                {item.chipTitle}
+              </button>
+            );
+          })}
         </div>
 
         <div

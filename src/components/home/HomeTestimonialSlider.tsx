@@ -72,11 +72,14 @@ export function HomeTestimonialSlider() {
     setIndex((i) => (i + 1) % count);
   }, [count]);
 
-  const goTo = useCallback((i: number) => {
-    if (i === index) return;
-    setEnterDir(i > index ? "right" : "left");
-    setIndex(i);
-  }, [index]);
+  const goTo = useCallback(
+    (i: number) => {
+      if (i === index) return;
+      setEnterDir(i > index ? "right" : "left");
+      setIndex(i);
+    },
+    [index],
+  );
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -170,7 +173,7 @@ export function HomeTestimonialSlider() {
                         alt=""
                         width={120}
                         height={40}
-                        className="h-8 w-auto max-w-[140px] object-contain object-left md:h-9"
+                        className="h-8 w-auto max-w-35 object-contain object-left md:h-9"
                         loading="lazy"
                         decoding="async"
                       />

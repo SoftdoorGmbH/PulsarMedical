@@ -1,3 +1,5 @@
+import { useCallback, useEffect, useRef, useState } from "react";
+
 const ABOUT_VALUES = [
   {
     title: "Wir hören genau hin",
@@ -26,24 +28,104 @@ const ABOUT_VALUES = [
   },
 ] as const;
 
+function DotButton({
+  active,
+  onClick,
+  label,
+}: {
+  active: boolean;
+  onClick: () => void;
+  label: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`h-2.5 rounded-full transition-all duration-300 ${
+        active ? "w-6 bg-pm-light-button" : "w-2.5 bg-pm-light-container-border"
+      }`}
+      aria-label={label}
+    />
+  );
+}
+
 export function AboutValuesSection() {
+  const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
+  const mobileScrollRef = useRef<HTMLUListElement>(null);
+  const mobileScrollRafRef = useRef<number | null>(null);
+
+  const syncMobileActiveIndex = useCallback(() => {
+    const el = mobileScrollRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    if (rect.width === 0) return;
+    const centerX = rect.left + rect.width / 2;
+    let best = 0;
+    let bestDist = Infinity;
+    Array.from(el.children).forEach((child, i) => {
+      const r = child.getBoundingClientRect();
+      const cx = r.left + r.width / 2;
+      const d = Math.abs(cx - centerX);
+      if (d < bestDist) {
+        bestDist = d;
+        best = i;
+      }
+    });
+    setMobileActiveIndex((prev) => (prev === best ? prev : best));
+  }, []);
+
+  const onMobileScroll = () => {
+    if (mobileScrollRafRef.current != null) {
+      cancelAnimationFrame(mobileScrollRafRef.current);
+    }
+    mobileScrollRafRef.current = requestAnimationFrame(() => {
+      mobileScrollRafRef.current = null;
+      syncMobileActiveIndex();
+    });
+  };
+
+  useEffect(() => {
+    syncMobileActiveIndex();
+    window.addEventListener("resize", syncMobileActiveIndex);
+    return () => {
+      window.removeEventListener("resize", syncMobileActiveIndex);
+      if (mobileScrollRafRef.current != null) {
+        cancelAnimationFrame(mobileScrollRafRef.current);
+      }
+    };
+  }, [syncMobileActiveIndex]);
+
+  const scrollMobileToIndex = (idx: number) => {
+    const scroller = mobileScrollRef.current;
+    const slide = scroller?.children[idx] as HTMLElement | undefined;
+    slide?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  };
+
   return (
     <section
       className="bg-pm-light-bg py-16 md:py-24"
       aria-labelledby="about-values-heading"
     >
-      <div className="mx-auto max-w-7xl  px-6 md:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-10">
         <h2
           id="about-values-heading"
-          className="text-3xl text-left md:text-center font-semibold leading-snug tracking-tight text-pm-light-headline md:text-4xl"
+          className="text-left text-3xl font-semibold leading-snug tracking-tight text-pm-light-headline md:text-center md:text-4xl"
         >
           Was uns wichtig ist
         </h2>
-        <ul className="mt-10 grid gap-6 md:mt-14 md:grid-cols-2 lg:gap-8">
+        <ul
+          ref={mobileScrollRef}
+          onScroll={onMobileScroll}
+          className="mt-10 -mx-2 flex list-none snap-x snap-mandatory flex-row items-stretch gap-4 overflow-x-auto overflow-y-hidden scroll-pl-2 scroll-pr-2 px-2 [-webkit-overflow-scrolling:touch] scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:mt-14 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:px-0 md:snap-none lg:gap-8"
+        >
           {ABOUT_VALUES.map((value) => (
             <li
               key={value.title}
-              className="rounded-2xl border-4 border-pm-light-container-border bg-white p-6 shadow-[0_8px_24px_-12px_rgb(2_52_78_/0.12)] md:p-8 md:odd:last:col-span-2 md:odd:last:w-[calc((100%-1.5rem)/2)] md:odd:last:justify-self-center lg:odd:last:w-[calc((100%-2rem)/2)]"
+              className="w-[min(88vw,24rem)] max-w-md shrink-0 snap-center rounded-2xl border-4 border-pm-light-container-border bg-white p-6 shadow-[0_8px_24px_-12px_rgb(2_52_78_/0.12)] md:w-auto md:max-w-none md:snap-normal md:p-8 md:odd:last:col-span-2 md:odd:last:w-[calc((100%-1.5rem)/2)] md:odd:last:justify-self-center lg:odd:last:w-[calc((100%-2rem)/2)]"
             >
               <h3 className="text-xl font-semibold tracking-tight text-pm-light-headline">
                 {value.title}
@@ -54,6 +136,20 @@ export function AboutValuesSection() {
             </li>
           ))}
         </ul>
+        <div
+          className="mt-6 flex justify-center gap-2 md:hidden"
+          role="tablist"
+          aria-label="Werte"
+        >
+          {ABOUT_VALUES.map((value, idx) => (
+            <DotButton
+              key={value.title}
+              active={mobileActiveIndex === idx}
+              onClick={() => scrollMobileToIndex(idx)}
+              label={`${value.title} anzeigen`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

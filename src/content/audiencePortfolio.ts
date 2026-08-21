@@ -1,5 +1,6 @@
 export type AudiencePortfolioItem = {
   title: string;
+  chipTitle: string;
   intro: string;
   items: readonly string[];
   imageSrc: string;
@@ -37,6 +38,7 @@ export const JOBCENTER_PORTFOLIO: AudiencePortfolioContent = {
   items: [
     {
       title: "Medizinische Begutachtungen",
+      chipTitle: "Medizinisch",
       intro: "Gesundheitliche Einschränkungen fundiert einordnen",
       items: [
         "Relevante Befunde, Diagnosen und Krankheitsverläufe fachlich einordnen",
@@ -53,6 +55,7 @@ export const JOBCENTER_PORTFOLIO: AudiencePortfolioContent = {
     },
     {
       title: "Psychologische & psychiatrische Begutachtungen",
+      chipTitle: "Psychologische & psychiatrisch",
       intro: "Psychische Belastungen und Mitwirkungsfähigkeit einordnen",
       items: [
         "Psychische Belastungen und Erkrankungen fachlich einschätzen",
@@ -69,6 +72,7 @@ export const JOBCENTER_PORTFOLIO: AudiencePortfolioContent = {
     },
     {
       title: "Arbeits- & sozialmedizinische Begutachtungen",
+      chipTitle: "Arbeits- & sozialmedizinisch",
       intro: "Gesundheit und berufliche Anforderungen gemeinsam betrachten",
       items: [
         "Gesundheitliche Belastbarkeit im Arbeitskontext beurteilen",
@@ -85,6 +89,7 @@ export const JOBCENTER_PORTFOLIO: AudiencePortfolioContent = {
     },
     {
       title: "Fachliche Einschätzung bei Meldeversäumnissen",
+      chipTitle: "Meldeversäumnisse",
       intro: "Meldeversäumnisse klären, bevor der Kontakt abbricht",
       items: [
         "Mögliche gesundheitliche oder psychische Ursachen einordnen",
@@ -101,6 +106,7 @@ export const JOBCENTER_PORTFOLIO: AudiencePortfolioContent = {
     },
     {
       title: "Schulungen & Informationsangebote",
+      chipTitle: "Schulungen & Informationsangebote",
       intro: "Gesundheitliche Belastungen im Beratungsalltag besser verstehen",
       items: [
         "Schulungen für Integrationsfachkräfte, Fallmanager:innen und Führungskräfte",
@@ -125,6 +131,7 @@ export const BERUFSGENOSSENSCHAFTEN_PORTFOLIO: AudiencePortfolioContent = {
   items: [
     {
       title: "Medizinische Begutachtungen",
+      chipTitle: "Medizinisch",
       intro: "Unfallfolgen und Leistungsfähigkeit fundiert einordnen",
       items: [
         "Unfallfolgen und relevante Befunde fachlich beurteilen",
@@ -141,6 +148,7 @@ export const BERUFSGENOSSENSCHAFTEN_PORTFOLIO: AudiencePortfolioContent = {
     },
     {
       title: "Psychologische & psychiatrische Begutachtungen",
+      chipTitle: "Psychologische & psychiatrisch",
       intro: "Psychische Unfallfolgen und Belastungen einordnen",
       items: [
         "Psychische Belastungen und Erkrankungen fachlich einschätzen",
@@ -157,6 +165,7 @@ export const BERUFSGENOSSENSCHAFTEN_PORTFOLIO: AudiencePortfolioContent = {
     },
     {
       title: "Arbeits- & sozialmedizinische Begutachtungen",
+      chipTitle: "Arbeits- & sozialmedizinisch",
       intro: "Gesundheitliche Belastbarkeit im Arbeitskontext bewerten",
       items: [
         "Gesundheitliche Belastbarkeit im Arbeitskontext beurteilen",
@@ -173,6 +182,7 @@ export const BERUFSGENOSSENSCHAFTEN_PORTFOLIO: AudiencePortfolioContent = {
     },
     {
       title: "Fachübergreifende Begutachtungen",
+      chipTitle: "Fachübergreifend",
       intro: "Komplexe Fälle aus mehreren Perspektiven beurteilen",
       items: [
         "Medizinische, psychologische und arbeitsbezogene Aspekte verbinden",
@@ -189,6 +199,7 @@ export const BERUFSGENOSSENSCHAFTEN_PORTFOLIO: AudiencePortfolioContent = {
     },
     {
       title: "Schulungen & Informationsangebote",
+      chipTitle: "Schulungen & Informationsangebote",
       intro: "Unfallfolgen und psychische Belastungen besser verstehen",
       items: [
         "Schulungen für Reha-Management, Fallmanagement und Führungskräfte",
@@ -213,6 +224,7 @@ export const RUECKVERSICHERER_PORTFOLIO: AudiencePortfolioContent = {
   items: [
     {
       title: "Medizinische Begutachtungen",
+      chipTitle: "Medizinisch",
       intro: "Gesundheitliche Einschränkungen und Funktionen beurteilen",
       items: [
         "Relevante Befunde, Diagnosen und Krankheitsverläufe fachlich einordnen",
@@ -229,6 +241,7 @@ export const RUECKVERSICHERER_PORTFOLIO: AudiencePortfolioContent = {
     },
     {
       title: "Psychologische & psychiatrische Begutachtungen",
+      chipTitle: "Psychologische & psychiatrisch",
       intro: "Psychische Belastungen und Leistungsfähigkeit bewerten",
       items: [
         "Psychische Belastungen und Erkrankungen fachlich einschätzen",
@@ -245,6 +258,7 @@ export const RUECKVERSICHERER_PORTFOLIO: AudiencePortfolioContent = {
     },
     {
       title: "Arbeits- & sozialmedizinische Begutachtungen",
+      chipTitle: "Arbeits- & sozialmedizinisch",
       intro: "Berufliche Leistungsfähigkeit im Kontext beurteilen",
       items: [
         "Gesundheitliche Belastbarkeit im Arbeitskontext beurteilen",
@@ -261,6 +275,7 @@ export const RUECKVERSICHERER_PORTFOLIO: AudiencePortfolioContent = {
     },
     {
       title: "Fachübergreifende Begutachtungen",
+      chipTitle: "Fachübergreifend",
       intro: "Komplexe Leistungsfälle vollständig einordnen",
       items: [
         "Medizinische, psychologische und arbeitsbezogene Aspekte verbinden",
@@ -277,6 +292,7 @@ export const RUECKVERSICHERER_PORTFOLIO: AudiencePortfolioContent = {
     },
     {
       title: "Schulungen & Informationsangebote",
+      chipTitle: "Schulungen & Informationsangebote",
       intro: "Komplexe Gesundheitsfragen sicher einordnen",
       items: [
         "Schulungen für Leistungsprüfung, Claims und Fallmanagement",

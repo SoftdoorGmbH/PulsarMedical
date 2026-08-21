@@ -111,7 +111,7 @@ export function AudienceFaqSection({
                     }
                   >
                     <span
-                      className={`mb-0 text-2xl leading-snug tracking-tight transition-colors duration-300 ease-linear md:text-2xl ${
+                      className={`mb-0 text-lg leading-snug tracking-tight transition-colors duration-300 ease-linear sm:text-xl md:text-2xl ${
                         isOpen
                           ? "text-pm-light-text-2"
                           : "text-pm-light-headline group-hover:text-pm-light-text-2"

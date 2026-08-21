@@ -12,10 +12,7 @@ import {
   Video,
 } from "lucide-react";
 import type { OfferPageContent } from "@/content/offerPages";
-import {
-  OFFER_PRIMARY_CTA,
-  OFFER_SECONDARY_CTA,
-} from "@/content/cta";
+import { OFFER_PRIMARY_CTA, OFFER_SECONDARY_CTA } from "@/content/cta";
 
 export const fachuebergreifendeBegutachtungen: OfferPageContent = {
   slug: "fachuebergreifende-begutachtungen",
@@ -42,7 +39,7 @@ export const fachuebergreifendeBegutachtungen: OfferPageContent = {
     description:
       "Eine fachübergreifende Begutachtung ist sinnvoll, wenn medizinische, psychische und arbeitsbezogene Fragen zusammenhängen und eine einzelne Fachrichtung den Fall nicht vollständig beurteilen kann.",
     image: {
-      src: "/3.png.webp",
+      src: "/offers/fachuebergreifende_begutachtungen/close-up-people-studying-with-notebook.jpg",
       alt: "Fachübergreifende Begutachtung im Team",
     },
     items: [
@@ -122,7 +119,7 @@ export const fachuebergreifendeBegutachtungen: OfferPageContent = {
           "Auf dieser Grundlage richten wir Auftrag, Kommunikation und Ablauf verbindlich ein.",
         ],
         icon: Send,
-        imageSrc: "/pulsarmedical-jobcenter-1.jpg",
+        imageSrc: "/offers/fachuebergreifende_begutachtungen/good-worker.jpg",
         imageAlt: "Klärung der erforderlichen Fachperspektiven",
       },
       {
@@ -134,7 +131,8 @@ export const fachuebergreifendeBegutachtungen: OfferPageContent = {
           "Die Projektkoordination sorgt dafür, dass alle Beteiligten auf dieselben Zielfragen und Abläufe ausgerichtet sind.",
         ],
         icon: Layers,
-        imageSrc: "/pulsarmedical-jobcenter-2.jpg",
+        imageSrc:
+          "/offers/fachuebergreifende_begutachtungen/portrait-business-people-man-office-teamwork-lens-flare-with-cooperation-employees-group-coworkers-workplace-journalist-research-article-magazine-editor-copywriting.jpg",
         imageAlt: "Zusammenstellung der Fachrichtungen",
       },
       {

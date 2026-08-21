@@ -12,10 +12,7 @@ import {
   Video,
 } from "lucide-react";
 import type { OfferPageContent } from "@/content/offerPages";
-import {
-  OFFER_PRIMARY_CTA,
-  OFFER_SECONDARY_CTA,
-} from "@/content/cta";
+import { OFFER_PRIMARY_CTA, OFFER_SECONDARY_CTA } from "@/content/cta";
 
 export const psychologischeBegutachtungen: OfferPageContent = {
   slug: "psychologische-begutachtungen",
@@ -43,7 +40,7 @@ export const psychologischeBegutachtungen: OfferPageContent = {
     description:
       "Eine psychologische oder psychiatrische Begutachtung ist sinnvoll, wenn unklar ist, ob psychische Belastungen die Zusammenarbeit, Belastbarkeit oder berufliche Planung beeinträchtigen.",
     image: {
-      src: "/pulsarmedical-jobcenter-2.jpg",
+      src: "/offers/psychologische_begutachtungen/creativity-go-cropped-shot-creative-business-office.jpg",
       alt: "Psychologische Begutachtung im Gespräch",
     },
     items: [
@@ -124,7 +121,8 @@ export const psychologischeBegutachtungen: OfferPageContent = {
           "Auf dieser Grundlage richten wir Auftrag, Kommunikation und Ablauf verbindlich ein.",
         ],
         icon: Send,
-        imageSrc: "/pulsarmedical-jobcenter-2.jpg",
+        imageSrc:
+          "/offers/psychologische_begutachtungen/social-integration-working-team(1).jpg",
         imageAlt: "Abstimmung der psychologischen Fragestellung",
       },
       {
@@ -136,7 +134,8 @@ export const psychologischeBegutachtungen: OfferPageContent = {
           "Bei komplexen Fällen können medizinische, psychiatrische und psychologische Perspektiven gezielt verbunden werden.",
         ],
         icon: Brain,
-        imageSrc: "/pulsarmedical-jobcenter-1.jpg",
+        imageSrc:
+          "/offers/psychologische_begutachtungen/two-businesspeople-having-conversation-office.jpg",
         imageAlt: "Einsatz psychologischer oder psychiatrischer Expertise",
       },
       {
@@ -148,7 +147,8 @@ export const psychologischeBegutachtungen: OfferPageContent = {
           "Bei gebündelten Terminen oder größeren Auftragsvolumen kann die Durchführung bundesweit auch vor Ort erfolgen.",
         ],
         icon: ClipboardList,
-        imageSrc: "/pulsarmedical-jobcenter-3.jpg",
+        imageSrc:
+          "/offers/psychologische_begutachtungen/unrecognizable-brunette-young-male-architect-sitting-desk-with-drawings-while-discussing-something-with-his-cheerful-mature-female-boss-who-is-smiling-him-approving-his-creative-ideas.jpg",
         imageAlt: "Durchführung der psychologischen Begutachtung",
       },
       {
@@ -252,7 +252,8 @@ export const psychologischeBegutachtungen: OfferPageContent = {
     items: [
       {
         id: "psychologische-faq-1",
-        question: "Was ist eine psychologische oder psychiatrische Begutachtung?",
+        question:
+          "Was ist eine psychologische oder psychiatrische Begutachtung?",
         answer: [
           "Psychologische und psychiatrische Begutachtungen beurteilen psychische Belastungen, Erkrankungen, Ressourcen und die Auswirkungen auf die individuelle Belastbarkeit. Sie dienen dazu, die psychische Situation in Bezug auf eine konkrete berufliche, leistungsrechtliche oder organisatorische Fragestellung fachlich einzuordnen.",
           "Dabei kann unter anderem beurteilt werden:",
@@ -310,7 +311,8 @@ export const psychologischeBegutachtungen: OfferPageContent = {
       },
       {
         id: "psychologische-faq-5",
-        question: "Können psychologische Begutachtungen telemedizinisch erfolgen?",
+        question:
+          "Können psychologische Begutachtungen telemedizinisch erfolgen?",
         answer: [
           "Ja, wenn die Fragestellung und die individuelle Situation dies zulassen. Die fachliche Vorstellung erfolgt dann per Video. Vorliegende Unterlagen, Befunde und die vereinbarten Zielfragen werden in die Einschätzung einbezogen.",
           "Ob eine persönliche Vorstellung, eine telemedizinische Durchführung oder eine Begutachtung nach Aktenlage geeignet ist, wird vor Beginn des Auftrags fachlich geprüft.",

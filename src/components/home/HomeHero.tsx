@@ -74,7 +74,7 @@ export function HomeHero() {
     >
       <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="mx-auto flex max-w-3xl flex-col items-start md:items-center text-left md:text-center">
-          <div className="grid motion-reduce:flex motion-reduce:flex-col motion-reduce:gap-2">
+          <div className="hidden md:grid motion-reduce:flex motion-reduce:flex-col motion-reduce:gap-2">
             {HERO_OVERLINES.map((text, index) => (
               <p
                 key={text}

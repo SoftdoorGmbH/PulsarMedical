@@ -12,10 +12,7 @@ import {
   Video,
 } from "lucide-react";
 import type { OfferPageContent } from "@/content/offerPages";
-import {
-  OFFER_PRIMARY_CTA,
-  OFFER_SECONDARY_CTA,
-} from "@/content/cta";
+import { OFFER_PRIMARY_CTA, OFFER_SECONDARY_CTA } from "@/content/cta";
 
 export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
   slug: "arbeits-sozialmedizinische-begutachtungen",
@@ -43,7 +40,7 @@ export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
     description:
       "Eine arbeits- oder sozialmedizinische Begutachtung ist sinnvoll, wenn die gesundheitliche Situation im Zusammenhang mit konkreten Tätigkeiten, Arbeitsbedingungen oder sozialen Rahmenbedingungen beurteilt werden muss.",
     image: {
-      src: "/pulsarmedical-jobcenter-3.jpg",
+      src: "/offers/arbeits_sozialmedizinische_begutachtungen/magnific_contemporary-documentary-_xSwHApojfW.jpg",
       alt: "Arbeits- und sozialmedizinische Einschätzung",
     },
     items: [
@@ -124,7 +121,8 @@ export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
           "Auf dieser Grundlage richten wir Auftrag, Kommunikation und Ablauf verbindlich ein.",
         ],
         icon: Send,
-        imageSrc: "/pulsarmedical-jobcenter-3.jpg",
+        imageSrc:
+          "/offers/arbeits_sozialmedizinische_begutachtungen/magnific_documentarystyle-editoria_9ZAg56mNYZ.jpg",
         imageAlt: "Abstimmung der beruflichen Fragestellung",
       },
       {
@@ -136,7 +134,8 @@ export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
           "Bei komplexen Fällen verbinden wir arbeitsmedizinische, medizinische und psychologische Perspektiven gezielt miteinander.",
         ],
         icon: HeartPulse,
-        imageSrc: "/pulsarmedical-jobcenter-1.jpg",
+        imageSrc:
+          "/offers/arbeits_sozialmedizinische_begutachtungen/magnific_documentarystyle-editoria_DoIGUXnpcl.jpg",
         imageAlt: "Einsatz arbeitsmedizinischer Expertise",
       },
       {
@@ -148,7 +147,8 @@ export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
           "Berufsbezogene Anforderungen, Belastungen und soziale Rahmenbedingungen werden in die Beurteilung einbezogen.",
         ],
         icon: ClipboardList,
-        imageSrc: "/pulsarmedical-jobcenter-2.jpg",
+        imageSrc:
+          "/offers/arbeits_sozialmedizinische_begutachtungen/similar-258638884.jpeg",
         imageAlt: "Beurteilung von Gesundheit und Arbeitsrealität",
       },
       {

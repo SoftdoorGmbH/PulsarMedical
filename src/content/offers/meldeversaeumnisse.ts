@@ -12,10 +12,7 @@ import {
   Video,
 } from "lucide-react";
 import type { OfferPageContent } from "@/content/offerPages";
-import {
-  OFFER_PRIMARY_CTA,
-  OFFER_SECONDARY_CTA,
-} from "@/content/cta";
+import { OFFER_PRIMARY_CTA, OFFER_SECONDARY_CTA } from "@/content/cta";
 
 export const meldeversaeumnisse: OfferPageContent = {
   slug: "meldeversaeumnisse",
@@ -43,7 +40,7 @@ export const meldeversaeumnisse: OfferPageContent = {
     description:
       "Eine fachliche Einschätzung kann sinnvoll sein, wenn Hinweise darauf bestehen, dass gesundheitliche oder psychische Belastungen eine aktive Zusammenarbeit mit dem Jobcenter erschweren.",
     image: {
-      src: "/5.png.webp",
+      src: "/offers/meldeversauemnisse/2-business-man-are-sitting-table-with-man-suit-discuss-about-projec 2.jpg",
       alt: "Fachliche Ersteinschätzung bei Meldeversäumnissen",
     },
     items: [
@@ -118,7 +115,8 @@ export const meldeversaeumnisse: OfferPageContent = {
           "Bei Bedarf werden Termine für mehrere leistungsberechtigte Personen gebündelt organisiert.",
         ],
         icon: Send,
-        imageSrc: "/pulsarmedical-jobcenter-1.jpg",
+        imageSrc:
+          "/offers/meldeversauemnisse/colleague-talking-office-with-coffee-company-career-professional-planning-innovative-business-strategy-young-man-with-mature-person-analyst-break-job-feedback-profession.jpg",
         imageAlt: "Bündelung von Fällen und Fragestellungen",
       },
       {
@@ -130,7 +128,8 @@ export const meldeversaeumnisse: OfferPageContent = {
           "Die Vorstellung erfolgt respektvoll, empathisch und mit der erforderlichen fachlichen Objektivität.",
         ],
         icon: User,
-        imageSrc: "/pulsarmedical-jobcenter-2.jpg",
+        imageSrc:
+          "/offers/meldeversauemnisse/social-integration-working-team.jpg",
         imageAlt: "Persönliche Vorstellung bei einer Fachkraft",
       },
       {

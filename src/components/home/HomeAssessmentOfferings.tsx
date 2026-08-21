@@ -1,3 +1,4 @@
+import { useCallback, useEffect, useRef, useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/Button";
@@ -5,6 +6,27 @@ import { HOME_ASSESSMENT_OFFERINGS } from "@/content/homeAssessmentOfferings";
 
 const checkClassName =
   "mt-0.5 size-6 shrink-0 text-pm-light-text-2 [&>circle]:fill-pm-light-icon-bg [&>circle]:stroke-pm-light-icon-border [&>path]:origin-[12px_12px] [&>path]:scale-[1.18] [&>path]:stroke-[1.75] [&>path]:stroke-pm-light-text-2";
+
+function DotButton({
+  active,
+  onClick,
+  label,
+}: {
+  active: boolean;
+  onClick: () => void;
+  label: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`h-2.5 rounded-full transition-all duration-300 ${
+        active ? "w-6 bg-pm-light-button" : "w-2.5 bg-pm-light-container-border"
+      }`}
+      aria-label={label}
+    />
+  );
+}
 
 function StepEyebrow({
   icon: Icon,
@@ -45,22 +67,18 @@ function OfferingBlock({
   imageAlt,
   panelClassName,
   note,
-  isLast,
 }: (typeof HOME_ASSESSMENT_OFFERINGS)[number] & {
   note?: string;
-  isLast: boolean;
 }) {
   const headingId = `assessment-offering-${id}`;
 
   return (
     <article
       aria-labelledby={headingId}
-      className={`overflow-hidden rounded-[1.75rem] border-6 border-pm-light-container-border bg-white shadow-[0_14px_44px_-14px_rgb(2_52_78_/0.14)] ${
-        isLast ? "" : "mb-8 sm:mb-10 lg:mb-12"
-      }`}
+      className="flex w-[min(88vw,24rem)] max-w-md shrink-0 snap-center flex-col overflow-hidden rounded-[1.75rem] border-6 border-pm-light-container-border bg-white shadow-[0_14px_44px_-14px_rgb(2_52_78_/0.14)] md:w-full md:max-w-none md:snap-normal"
     >
-      <div className="grid items-stretch lg:grid-cols-2">
-        <div className="flex flex-col px-7 py-6 sm:p-8 lg:p-10 xl:p-12">
+      <div className="grid h-full flex-1 items-stretch lg:grid-cols-2">
+        <div className="flex h-full flex-col px-7 py-6 sm:p-8 lg:p-10 xl:p-12">
           <StepEyebrow icon={icon} label={stageLabel} note={note} />
 
           <h3
@@ -85,7 +103,7 @@ function OfferingBlock({
             ))}
           </ul>
 
-          <div className="mt-8 lg:mt-auto lg:pt-8">
+          <div className="mt-auto pt-8">
             <Button to={to} fullWidth>
               {cta}
             </Button>
@@ -112,6 +130,61 @@ function OfferingBlock({
 
 /** Angebotsübersicht: fünf Begutachtungsarten als Split-Karten (Text links, Bild rechts). */
 export function HomeAssessmentOfferings() {
+  const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
+  const mobileScrollRef = useRef<HTMLDivElement>(null);
+  const mobileScrollRafRef = useRef<number | null>(null);
+
+  const syncMobileActiveIndex = useCallback(() => {
+    const el = mobileScrollRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    if (rect.width === 0) return;
+    const centerX = rect.left + rect.width / 2;
+    let best = 0;
+    let bestDist = Infinity;
+    Array.from(el.children).forEach((child, i) => {
+      const r = child.getBoundingClientRect();
+      const cx = r.left + r.width / 2;
+      const d = Math.abs(cx - centerX);
+      if (d < bestDist) {
+        bestDist = d;
+        best = i;
+      }
+    });
+    setMobileActiveIndex((prev) => (prev === best ? prev : best));
+  }, []);
+
+  const onMobileScroll = () => {
+    if (mobileScrollRafRef.current != null) {
+      cancelAnimationFrame(mobileScrollRafRef.current);
+    }
+    mobileScrollRafRef.current = requestAnimationFrame(() => {
+      mobileScrollRafRef.current = null;
+      syncMobileActiveIndex();
+    });
+  };
+
+  useEffect(() => {
+    syncMobileActiveIndex();
+    window.addEventListener("resize", syncMobileActiveIndex);
+    return () => {
+      window.removeEventListener("resize", syncMobileActiveIndex);
+      if (mobileScrollRafRef.current != null) {
+        cancelAnimationFrame(mobileScrollRafRef.current);
+      }
+    };
+  }, [syncMobileActiveIndex]);
+
+  const scrollMobileToIndex = (idx: number) => {
+    const scroller = mobileScrollRef.current;
+    const slide = scroller?.children[idx] as HTMLElement | undefined;
+    slide?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  };
+
   return (
     <section
       className="border-y border-pm-light-container-border bg-pm-light-container py-16 sm:py-20 md:py-24"
@@ -133,12 +206,27 @@ export function HomeAssessmentOfferings() {
           </p>
         </div>
 
-        <div className="mt-12 sm:mt-14 lg:mt-16">
-          {HOME_ASSESSMENT_OFFERINGS.map((offering, index) => (
-            <OfferingBlock
+        <div
+          ref={mobileScrollRef}
+          onScroll={onMobileScroll}
+          className="mt-12 -mx-2 flex snap-x snap-mandatory flex-row items-stretch gap-4 overflow-x-auto overflow-y-hidden scroll-pl-2 scroll-pr-2 px-2 [-webkit-overflow-scrolling:touch] scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:mt-16 md:flex-col md:gap-10 md:overflow-visible md:px-0 md:snap-none lg:gap-12"
+        >
+          {HOME_ASSESSMENT_OFFERINGS.map((offering) => (
+            <OfferingBlock key={offering.id} {...offering} />
+          ))}
+        </div>
+
+        <div
+          className="mt-6 flex justify-center gap-2 md:hidden"
+          role="tablist"
+          aria-label="Begutachtungsarten"
+        >
+          {HOME_ASSESSMENT_OFFERINGS.map((offering, idx) => (
+            <DotButton
               key={offering.id}
-              {...offering}
-              isLast={index === HOME_ASSESSMENT_OFFERINGS.length - 1}
+              active={mobileActiveIndex === idx}
+              onClick={() => scrollMobileToIndex(idx)}
+              label={`${offering.stageLabel} anzeigen`}
             />
           ))}
         </div>
