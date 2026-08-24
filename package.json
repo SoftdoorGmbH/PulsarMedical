@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && npm run prerender",
+    "build": "tsc -b && vite build && npm run sitemap",
+    "build:prerender": "npm run build && npm run prerender",
     "preview": "vite preview",
+    "sitemap": "tsx scripts/write-sitemap.ts",
     "prerender": "tsx scripts/prerender.ts",
     "optimize-images": "node scripts/optimize-images.mjs",
     "create-og": "node scripts/create-og-image.mjs"

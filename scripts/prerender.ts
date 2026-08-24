@@ -3,11 +3,8 @@ import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
-import {
-  getPrerenderPaths,
-  getSitemapPaths,
-  SITE_URL,
-} from "../src/content/seo.ts";
+import { getPrerenderPaths, SITE_URL } from "../src/content/seo.ts";
+import { writeSitemap } from "./write-sitemap.ts";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const distDir = path.join(root, "dist");
@@ -157,21 +154,6 @@ function outputFileForPath(routePath: string): string {
   return path.join(distDir, routePath.replace(/^\/+/, ""), "index.html");
 }
 
-function buildSitemapXml(paths: readonly string[]): string {
-  const urls = paths
-    .map((routePath) => {
-      const loc = routePath === "/" ? `${SITE_URL}/` : `${SITE_URL}${routePath}`;
-      return `  <url>\n    <loc>${loc}</loc>\n    <changefreq>weekly</changefreq>\n  </url>`;
-    })
-    .join("\n");
-
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls}
-</urlset>
-`;
-}
-
 async function writeHtml(filePath: string, html: string): Promise<void> {
   await mkdir(path.dirname(filePath), { recursive: true });
   const cleaned = sanitizeHtml(html);
@@ -223,9 +205,7 @@ async function main() {
     await writeHtml(path.join(distDir, "404.html"), notFoundHtml);
     console.log("prerendered /404.html");
 
-    const sitemap = buildSitemapXml(getSitemapPaths());
-    await writeFile(path.join(distDir, "sitemap.xml"), sitemap, "utf8");
-    console.log("wrote dist/sitemap.xml");
+    await writeSitemap(distDir);
   } finally {
     await browser.close();
     await server.close();
