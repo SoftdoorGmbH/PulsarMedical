@@ -54,6 +54,30 @@ function StepEyebrow({
   );
 }
 
+function ExpandableIntro({ children }: { children: string }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className="mt-4 max-w-xl">
+      <p
+        className={`text-base leading-relaxed text-pm-light-text-1 ${
+          expanded ? "" : "line-clamp-2 md:line-clamp-none"
+        }`}
+      >
+        {children}
+      </p>
+      <button
+        type="button"
+        className="mt-1.5 text-sm font-semibold text-pm-light-text-2 no-underline hover:underline md:hidden"
+        aria-expanded={expanded}
+        onClick={() => setExpanded((open) => !open)}
+      >
+        {expanded ? "Weniger anzeigen" : "Mehr lesen"}
+      </button>
+    </div>
+  );
+}
+
 function OfferingBlock({
   id,
   stageLabel,
@@ -88,9 +112,7 @@ function OfferingBlock({
             {title}
           </h3>
 
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-pm-light-text-1">
-            {intro}
-          </p>
+          <ExpandableIntro>{intro}</ExpandableIntro>
 
           <ul className="mt-6 flex max-w-xl flex-col gap-3">
             {bullets.map((item) => (
@@ -117,6 +139,8 @@ function OfferingBlock({
             <img
               src={imageSrc}
               alt={imageAlt}
+              width={640}
+              height={480}
               loading="lazy"
               decoding="async"
               className="size-full object-cover"

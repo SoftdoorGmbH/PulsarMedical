@@ -11,6 +11,7 @@ import { fachuebergreifendeBegutachtungen } from "@/content/offers/fachuebergrei
 import { medizinischeBegutachtungen } from "@/content/offers/medizinische-begutachtungen";
 import { meldeversaeumnisse } from "@/content/offers/meldeversaeumnisse";
 import { psychologischeBegutachtungen } from "@/content/offers/psychologische-begutachtungen";
+import type { PageSeoFields } from "@/content/seoFields";
 
 export type OfferPageSlug =
   | "medizinische-begutachtungen"
@@ -22,6 +23,7 @@ export type OfferPageSlug =
 export type OfferPageContent = {
   slug: OfferPageSlug;
   navLabel: string;
+  seo?: PageSeoFields;
   icon: LucideIcon;
   hero?: AudienceHeroContent;
   useCases?: OfferUseCasesContent;
@@ -67,16 +69,15 @@ export const OFFER_NAV_DESCRIPTIONS: Record<OfferPageSlug, string> = {
     "Arbeitsfähigkeit und Belastbarkeit im beruflichen Kontext.",
   "fachuebergreifende-begutachtungen":
     "Komplexe Fälle mit mehreren Fachdisziplinen bewerten.",
-  meldeversaeumnisse:
-    "Meldeversäumnisse schnell und fundiert einordnen.",
+  meldeversaeumnisse: "Meldeversäumnisse schnell und fundiert einordnen.",
 };
 
 export const MEGA_MENU_OFFER_ORDER: readonly OfferPageSlug[] = [
   "medizinische-begutachtungen",
-  "arbeits-sozialmedizinische-begutachtungen",
-  "meldeversaeumnisse",
   "psychologische-begutachtungen",
+  "arbeits-sozialmedizinische-begutachtungen",
   "fachuebergreifende-begutachtungen",
+  "meldeversaeumnisse",
 ] as const;
 
 export const OFFER_NAV_ITEMS = MEGA_MENU_OFFER_ORDER.map((slug) => ({

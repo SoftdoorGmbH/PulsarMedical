@@ -46,7 +46,7 @@ export const JOBCENTER_PORTFOLIO: AudiencePortfolioContent = {
         "Berufliche Belastbarkeit und Leistungsvermögen realistisch einschätzen",
         "Medizinische Fragen für Beratung und Integrationsplanung beantworten",
       ],
-      imageSrc: "/pulsarmedical-jobcenter-1.jpg",
+      imageSrc: "/pulsarmedical-jobcenter-1.webp",
       imageAlt: "Medizinische Begutachtung im Beratungskontext",
       cta: {
         to: "/medizinische-begutachtungen",
@@ -63,7 +63,7 @@ export const JOBCENTER_PORTFOLIO: AudiencePortfolioContent = {
         "Ressourcen und vorhandene Unterstützungsmöglichkeiten erkennen",
         "Weiteren Klärungs- oder Unterstützungsbedarf einordnen",
       ],
-      imageSrc: "/pulsarmedical-jobcenter-2.jpg",
+      imageSrc: "/pulsarmedical-jobcenter-2.webp",
       imageAlt: "Psychologische Beratung und Einschätzung",
       cta: {
         to: "/psychologische-begutachtungen",
@@ -80,7 +80,7 @@ export const JOBCENTER_PORTFOLIO: AudiencePortfolioContent = {
         "Soziale Rahmenbedingungen in die Einschätzung einbeziehen",
         "Realistische Einsatz- und Entwicklungsmöglichkeiten aufzeigen",
       ],
-      imageSrc: "/pulsarmedical-jobcenter-3.jpg",
+      imageSrc: "/pulsarmedical-jobcenter-3.webp",
       imageAlt: "Arbeits- und sozialmedizinische Beratung",
       cta: {
         to: "/arbeits-sozialmedizinische-begutachtungen",
@@ -97,7 +97,7 @@ export const JOBCENTER_PORTFOLIO: AudiencePortfolioContent = {
         "Unterstützungs- und Klärungsbedarf nachvollziehbar benennen",
         "Bei Bedarf direkt in eine vertiefte Begutachtung überführen",
       ],
-      imageSrc: "/pulsarmedical-jobcenter-1.jpg",
+      imageSrc: "/pulsarmedical-jobcenter-1.webp",
       imageAlt: "Fachliche Einschätzung bei Meldeversäumnissen",
       cta: {
         to: "/meldeversaeumnisse",
@@ -114,7 +114,7 @@ export const JOBCENTER_PORTFOLIO: AudiencePortfolioContent = {
         "Raum für konkrete Fragen aus der Arbeitspraxis Ihres Jobcenters",
         "Persönlich vor Ort oder digital durchführbar",
       ],
-      imageSrc: "/pulsarmedical-jobcenter-2.jpg",
+      imageSrc: "/pulsarmedical-jobcenter-2.webp",
       imageAlt: "Schulungen und Informationsangebote für Jobcenter",
       cta: CONTACT_CTA,
     },
@@ -139,7 +139,7 @@ export const BERUFSGENOSSENSCHAFTEN_PORTFOLIO: AudiencePortfolioContent = {
         "Belastbarkeit und verbliebenes Leistungsvermögen einschätzen",
         "Medizinische Fragen für Reha- und Leistungsentscheidungen beantworten",
       ],
-      imageSrc: "/pulsarmedical-jobcenter-1.jpg",
+      imageSrc: "/pulsarmedical-jobcenter-1.webp",
       imageAlt: "Medizinische Begutachtung nach einem Unfall",
       cta: {
         to: "/medizinische-begutachtungen",
@@ -156,7 +156,7 @@ export const BERUFSGENOSSENSCHAFTEN_PORTFOLIO: AudiencePortfolioContent = {
         "Ressourcen und vorhandene Unterstützungsmöglichkeiten erkennen",
         "Relevanten Behandlungs- oder Klärungsbedarf einordnen",
       ],
-      imageSrc: "/pulsarmedical-jobcenter-2.jpg",
+      imageSrc: "/pulsarmedical-jobcenter-2.webp",
       imageAlt: "Psychologische Begutachtung nach einem Unfall",
       cta: {
         to: "/psychologische-begutachtungen",
@@ -173,7 +173,7 @@ export const BERUFSGENOSSENSCHAFTEN_PORTFOLIO: AudiencePortfolioContent = {
         "Anpassungsbedarf für Rückkehr und Wiedereingliederung erkennen",
         "Realistische Einsatz- und Entwicklungsmöglichkeiten aufzeigen",
       ],
-      imageSrc: "/pulsarmedical-jobcenter-3.jpg",
+      imageSrc: "/pulsarmedical-jobcenter-3.webp",
       imageAlt: "Arbeitsmedizinische Einschätzung der Belastbarkeit",
       cta: {
         to: "/arbeits-sozialmedizinische-begutachtungen",
@@ -207,7 +207,7 @@ export const BERUFSGENOSSENSCHAFTEN_PORTFOLIO: AudiencePortfolioContent = {
         "Raum für konkrete Fragen aus der Fallarbeit",
         "Persönlich vor Ort oder digital durchführbar",
       ],
-      imageSrc: "/pulsarmedical-jobcenter-2.jpg",
+      imageSrc: "/pulsarmedical-jobcenter-2.webp",
       imageAlt: "Schulungen für Berufsgenossenschaften",
       cta: CONTACT_CTA,
     },
@@ -232,7 +232,7 @@ export const RUECKVERSICHERER_PORTFOLIO: AudiencePortfolioContent = {
         "Verbliebenes Leistungsvermögen realistisch einschätzen",
         "Medizinische Fragen für Leistungsentscheidungen beantworten",
       ],
-      imageSrc: "/pulsarmedical-jobcenter-1.jpg",
+      imageSrc: "/pulsarmedical-jobcenter-1.webp",
       imageAlt: "Medizinische Begutachtung für Leistungsfälle",
       cta: {
         to: "/medizinische-begutachtungen",
@@ -249,7 +249,7 @@ export const RUECKVERSICHERER_PORTFOLIO: AudiencePortfolioContent = {
         "Ressourcen und prognoserelevante Faktoren erkennen",
         "Weiteren Klärungs- oder Behandlungsbedarf einordnen",
       ],
-      imageSrc: "/pulsarmedical-jobcenter-2.jpg",
+      imageSrc: "/pulsarmedical-jobcenter-2.webp",
       imageAlt: "Psychologische Begutachtung für Leistungsfälle",
       cta: {
         to: "/psychologische-begutachtungen",
@@ -266,7 +266,7 @@ export const RUECKVERSICHERER_PORTFOLIO: AudiencePortfolioContent = {
         "Einschränkungen im Verhältnis zum Berufsbild einordnen",
         "Realistische Einsatz- und Entwicklungsmöglichkeiten aufzeigen",
       ],
-      imageSrc: "/pulsarmedical-jobcenter-3.jpg",
+      imageSrc: "/pulsarmedical-jobcenter-3.webp",
       imageAlt: "Arbeitsmedizinische Beurteilung der Leistungsfähigkeit",
       cta: {
         to: "/arbeits-sozialmedizinische-begutachtungen",
@@ -300,7 +300,7 @@ export const RUECKVERSICHERER_PORTFOLIO: AudiencePortfolioContent = {
         "Raum für konkrete Fragen aus Leistungsfällen und Fallarbeit",
         "Persönlich vor Ort oder digital durchführbar",
       ],
-      imageSrc: "/pulsarmedical-jobcenter-2.jpg",
+      imageSrc: "/pulsarmedical-jobcenter-2.webp",
       imageAlt: "Schulungen für Rückversicherer",
       cta: CONTACT_CTA,
     },

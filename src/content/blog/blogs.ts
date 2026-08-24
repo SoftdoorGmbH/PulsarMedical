@@ -9,7 +9,11 @@ export type BlogPost = {
   readTimeMinutes: number;
   publishedAt: string;
   imageUrl?: string;
+  imageAlt?: string;
   featured?: boolean;
+  body?: string;
+  metaTitle?: string;
+  metaDescription?: string;
 };
 
 export type BlogCategoryMeta = {

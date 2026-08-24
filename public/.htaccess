@@ -1,0 +1,16 @@
+# IONOS / Apache: prerendered folders are served as real files.
+# Unknown paths return 404.html instead of the homepage.
+
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Legacy audience URL
+  RewriteRule ^unternehmen/?$ /rueckversicherer [R=301,L]
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+</IfModule>

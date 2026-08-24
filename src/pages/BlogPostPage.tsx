@@ -1,14 +1,15 @@
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Button } from "@/components/Button";
 import { BLOG_CARD_GRADIENTS, formatBlogDate, formatReadTime } from "@/components/blog/blogUtils";
 import { BLOG_CATEGORIES, getPostBySlug } from "@/content/blog/blogs";
+import { NotFoundPage } from "@/pages/NotFoundPage";
 
 export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : undefined;
 
   if (!post) {
-    return <Navigate to="/blog" replace />;
+    return <NotFoundPage />;
   }
 
   const categoryLabel =
@@ -39,7 +40,9 @@ export function BlogPostPage() {
           {post.imageUrl ? (
             <img
               src={post.imageUrl}
-              alt=""
+              alt={post.imageAlt ?? post.title}
+              width={1200}
+              height={750}
               className="aspect-16/10 w-full object-cover"
             />
           ) : (
@@ -54,10 +57,16 @@ export function BlogPostPage() {
 
         <div className="mt-10 space-y-4 text-base leading-relaxed text-pm-light-text-1 md:text-lg">
           <p>{post.excerpt}</p>
-          <p className="text-sm text-pm-light-text-1">
-            Der vollständige Artikel wird in Kürze hier verfügbar sein. Bis
-            dahin freuen wir uns über Ihre Nachricht.
-          </p>
+          {post.body ? (
+            post.body.split(/\n\n+/).map((paragraph) => (
+              <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+            ))
+          ) : (
+            <p className="text-sm text-pm-light-text-1">
+              Der vollständige Artikel wird in Kürze hier verfügbar sein. Bis
+              dahin freuen wir uns über Ihre Nachricht.
+            </p>
+          )}
         </div>
 
         <div className="mt-10">

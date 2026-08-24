@@ -1,62 +1,62 @@
 export const JOB_CENTER_LOGOS = [
   {
     alt: "Logo: Jobcenter Kreis Siegen-Wittgenstein",
-    src: "https://pulsarmed.de/wp-content/uploads/2023/10/logo-jc-siegen-wittgenstein.jpg",
+    src: "/logos/logo-jc-siegen-wittgenstein.webp",
   },
   {
     alt: "Logo: Jobcenter Landkreis Northeim",
-    src: "https://pulsarmed.de/wp-content/uploads/2023/10/logo-jc-northeim.jpg",
+    src: "/logos/logo-jc-northeim.webp",
   },
   {
     alt: "Logo: Jobcenter Holzminden",
-    src: "https://pulsarmed.de/wp-content/uploads/2023/10/logo-jc-holzminden.jpg",
+    src: "/logos/logo-jc-holzminden.webp",
   },
   {
     alt: "Logo: Jobcenter Hameln-Pyrmont",
-    src: "https://pulsarmed.de/wp-content/uploads/2023/10/logo-jc-hameln-pyrmont.jpg",
+    src: "/logos/logo-jc-hameln-pyrmont.webp",
   },
   {
     alt: "Logo: Jobcenter Herford",
-    src: "https://pulsarmed.de/wp-content/uploads/2023/10/jc-herford.png",
+    src: "/logos/jc-herford.webp",
   },
   {
     alt: "Logo: Jobcenter Remscheid",
-    src: "https://pulsarmed.de/wp-content/uploads/2023/10/logo-jc-remscheid.jpg",
+    src: "/logos/logo-jc-remscheid.webp",
   },
   {
     alt: "Logo: kommunales Jobcenter Solingen",
-    src: "https://pulsarmed.de/wp-content/uploads/2023/10/logo-kommunales-jobcenter-solingen.jpg",
+    src: "/logos/logo-kommunales-jobcenter-solingen.webp",
   },
   {
     alt: "Logo: Jobcenter Wolfsburg",
-    src: "https://pulsarmed.de/wp-content/uploads/2024/08/jobcenter-wolfsburg.jpg",
+    src: "/logos/jobcenter-wolfsburg.webp",
   },
   {
     alt: "Logo: Jobcenter Region Hannover",
-    src: "https://pulsarmed.de/wp-content/uploads/2024/05/logo-jobcenter-rgb.jpg",
+    src: "/logos/logo-jobcenter-rgb.webp",
   },
   {
     alt: "Logo: Jobcenter Wuppertal",
-    src: "https://pulsarmed.de/wp-content/uploads/2023/10/logo-jc-wuppertal.jpg",
+    src: "/logos/logo-jc-wuppertal.webp",
   },
   {
     alt: "Logo: Jobcenter Kreis Gütersloh",
-    src: "https://pulsarmed.de/wp-content/uploads/2024/12/logo-jobcenter-kreis-gutersloh.jpg",
+    src: "/logos/logo-jobcenter-kreis-gutersloh.webp",
   },
   {
     alt: "Logo: Jobcenter Ebersberg",
-    src: "https://pulsarmed.de/wp-content/uploads/2025/01/jobcenterlogo-ebersberg-a2ll-wappen.jpg",
+    src: "/logos/jobcenterlogo-ebersberg-a2ll-wappen.webp",
   },
   {
     alt: "Logo: Jobcenter Freising",
-    src: "https://pulsarmed.de/wp-content/uploads/2025/01/logo-jobcenter-freising.jpg",
+    src: "/logos/logo-jobcenter-freising.webp",
   },
   {
     alt: "Logo: Jobcenter Aruso Erding",
-    src: "https://pulsarmed.de/wp-content/uploads/2025/01/logo-jobcenter-erding.png",
+    src: "/logos/logo-jobcenter-erding.webp",
   },
   {
     alt: "Logo: Jobcenter Dachau",
-    src: "https://pulsarmed.de/wp-content/uploads/2025/01/logo-jobcenter-dachau-aktuell.jpg",
+    src: "/logos/logo-jobcenter-dachau-aktuell.webp",
   },
 ] as const;

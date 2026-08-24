@@ -21,7 +21,7 @@ const TABS: TabPanel[] = [
       "Wir unterstützen Sie bei der Auswahl von Qualifizierungen, der Vorbereitung auf den Klinik- oder Praxisalltag und der nachhaltigen Vermittlung in gesicherte Stellen.",
       "Gemeinsam mit regionalen Partnern schaffen wir transparente Pfade, damit Teilnehmende nicht nur starten, sondern langfristig erfolgreich bleiben.",
     ],
-    imageSrc: "/placeholder.png",
+    imageSrc: "/pulsarmedical-jobcenter-1.webp",
     imageAlt: "Beratungssituation im Gesundheitsbereich",
     cta: { to: "/jobcenter", label: "Mehr zu Jobcentern" },
   },
@@ -34,7 +34,7 @@ const TABS: TabPanel[] = [
       "Ob Klinikverbund, MVZ oder Pflegeeinrichtung: Wir helfen Ihnen, Engpässe früh zu erkennen und Profile zu besetzen, die wirklich zu Team und Aufgaben passen.",
       "Sie erhalten praxisnahe Beratung zu Anspruch, Arbeitsmodellen und Onboarding — immer abgestimmt auf Ihre internen Abläufe.",
     ],
-    imageSrc: "/placeholder.png",
+    imageSrc: "/pulsarmedical-jobcenter-2.webp",
     imageAlt: "Team im Gesundheitswesen bei der Arbeit",
     cta: { to: "/unternehmen", label: "Mehr für Unternehmen" },
   },
@@ -47,7 +47,7 @@ const TABS: TabPanel[] = [
       "Von der ersten Orientierung bis zur Vertragsunterzeichnung stehen wir an Ihrer Seite und vermitteln transparente Informationen zu Arbeitgeber, Schichtmodellen und Entwicklungsmöglichkeiten.",
       "Sie profitieren von einem Netzwerk, das Qualität ebenso ernst nimmt wie Menschlichkeit.",
     ],
-    imageSrc: "/placeholder.png",
+    imageSrc: "/pulsarmedical-jobcenter-3.webp",
     imageAlt: "Gespräch zwischen Beraterin und Bewerberin",
     cta: { to: "/karriere", label: "Zu den Karrierethemen" },
   },
@@ -60,7 +60,7 @@ const TABS: TabPanel[] = [
       "Wir verbinden Akteure aus Bildung, Arbeitgeberschaft und Versorgung, damit Talente dort ankommen, wo sie gebraucht werden.",
       "Regelmäßiger Austausch, klare Ziele und messbare Meilensteine sorgen dafür, dass Partnerschaften nicht nur starten, sondern wachsen.",
     ],
-    imageSrc: "/placeholder.png",
+    imageSrc: "/3.png.webp",
     imageAlt: "Kooperation im Gesundheitsnetzwerk",
     cta: { to: "/ueber-uns", label: "Über unsere Arbeit" },
   },
@@ -149,6 +149,8 @@ export function HomeTabbedSection() {
                 key={panel.id}
                 src={panel.imageSrc}
                 alt={panel.imageAlt}
+                width={800}
+                height={640}
                 className="aspect-4/3 w-full rounded-2xl object-cover shadow-[0_24px_48px_-16px_rgb(0_0_0_/0.45)] ring-1 ring-white/15 md:aspect-5/4"
                 loading="lazy"
                 decoding="async"

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useId, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 /** Vorhandene Datei aus `public/` — kein neues Asset. */
-const PLACEHOLDER_LOGO_SRC = "/Pulsar_Logo.png";
+const PLACEHOLDER_LOGO_SRC = "/Pulsar_Logo.webp";
 
 type Stat = { value: string; label: string };
 
@@ -170,7 +170,7 @@ export function HomeTestimonialSlider() {
                     <div className="flex shrink-0 items-center justify-center gap-1">
                       <img
                         src={PLACEHOLDER_LOGO_SRC}
-                        alt=""
+                        alt="PULSAR Medical"
                         width={120}
                         height={40}
                         className="h-8 w-auto max-w-35 object-contain object-left md:h-9"

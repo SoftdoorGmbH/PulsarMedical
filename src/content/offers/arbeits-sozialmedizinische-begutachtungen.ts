@@ -17,6 +17,11 @@ import { OFFER_PRIMARY_CTA, OFFER_SECONDARY_CTA } from "@/content/cta";
 export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
   slug: "arbeits-sozialmedizinische-begutachtungen",
   navLabel: "Arbeits- & sozialmedizinische Begutachtungen",
+  seo: {
+    title: "Arbeits- und sozialmedizinische Begutachtungen",
+    description:
+      "PULSAR Medical beurteilt, wie gesundheitliche Einschränkungen berufliche Anforderungen, Belastbarkeit und realistische Einsatzmöglichkeiten beeinflussen.",
+  },
   icon: HeartPulse,
   hero: {
     ariaLabel: "Arbeits- & sozialmedizinische Begutachtungen",
@@ -40,7 +45,7 @@ export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
     description:
       "Eine arbeits- oder sozialmedizinische Begutachtung ist sinnvoll, wenn die gesundheitliche Situation im Zusammenhang mit konkreten Tätigkeiten, Arbeitsbedingungen oder sozialen Rahmenbedingungen beurteilt werden muss.",
     image: {
-      src: "/offers/arbeits_sozialmedizinische_begutachtungen/magnific_contemporary-documentary-_xSwHApojfW.jpg",
+      src: "/offers/arbeits_sozialmedizinische_begutachtungen/magnific_contemporary-documentary-_xSwHApojfW.webp",
       alt: "Arbeits- und sozialmedizinische Einschätzung",
     },
     items: [
@@ -122,7 +127,7 @@ export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
         ],
         icon: Send,
         imageSrc:
-          "/offers/arbeits_sozialmedizinische_begutachtungen/magnific_documentarystyle-editoria_9ZAg56mNYZ.jpg",
+          "/offers/arbeits_sozialmedizinische_begutachtungen/magnific_documentarystyle-editoria_9ZAg56mNYZ.webp",
         imageAlt: "Abstimmung der beruflichen Fragestellung",
       },
       {
@@ -135,7 +140,7 @@ export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
         ],
         icon: HeartPulse,
         imageSrc:
-          "/offers/arbeits_sozialmedizinische_begutachtungen/magnific_documentarystyle-editoria_DoIGUXnpcl.jpg",
+          "/offers/arbeits_sozialmedizinische_begutachtungen/magnific_documentarystyle-editoria_DoIGUXnpcl.webp",
         imageAlt: "Einsatz arbeitsmedizinischer Expertise",
       },
       {
@@ -148,7 +153,7 @@ export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
         ],
         icon: ClipboardList,
         imageSrc:
-          "/offers/arbeits_sozialmedizinische_begutachtungen/similar-258638884.jpeg",
+          "/offers/arbeits_sozialmedizinische_begutachtungen/similar-258638884.webp",
         imageAlt: "Beurteilung von Gesundheit und Arbeitsrealität",
       },
       {
@@ -160,7 +165,7 @@ export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
           "Die feste Projektkoordination bleibt für organisatorische Rückfragen und weitere Abstimmungen erreichbar.",
         ],
         icon: FileCheck,
-        imageSrc: "/pulsarmedical-jobcenter-3.jpg",
+        imageSrc: "/pulsarmedical-jobcenter-3.webp",
         imageAlt: "Ergebnisse für die berufliche Planung",
       },
     ],

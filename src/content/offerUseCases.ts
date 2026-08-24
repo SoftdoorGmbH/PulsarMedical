@@ -12,6 +12,7 @@ export type OfferUseCasesContent = {
   headingId: string;
   title: string;
   description: string;
+  eyebrow?: string;
   image: OfferUseCaseImage;
   items: readonly OfferUseCaseItem[];
 };

@@ -17,6 +17,11 @@ import { OFFER_PRIMARY_CTA, OFFER_SECONDARY_CTA } from "@/content/cta";
 export const meldeversaeumnisse: OfferPageContent = {
   slug: "meldeversaeumnisse",
   navLabel: "Fachliche Einschätzung bei Meldeversäumnissen",
+  seo: {
+    title: "Fachliche Einschätzung bei Meldeversäumnissen",
+    description:
+      "PULSAR Medical hilft Jobcentern, gesundheitliche oder psychische Ursachen von Meldeversäumnissen früh einzuordnen – bevor der Kontakt abbricht.",
+  },
   icon: ClipboardCheck,
   hero: {
     ariaLabel: "Fachliche Einschätzung bei Meldeversäumnissen",
@@ -40,7 +45,7 @@ export const meldeversaeumnisse: OfferPageContent = {
     description:
       "Eine fachliche Einschätzung kann sinnvoll sein, wenn Hinweise darauf bestehen, dass gesundheitliche oder psychische Belastungen eine aktive Zusammenarbeit mit dem Jobcenter erschweren.",
     image: {
-      src: "/offers/meldeversauemnisse/2-business-man-are-sitting-table-with-man-suit-discuss-about-projec 2.jpg",
+      src: "/offers/meldeversauemnisse/business-men-discussing-project.webp",
       alt: "Fachliche Ersteinschätzung bei Meldeversäumnissen",
     },
     items: [
@@ -116,7 +121,7 @@ export const meldeversaeumnisse: OfferPageContent = {
         ],
         icon: Send,
         imageSrc:
-          "/offers/meldeversauemnisse/colleague-talking-office-with-coffee-company-career-professional-planning-innovative-business-strategy-young-man-with-mature-person-analyst-break-job-feedback-profession.jpg",
+          "/offers/meldeversauemnisse/colleague-talking-office-with-coffee-company-career-professional-planning-innovative-business-strategy-young-man-with-mature-person-analyst-break-job-feedback-profession.webp",
         imageAlt: "Bündelung von Fällen und Fragestellungen",
       },
       {
@@ -129,7 +134,7 @@ export const meldeversaeumnisse: OfferPageContent = {
         ],
         icon: User,
         imageSrc:
-          "/offers/meldeversauemnisse/social-integration-working-team.jpg",
+          "/offers/meldeversauemnisse/social-integration-working-team.webp",
         imageAlt: "Persönliche Vorstellung bei einer Fachkraft",
       },
       {
@@ -141,7 +146,7 @@ export const meldeversaeumnisse: OfferPageContent = {
           "Ergebnisse werden über vorab abgestimmte, geschützte und datenschutzkonforme Wege bereitgestellt.",
         ],
         icon: FileCheck,
-        imageSrc: "/pulsarmedical-jobcenter-3.jpg",
+        imageSrc: "/pulsarmedical-jobcenter-3.webp",
         imageAlt: "Bereitstellung der fachlichen Einschätzung",
       },
     ],

@@ -29,6 +29,10 @@ export const HOME_ASSESSMENT_COMPARE = {
 
 export const HOME_ASSESSMENT_BENEFITS = {
   headline: "Weitere Vorteile mit PULSAR Medical…",
+  image: {
+    src: "/8.png.webp",
+    alt: "Zwei Fachkräfte besprechen gemeinsam Unterlagen",
+  },
   cta: { label: "Unverbindlich anfragen", to: "/kontakt" },
   items: [
     {

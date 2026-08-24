@@ -17,6 +17,11 @@ import { OFFER_PRIMARY_CTA, OFFER_SECONDARY_CTA } from "@/content/cta";
 export const psychologischeBegutachtungen: OfferPageContent = {
   slug: "psychologische-begutachtungen",
   navLabel: "Psychologische & psychiatrische Begutachtungen",
+  seo: {
+    title: "Psychologische und psychiatrische Begutachtungen",
+    description:
+      "PULSAR Medical beurteilt psychische Erkrankungen, Belastungen und Ressourcen und deren Auswirkungen auf Leistungsfähigkeit, Mitwirkung und berufliche Perspektiven.",
+  },
   icon: Brain,
   hero: {
     ariaLabel: "Psychologische & psychiatrische Begutachtungen",
@@ -40,7 +45,7 @@ export const psychologischeBegutachtungen: OfferPageContent = {
     description:
       "Eine psychologische oder psychiatrische Begutachtung ist sinnvoll, wenn unklar ist, ob psychische Belastungen die Zusammenarbeit, Belastbarkeit oder berufliche Planung beeinträchtigen.",
     image: {
-      src: "/offers/psychologische_begutachtungen/creativity-go-cropped-shot-creative-business-office.jpg",
+      src: "/offers/psychologische_begutachtungen/creativity-go-cropped-shot-creative-business-office.webp",
       alt: "Psychologische Begutachtung im Gespräch",
     },
     items: [
@@ -122,7 +127,7 @@ export const psychologischeBegutachtungen: OfferPageContent = {
         ],
         icon: Send,
         imageSrc:
-          "/offers/psychologische_begutachtungen/social-integration-working-team(1).jpg",
+          "/offers/psychologische_begutachtungen/social-integration-working-team(1).webp",
         imageAlt: "Abstimmung der psychologischen Fragestellung",
       },
       {
@@ -135,7 +140,7 @@ export const psychologischeBegutachtungen: OfferPageContent = {
         ],
         icon: Brain,
         imageSrc:
-          "/offers/psychologische_begutachtungen/two-businesspeople-having-conversation-office.jpg",
+          "/offers/psychologische_begutachtungen/two-businesspeople-having-conversation-office.webp",
         imageAlt: "Einsatz psychologischer oder psychiatrischer Expertise",
       },
       {
@@ -148,7 +153,7 @@ export const psychologischeBegutachtungen: OfferPageContent = {
         ],
         icon: ClipboardList,
         imageSrc:
-          "/offers/psychologische_begutachtungen/unrecognizable-brunette-young-male-architect-sitting-desk-with-drawings-while-discussing-something-with-his-cheerful-mature-female-boss-who-is-smiling-him-approving-his-creative-ideas.jpg",
+          "/offers/psychologische_begutachtungen/unrecognizable-brunette-young-male-architect-sitting-desk-with-drawings-while-discussing-something-with-his-cheerful-mature-female-boss-who-is-smiling-him-approving-his-creative-ideas.webp",
         imageAlt: "Durchführung der psychologischen Begutachtung",
       },
       {
@@ -160,7 +165,7 @@ export const psychologischeBegutachtungen: OfferPageContent = {
           "Die feste Projektkoordination bleibt für organisatorische Rückfragen und weitere Abstimmungen erreichbar.",
         ],
         icon: FileCheck,
-        imageSrc: "/pulsarmedical-jobcenter-2.jpg",
+        imageSrc: "/pulsarmedical-jobcenter-2.webp",
         imageAlt: "Bereitstellung der fachlichen Einschätzung",
       },
     ],

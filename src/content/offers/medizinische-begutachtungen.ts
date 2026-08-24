@@ -18,6 +18,11 @@ import { OFFER_PRIMARY_CTA, OFFER_SECONDARY_CTA } from "@/content/cta";
 export const medizinischeBegutachtungen: OfferPageContent = {
   slug: "medizinische-begutachtungen",
   navLabel: "Medizinische Begutachtungen",
+  seo: {
+    title: "Medizinische Begutachtungen",
+    description:
+      "PULSAR Medical beurteilt Befunde, funktionelle Einschränkungen und Leistungsvermögen – damit Sie gesundheitliche Auswirkungen im konkreten Fall sicher bewerten.",
+  },
   icon: Stethoscope,
   hero: {
     ariaLabel: "Medizinische Begutachtungen",
@@ -40,7 +45,7 @@ export const medizinischeBegutachtungen: OfferPageContent = {
     description:
       "Eine medizinische Begutachtung ist sinnvoll, wenn gesundheitliche Informationen für die weitere Fallsteuerung relevant sind, vorhandene Unterlagen kein klares Gesamtbild ergeben oder die Leistungsfähigkeit fachlich eingeordnet werden muss.",
     image: {
-      src: "/offers/medizinische_begutachtungen/magnific_contemporary-documentary-_huFeU9OvqL.jpg",
+      src: "/offers/medizinische_begutachtungen/magnific_contemporary-documentary-_huFeU9OvqL.webp",
       alt: "Medizinische Begutachtung im Beratungsgespräch",
     },
     items: [
@@ -121,7 +126,7 @@ export const medizinischeBegutachtungen: OfferPageContent = {
         ],
         icon: Send,
         imageSrc:
-          "/offers/medizinische_begutachtungen/magnific_documentarystyle-editoria_jU7FW8xLD0.jpg",
+          "/offers/medizinische_begutachtungen/magnific_documentarystyle-editoria_jU7FW8xLD0.webp",
         imageAlt: "Abstimmung der medizinischen Fragestellung",
       },
       {
@@ -133,7 +138,7 @@ export const medizinischeBegutachtungen: OfferPageContent = {
           "Bei komplexen Fragestellungen beziehen wir bei Bedarf weitere medizinische oder psychologische Perspektiven ein.",
         ],
         icon: Stethoscope,
-        imageSrc: "/offers/medizinische_begutachtungen/similar-5535720.jpeg",
+        imageSrc: "/offers/medizinische_begutachtungen/similar-5535720.webp",
         imageAlt: "Auswahl der medizinischen Fachkraft",
       },
       {
@@ -146,7 +151,7 @@ export const medizinischeBegutachtungen: OfferPageContent = {
         ],
         icon: ClipboardList,
         imageSrc:
-          "/offers/medizinische_begutachtungen/magnific_documentarystyle-editoria_P3Zsv3G42C.jpg",
+          "/offers/medizinische_begutachtungen/magnific_documentarystyle-editoria_P3Zsv3G42C.webp",
         imageAlt: "Zentrale Steuerung von Terminen und Unterlagen",
       },
       {
@@ -158,7 +163,7 @@ export const medizinischeBegutachtungen: OfferPageContent = {
           "Ihre feste Projektkoordination bleibt auch nach Abschluss für organisatorische Rückfragen und weitere Abstimmungen erreichbar.",
         ],
         icon: FileCheck,
-        imageSrc: "/offers/medizinische_begutachtungen/similar-5535771.jpeg",
+        imageSrc: "/offers/medizinische_begutachtungen/similar-5535771.webp",
         imageAlt: "Bereitstellung der medizinischen Ergebnisse",
       },
     ],

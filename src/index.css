@@ -116,6 +116,21 @@
     animation: pm-portfolio-card-in 420ms cubic-bezier(0.25, 1, 0.5, 1) both;
   }
 
+  @keyframes pm-cookie-in {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-pm-cookie-in {
+    animation: pm-cookie-in 420ms cubic-bezier(0.25, 1, 0.5, 1) both;
+  }
+
   /* 16s loop: each overline is visible for 8s, with a ~800ms crossfade. */
   @keyframes pm-overline-swap {
     0%,
@@ -199,7 +214,8 @@
     .animate-pm-marquee,
     .animate-pm-marquee-reverse,
     .animate-pm-overline,
-    .animate-pm-overline-delayed {
+    .animate-pm-overline-delayed,
+    .animate-pm-cookie-in {
       animation: none;
     }
 

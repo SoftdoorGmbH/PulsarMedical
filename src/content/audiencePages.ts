@@ -32,6 +32,7 @@ import {
   AUDIENCE_SECONDARY_CTA,
   OFFER_PRIMARY_CTA,
 } from "@/content/cta";
+import type { PageSeoFields } from "@/content/seoFields";
 
 export type AudiencePageSlug =
   | "jobcenter"
@@ -76,6 +77,7 @@ export type AudienceLogoMarqueeContent = {
 export type AudiencePageContent = {
   slug: AudiencePageSlug;
   navLabel: string;
+  seo?: PageSeoFields;
   hero?: AudienceHeroContent;
   painPoints?: AudiencePainPointsContent;
   portfolio?: AudiencePortfolioContent;
@@ -112,6 +114,11 @@ export const AUDIENCE_PAGES: Record<AudiencePageSlug, AudiencePageContent> = {
   jobcenter: {
     slug: "jobcenter",
     navLabel: "Für Jobcenter",
+    seo: {
+      title: "Begutachtungen für Jobcenter",
+      description:
+        "PULSAR Medical unterstützt Jobcenter mit medizinischen und psychologischen Begutachtungen, wenn Gesundheit Mitwirkung, Leistungsfähigkeit oder Integration beeinflusst.",
+    },
     hero: {
       ariaLabel: "Für Jobcenter",
       overline: "Für Jobcenter",
@@ -135,6 +142,11 @@ export const AUDIENCE_PAGES: Record<AudiencePageSlug, AudiencePageContent> = {
   berufsgenossenschaften: {
     slug: "berufsgenossenschaften",
     navLabel: "Für Berufsgenossenschaften",
+    seo: {
+      title: "Begutachtungen für Berufsgenossenschaften",
+      description:
+        "PULSAR Medical beurteilt Unfallfolgen, Arbeitsfähigkeit und Wiedereingliederung – mit medizinischen und psychologischen Begutachtungen für Berufsgenossenschaften.",
+    },
     hero: {
       ariaLabel: "Für Berufsgenossenschaften",
       overline: "Für Berufsgenossenschaften",
@@ -158,6 +170,11 @@ export const AUDIENCE_PAGES: Record<AudiencePageSlug, AudiencePageContent> = {
   rueckversicherer: {
     slug: "rueckversicherer",
     navLabel: "Für Rückversicherer",
+    seo: {
+      title: "Begutachtungen für Rückversicherer",
+      description:
+        "PULSAR Medical bewertet Leistungsfälle medizinisch und psychologisch – für klare Einschätzungen zu Leistungsfähigkeit, Prognose und beruflicher Belastbarkeit.",
+    },
     hero: {
       ariaLabel: "Für Rückversicherer",
       overline: "Für Rückversicherer",

@@ -1,7 +1,7 @@
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/Button";
 
-const HERO_IMAGE = "/pulsarmedical-jobcenter-1.jpg";
+const HERO_IMAGE = "/pulsarmedical-jobcenter-1.webp";
 
 const TRUST_ITEMS = [
   "Medizinisch. Psychologisch. Menschlich.",

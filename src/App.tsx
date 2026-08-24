@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { CookieConsentProvider } from "@/context/CookieConsentContext";
 import { AboutPage } from "@/pages/AboutPage";
 import { BlogPage } from "@/pages/BlogPage";
 import { BlogPostPage } from "@/pages/BlogPostPage";
@@ -11,10 +12,11 @@ import { AudiencePage } from "@/pages/AudiencePage";
 import { OfferPage } from "@/pages/OfferPage";
 import { HomePage } from "@/pages/HomePage";
 import { ImpressumPage } from "@/pages/ImpressumPage";
+import { NotFoundPage } from "@/pages/NotFoundPage";
 
 export default function App() {
   return (
-    <>
+    <CookieConsentProvider>
       <ScrollToTop />
       <Routes>
       <Route element={<Layout />}>
@@ -61,9 +63,9 @@ export default function App() {
         <Route path="blog/:slug" element={<BlogPostPage />} />
         <Route path="impressum" element={<ImpressumPage />} />
         <Route path="datenschutz" element={<DatenschutzPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
-    </>
+    </CookieConsentProvider>
   );
 }

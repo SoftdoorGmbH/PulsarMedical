@@ -1,4 +1,5 @@
 import { Check, X } from "lucide-react";
+import type { CSSProperties } from "react";
 import type { OfferCompareContent } from "@/content/offerCompare";
 
 type CompareVariant = "alternative" | "pulsar";
@@ -42,24 +43,22 @@ function CompareCard({
   const isPositive = positive || variant === "pulsar";
 
   return (
-    <li
-      className={`list-none rounded-2xl border px-4 py-4 sm:px-5 sm:py-4.5 ${
+    <div
+      className={`flex h-full items-start gap-3.5 rounded-2xl border px-4 py-4 sm:px-5 sm:py-4.5 ${
         isPositive
           ? "border-pm-light-container-border bg-white shadow-[0_8px_28px_-12px_rgb(2_52_78_/0.12)]"
           : "border-pm-light-container-border/80 bg-pm-light-container/70"
       }`}
     >
-      <div className="flex items-start gap-3.5">
-        <CompareIcon variant={variant} positive={positive} />
-        <p
-          className={`leading-relaxed text-base ${
-            isPositive ? "text-pm-light-headline" : "text-pm-light-text-1"
-          }`}
-        >
-          {text}
-        </p>
-      </div>
-    </li>
+      <CompareIcon variant={variant} positive={positive} />
+      <p
+        className={`leading-relaxed text-base ${
+          isPositive ? "text-pm-light-headline" : "text-pm-light-text-1"
+        }`}
+      >
+        {text}
+      </p>
+    </div>
   );
 }
 
@@ -76,29 +75,29 @@ function CompareColumn({
   const isPositive = positive || variant === "pulsar";
 
   return (
-    <div>
-      <h3
-        className={`text-xl font-semibold tracking-tight sm:text-2xl ${
-          isPositive ? "text-pm-light-headline" : "text-pm-light-text-1"
-        }`}
-      >
-        {title}
-      </h3>
-      {subtitle ? (
-        <p className="mt-2 leading-relaxed text-pm-light-text-1 text-base">
-          {subtitle}
-        </p>
-      ) : null}
-      <ul className="mt-5 flex flex-col gap-3 sm:mt-6 sm:gap-3.5">
-        {items.map((item) => (
-          <CompareCard
-            key={item}
-            text={item}
-            variant={variant}
-            positive={positive}
-          />
-        ))}
-      </ul>
+    <div className="flex flex-col gap-3 sm:gap-3.5 lg:row-span-full lg:grid lg:grid-rows-subgrid">
+      <div className="mb-2 sm:mb-2.5 lg:mb-2">
+        <h3
+          className={`text-xl font-semibold tracking-tight sm:text-2xl ${
+            isPositive ? "text-pm-light-headline" : "text-pm-light-text-1"
+          }`}
+        >
+          {title}
+        </h3>
+        {subtitle ? (
+          <p className="mt-2 leading-relaxed text-pm-light-text-1 text-base">
+            {subtitle}
+          </p>
+        ) : null}
+      </div>
+      {items.map((item) => (
+        <CompareCard
+          key={item}
+          text={item}
+          variant={variant}
+          positive={positive}
+        />
+      ))}
     </div>
   );
 }
@@ -131,7 +130,17 @@ export function OfferCompareSection({
           </p>
         </header>
 
-        <div className="mt-12 grid gap-10 sm:mt-14 lg:mt-16 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+        <div
+          className="mt-12 grid gap-10 sm:mt-14 lg:mt-16 lg:grid-cols-2 lg:grid-rows-[auto_repeat(var(--compare-cards),1fr)] lg:gap-x-12 lg:gap-y-3.5 xl:gap-x-16"
+          style={
+            {
+              "--compare-cards": Math.max(
+                alternative.items.length,
+                pulsar.items.length,
+              ),
+            } as CSSProperties
+          }
+        >
           <CompareColumn
             {...alternative}
             variant="alternative"

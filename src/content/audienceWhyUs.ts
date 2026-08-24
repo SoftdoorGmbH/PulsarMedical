@@ -61,7 +61,7 @@ export const JOBCENTER_WHY_US: AudienceWhyUsContent = {
     },
   ],
   cta: WHY_US_CTA,
-  imageSrc: "/pulsarmedical-jobcenter-2.jpg",
+  imageSrc: "/pulsarmedical-jobcenter-2.webp",
   imageAlt: "Medizinische Beratung und Begutachtung im Team",
 };
 
@@ -105,7 +105,7 @@ export const BERUFSGENOSSENSCHAFTEN_WHY_US: AudienceWhyUsContent = {
     },
   ],
   cta: WHY_US_CTA,
-  imageSrc: "/pulsarmedical-jobcenter-1.jpg",
+  imageSrc: "/pulsarmedical-jobcenter-1.webp",
   imageAlt: "Begutachtung zur beruflichen Wiedereingliederung",
 };
 
@@ -149,6 +149,6 @@ export const RUECKVERSICHERER_WHY_US: AudienceWhyUsContent = {
     },
   ],
   cta: WHY_US_CTA,
-  imageSrc: "/pulsarmedical-jobcenter-3.jpg",
+  imageSrc: "/pulsarmedical-jobcenter-3.webp",
   imageAlt: "Medizinische Einschätzung für Leistungsfälle",
 };

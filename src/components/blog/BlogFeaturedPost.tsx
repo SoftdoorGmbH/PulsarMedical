@@ -57,11 +57,13 @@ export function BlogFeaturedPost({ post }: { post: BlogPost }) {
         {post.imageUrl ? (
           <img
             src={post.imageUrl}
-            alt=""
-            className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            alt={post.imageAlt ?? post.title}
+            width={800}
+            height={600}
+            className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           />
         ) : (
-          <div className="relative aspect-[4/3] w-full overflow-hidden bg-linear-to-br from-pm-light-icon-bg via-pm-light-container to-[#dceef8]">
+          <div className="relative aspect-4/3 w-full overflow-hidden bg-linear-to-br from-pm-light-icon-bg via-pm-light-container to-[#dceef8]">
             <div
               className="absolute inset-0 opacity-60"
               style={{
@@ -69,7 +71,7 @@ export function BlogFeaturedPost({ post }: { post: BlogPost }) {
                   "radial-gradient(circle at 20% 20%, rgb(19 108 155 / 0.35), transparent 45%), radial-gradient(circle at 80% 70%, rgb(2 52 78 / 0.2), transparent 40%)",
               }}
             />
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_40%,rgb(255_255_255_/_0.35)_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent_40%,rgb(255_255_255/0.35)_100%)]" />
           </div>
         )}
       </Link>

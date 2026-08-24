@@ -5,6 +5,15 @@ import type {
   AudienceFaqItem,
 } from "@/content/audienceFaq";
 
+const DESKTOP_MIN_WIDTH = 768;
+
+function getDefaultOpenId(items: AudienceFaqContent["items"]) {
+  if (typeof window === "undefined") return null;
+  return window.matchMedia(`(min-width: ${DESKTOP_MIN_WIDTH}px)`).matches
+    ? (items[0]?.id ?? null)
+    : null;
+}
+
 function ArrowRightSmall() {
   return (
     <svg viewBox="0 0 24 24" fill="none" className="size-5" aria-hidden>
@@ -67,7 +76,9 @@ export function AudienceFaqSection({
   items,
 }: AudienceFaqContent) {
   const baseId = useId();
-  const [openId, setOpenId] = useState<string | null>(items[0]?.id ?? null);
+  const [openId, setOpenId] = useState<string | null>(() =>
+    getDefaultOpenId(items),
+  );
 
   return (
     <section className="relative my-14 lg:my-24" aria-labelledby={headingId}>

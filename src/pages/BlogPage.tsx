@@ -18,8 +18,14 @@ export function BlogPage() {
   }, [activeCategory, featured.id]);
 
   return (
-    <section className="py-12 md:py-16 lg:py-20" aria-label="Blog">
+    <section className="py-12 md:py-16 lg:py-20" aria-labelledby="blog-heading">
       <div className="mx-auto max-w-8xl px-6 md:px-8 lg:px-10">
+        <h1
+          id="blog-heading"
+          className="mb-10 text-4xl font-semibold leading-[1.08] tracking-tight text-pm-light-headline sm:text-5xl md:mb-14"
+        >
+          Einblicke &amp; News
+        </h1>
         <BlogFeaturedPost post={featured} />
         <BlogCategoryFilter
           active={activeCategory}

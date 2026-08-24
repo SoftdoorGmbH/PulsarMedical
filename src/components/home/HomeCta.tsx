@@ -23,7 +23,7 @@ export function HomeCta() {
           Pilotprojekt bis zum langfristigen Auftrag.
         </p>
         <div className="mt-8 flex flex-wrap items-start justify-start md:items-center md:justify-center gap-x-4 gap-y-6 md:mt-10">
-          <Button to="/kontakt" variant="inverse" size="lg" fullWidth>
+          <Button to="/kontakt" variant="inverse" size="lg">
             Beratungstermin anfragen
           </Button>
         </div>

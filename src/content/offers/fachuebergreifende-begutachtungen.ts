@@ -17,6 +17,11 @@ import { OFFER_PRIMARY_CTA, OFFER_SECONDARY_CTA } from "@/content/cta";
 export const fachuebergreifendeBegutachtungen: OfferPageContent = {
   slug: "fachuebergreifende-begutachtungen",
   navLabel: "Fachübergreifende Begutachtungen",
+  seo: {
+    title: "Fachübergreifende Begutachtungen",
+    description:
+      "PULSAR Medical verbindet medizinische, psychologische und arbeitsbezogene Fachrichtungen, wenn komplexe Fälle mehr als eine Perspektive brauchen.",
+  },
   icon: Layers,
   hero: {
     ariaLabel: "Fachübergreifende Begutachtungen",
@@ -39,7 +44,7 @@ export const fachuebergreifendeBegutachtungen: OfferPageContent = {
     description:
       "Eine fachübergreifende Begutachtung ist sinnvoll, wenn medizinische, psychische und arbeitsbezogene Fragen zusammenhängen und eine einzelne Fachrichtung den Fall nicht vollständig beurteilen kann.",
     image: {
-      src: "/offers/fachuebergreifende_begutachtungen/close-up-people-studying-with-notebook.jpg",
+      src: "/offers/fachuebergreifende_begutachtungen/close-up-people-studying-with-notebook.webp",
       alt: "Fachübergreifende Begutachtung im Team",
     },
     items: [
@@ -119,7 +124,7 @@ export const fachuebergreifendeBegutachtungen: OfferPageContent = {
           "Auf dieser Grundlage richten wir Auftrag, Kommunikation und Ablauf verbindlich ein.",
         ],
         icon: Send,
-        imageSrc: "/offers/fachuebergreifende_begutachtungen/good-worker.jpg",
+        imageSrc: "/offers/fachuebergreifende_begutachtungen/good-worker.webp",
         imageAlt: "Klärung der erforderlichen Fachperspektiven",
       },
       {
@@ -132,7 +137,7 @@ export const fachuebergreifendeBegutachtungen: OfferPageContent = {
         ],
         icon: Layers,
         imageSrc:
-          "/offers/fachuebergreifende_begutachtungen/portrait-business-people-man-office-teamwork-lens-flare-with-cooperation-employees-group-coworkers-workplace-journalist-research-article-magazine-editor-copywriting.jpg",
+          "/offers/fachuebergreifende_begutachtungen/portrait-business-people-man-office-teamwork-lens-flare-with-cooperation-employees-group-coworkers-workplace-journalist-research-article-magazine-editor-copywriting.webp",
         imageAlt: "Zusammenstellung der Fachrichtungen",
       },
       {
@@ -144,7 +149,7 @@ export const fachuebergreifendeBegutachtungen: OfferPageContent = {
           "Die Ergebnisse werden anschließend so zusammengeführt, dass Wechselwirkungen und Zusammenhänge sichtbar werden.",
         ],
         icon: ClipboardList,
-        imageSrc: "/pulsarmedical-jobcenter-3.jpg",
+        imageSrc: "/pulsarmedical-jobcenter-3.webp",
         imageAlt: "Verbindung der fachlichen Einzelperspektiven",
       },
       {

@@ -43,6 +43,13 @@ export const JOBCENTER_PAIN_POINTS: AudiencePainPointsContent = {
       description:
         "Eine feste Projektkoordination steuert Fachkräfte, Termine, Unterlagen und Kommunikation – persönlich, telemedizinisch oder nach Aktenlage.",
     },
+    {
+      quote:
+        "Die Klärung beruflicher Möglichkeiten unter Berücksichtigung gesundheitlicher Einschränkungen, individueller Belastbarkeit und konkreter Anforderungen ist komplex.",
+      title: "Berufliche Perspektiven fundiert einordnen",
+      description:
+        "PULSAR Medical bewertet, welche Tätigkeiten und Entwicklungsschritte unter Berücksichtigung der gesundheitlichen Situation realistisch sind. Dafür werden individuelle Belastbarkeit, und konkrete berufliche Anforderungen gemeinsam betrachtet.",
+    },
   ],
 };
 

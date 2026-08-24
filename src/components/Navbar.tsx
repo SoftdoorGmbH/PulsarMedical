@@ -15,7 +15,7 @@ type MegaItem = {
 const MEGA_MENU_ITEMS: MegaItem[] = OFFER_NAV_ITEMS;
 
 const MEGA_MENU_CTA = {
-  imageSrc: "/pulsarmedical-jobcenter-2.jpg",
+  imageSrc: "/pulsarmedical-jobcenter-2.webp",
   eyebrow: "Kostenlose Erstberatung",
   title: "Unsicher, welches Gutachten Sie benötigen?",
   linkLabel: "Beratungstermin anfragen",
@@ -29,7 +29,7 @@ const NAV_LINKS = [
 
 function navItemClassName({ isActive }: { isActive: boolean }) {
   return [
-    "relative px-4 py-2 text-sm text-pm-light-headline no-underline transition-[font-weight] duration-150 xl:px-5",
+    "relative inline-flex items-center px-4 py-2 text-sm leading-5 text-pm-light-headline no-underline transition-[font-weight] duration-150 xl:px-5",
     isActive ? "font-semibold" : "font-medium hover:font-semibold",
   ].join(" ");
 }
@@ -126,7 +126,7 @@ export function Navbar() {
               onClick={closeAll}
             >
               <img
-                src="/Pulsar_Logo.png"
+                src="/Pulsar_Logo.webp"
                 alt="Pulsar Medical"
                 width={120}
                 height={48}
@@ -144,7 +144,7 @@ export function Navbar() {
                 >
                   <button
                     type="button"
-                    className="relative flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-pm-light-headline transition-[font-weight] duration-150 group-hover/loesungen:font-semibold xl:px-5"
+                    className="relative inline-flex items-center gap-1.5 bg-transparent px-4 py-2 text-sm leading-5 font-medium text-pm-light-headline transition-[font-weight] duration-150 group-hover/loesungen:font-semibold xl:px-5"
                     aria-expanded={megaOpen}
                     aria-controls={megaRegionId}
                     aria-haspopup="true"
@@ -188,7 +188,7 @@ export function Navbar() {
                         <div className="relative min-w-0 flex-2">
                           <img
                             src={MEGA_MENU_CTA.imageSrc}
-                            alt=""
+                            alt="Beratungsgespräch bei Pulsar Medical"
                             width={480}
                             height={400}
                             loading="lazy"

@@ -1,5 +1,4 @@
 import {
-  ExternalLink,
   LegalH2,
   LegalH3,
   LegalList,
@@ -178,61 +177,46 @@ export function ServicesSection() {
         nicht mehr alle Funktionen der Website vollumfänglich genutzt werden.
       </p>
 
-      <LegalH3>Cookie-Einwilligung mit dem »Borlabs Cookie Consent-Tool«</LegalH3>
+      <LegalH3>Cookie-Einwilligung über das Consent-Banner</LegalH3>
       <p>
-        Unsere Website nutzt die Cookie-Consent-Technologie von Borlabs Cookie,
-        um Ihre Einwilligung zur Speicherung bestimmter Cookies auf Ihrem
-        Endgerät einzuholen oder zum Einsatz bestimmter Technologien einzuholen
-        und diese datenschutzkonform zu dokumentieren. Anbieter dieser
-        Technologie ist die Borlabs GmbH, Rübenkamp 32, 22305 Hamburg (im
-        Folgenden »Borlabs«).
+        Unsere Website nutzt ein eigenes Consent-Banner, um Ihre Einwilligung
+        zur Speicherung bestimmter Cookies auf Ihrem Endgerät bzw. zum Einsatz
+        bestimmter Technologien einzuholen und diese datenschutzkonform zu
+        dokumentieren. Das Banner wird von uns selbst betrieben; es werden keine
+        personenbezogenen Daten an einen externen Consent-Anbieter übermittelt.
       </p>
 
       <LegalSubtitle>Beschreibung und Umfang der Datenverarbeitung</LegalSubtitle>
       <p>
-        Wenn Sie unsere Website betreten, werden über unser Consent-Tool Ihre
+        Wenn Sie unsere Website betreten, werden über unser Consent-Banner Ihre
         Einwilligungen und sonstige Erklärungen zur Cookie-Nutzung eingeholt.
-        Anschließend speichert das Consent-Tool ein Cookie in Ihrem Browser, um
-        Ihnen die erteilten Einwilligungen bzw. deren Widerruf zuordnen zu
-        können.
+        Anschließend speichert das Banner ein technisch notwendiges Cookie in
+        Ihrem Browser, um Ihnen die erteilten Einwilligungen bzw. deren Widerruf
+        zuordnen zu können. Sie können Ihre Auswahl jederzeit über den Link
+        »Cookie-Einstellungen« im Footer der Website ändern.
       </p>
 
       <LegalSubtitle>Rechtsgrundlage für die Datenverarbeitung</LegalSubtitle>
       <p>
-        Der Einsatz des Consent-Tools erfolgt, um die gesetzlich vorgeschriebenen
-        Einwilligungen für den Einsatz von Cookies einzuholen. Rechtsgrundlage
-        hierfür ist Art. 6 Abs. 1 lit. c DSGVO.
+        Der Einsatz des Consent-Banners erfolgt, um die gesetzlich
+        vorgeschriebenen Einwilligungen für den Einsatz von Cookies einzuholen.
+        Rechtsgrundlage hierfür ist Art. 6 Abs. 1 lit. c DSGVO.
       </p>
 
       <LegalSubtitle>Zweck der Datenverarbeitung</LegalSubtitle>
       <p>
-        Die Bereitstellung des Consent-Tools dient der Erfüllung vorrangiger
+        Die Bereitstellung des Consent-Banners dient der Erfüllung vorrangiger
         Rechtsvorschriften und der Information der Nutzer, in welchem Rahmen
         Cookies auf dieser Website eingesetzt werden.
       </p>
 
       <LegalSubtitle>Widerspruchs- und Beseitigungsmöglichkeit</LegalSubtitle>
       <p>
-        Die vom Consent-Tool erfassten Daten bleiben gespeichert, bis Sie das
-        Consent-Cookie selbst löschen, die Einstellungen über den Consent-Banner
-        erneut anpassen oder der Zweck für die Datenspeicherung entfällt.
-        Zwingende gesetzliche Aufbewahrungspflichten bleiben unberührt.
-      </p>
-
-      <LegalSubtitle>Weitere Informationen</LegalSubtitle>
-      <p>
-        Wir haben einen Vertrag über Auftragsverarbeitung mit Borlabs
-        geschlossen. Hierbei handelt es sich um einen datenschutzrechtlich
-        vorgeschriebenen Vertrag, der gewährleistet, dass Borlabs die
-        personenbezogenen Daten unserer Websitebesucher nur nach unseren
-        Weisungen und unter Einhaltung der der DSGVO verarbeitet.
-      </p>
-      <p>
-        Details zur Datenverarbeitung von Borlabs Cookie finden Sie unter{" "}
-        <ExternalLink href="https://de.borlabs.io/kb/welche-daten-speichert-borlabs-cookie/">
-          https://de.borlabs.io/kb/welche-daten-speichert-borlabs-cookie/
-        </ExternalLink>
-        .
+        Die vom Consent-Banner erfassten Daten bleiben gespeichert, bis Sie das
+        Consent-Cookie selbst löschen, die Einstellungen über den
+        Consent-Banner erneut anpassen oder der Zweck für die Datenspeicherung
+        entfällt. Zwingende gesetzliche Aufbewahrungspflichten bleiben
+        unberührt.
       </p>
     </>
   );

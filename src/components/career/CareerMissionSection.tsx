@@ -8,9 +8,9 @@ export function CareerMissionSection() {
       aria-labelledby="career-mission-heading"
     >
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2 md:gap-14 md:px-8 lg:px-10">
-        <div className="mx-auto w-full max-w-[530px] md:mx-0">
+        <div className="mx-auto w-full max-w-132.5 md:mx-0">
           <img
-            src="/pulsarmedical-jobcenter-1.jpg"
+            src="/pulsarmedical-jobcenter-1.webp"
             alt="Beratungsgespräch bei Pulsar Medical"
             width={530}
             height={530}
@@ -31,8 +31,8 @@ export function CareerMissionSection() {
             <p>
               Bei Pulsar Medical verbinden wir medizinisches Fachwissen,
               Psychologie und Beratung. Unser Team unterstützt Jobcenter,
-              Unternehmen und Betroffene — mit Empathie, Klarheit und
-              fachlicher Tiefe.
+              Unternehmen und Betroffene — mit Empathie, Klarheit und fachlicher
+              Tiefe.
             </p>
             <p>
               Wir arbeiten überwiegend remote und treffen uns regelmäßig für

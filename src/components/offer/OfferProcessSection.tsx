@@ -1,3 +1,4 @@
+import { useEffect, useId, useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type {
@@ -41,9 +42,11 @@ function ProcessStep({
   imageSrc,
   imageAlt,
   isLast,
+  showEyebrow = true,
 }: OfferProcessStep & {
   index: number;
   isLast: boolean;
+  showEyebrow?: boolean;
 }) {
   const imageFirst = index % 2 === 1;
   const headingId = `offer-process-step-${index + 1}`;
@@ -52,14 +55,16 @@ function ProcessStep({
     <div className={`relative ${isLast ? "" : "pb-10 sm:pb-12 lg:pb-20"}`}>
       <article
         aria-labelledby={headingId}
-        className="relative grid items-center gap-10 pl-9 lg:grid-cols-2 lg:gap-14 lg:pl-0 xl:gap-16"
+        className={`relative grid items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16 ${
+          showEyebrow ? "pl-9 lg:pl-0" : ""
+        }`}
       >
         <div className={imageFirst ? "lg:order-2" : undefined}>
-          <StepEyebrow icon={icon} label={stageLabel} />
+          {showEyebrow ? <StepEyebrow icon={icon} label={stageLabel} /> : null}
 
           <h3
             id={headingId}
-            className="mt-4 max-w-lg text-2xl font-semibold leading-snug tracking-tight text-pm-light-headline sm:text-3xl"
+            className={`${showEyebrow ? "mt-4" : ""} max-w-lg text-2xl font-semibold leading-snug tracking-tight text-pm-light-headline sm:text-3xl`}
           >
             {title}
           </h3>
@@ -77,11 +82,13 @@ function ProcessStep({
         </div>
 
         <div
-          className={`${imageWrapperClassName} ${imageFirst ? "lg:order-1" : ""}`}
+          className={`${imageWrapperClassName} ${imageFirst ? "lg:order-1" : ""} hidden lg:block`}
         >
           <img
             src={imageSrc}
             alt={imageAlt}
+            width={960}
+            height={720}
             loading="lazy"
             decoding="async"
             className="size-full object-cover"
@@ -98,6 +105,14 @@ export function OfferProcessSection({
   subtitle,
   steps,
 }: OfferProcessContent) {
+  const baseId = useId();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = steps[activeIndex]!;
+
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [headingId]);
+
   return (
     <section
       id="process"
@@ -119,11 +134,88 @@ export function OfferProcessSection({
           </p>
         </div>
 
-        <div className="relative mt-10 sm:mt-12">
+        <div className="mt-10 sm:mt-12 lg:hidden">
           <div
-            aria-hidden
-            className="absolute top-7.5 bottom-0 left-2.75 w-0.5 bg-pm-light-container-border lg:hidden"
-          />
+            role="tablist"
+            aria-label="Ablaufschritte"
+            className="grid grid-cols-2 gap-2.5"
+          >
+            {steps.map((step, index) => {
+              const selected = index === activeIndex;
+              const tabId = `${baseId}-tab-${index}`;
+              const panelId = `${baseId}-panel`;
+              const Icon = step.icon;
+
+              return (
+                <button
+                  key={step.title}
+                  id={tabId}
+                  type="button"
+                  role="tab"
+                  aria-selected={selected}
+                  aria-controls={panelId}
+                  tabIndex={selected ? 0 : -1}
+                  onClick={() => setActiveIndex(index)}
+                  onKeyDown={(event) => {
+                    if (
+                      event.key !== "ArrowRight" &&
+                      event.key !== "ArrowLeft" &&
+                      event.key !== "ArrowDown" &&
+                      event.key !== "ArrowUp"
+                    ) {
+                      return;
+                    }
+                    event.preventDefault();
+                    const delta =
+                      event.key === "ArrowRight" || event.key === "ArrowDown"
+                        ? 1
+                        : -1;
+                    const next = (index + delta + steps.length) % steps.length;
+                    setActiveIndex(next);
+                    document.getElementById(`${baseId}-tab-${next}`)?.focus();
+                  }}
+                  className={`inline-flex items-center justify-center gap-2 rounded-full border px-3.5 py-2 text-center text-sm font-semibold tracking-wide transition-[color,background-color,border-color] duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pm-light-text-2 ${
+                    selected
+                      ? "border-pm-light-button bg-pm-light-button text-white shadow-md"
+                      : "border-pm-light-container-border bg-white text-pm-light-text-1 hover:border-pm-light-text-2/55 hover:text-pm-light-headline"
+                  }`}
+                >
+                  <Icon className="size-3.5 shrink-0" strokeWidth={1.75} />
+                  {step.stageLabel}
+                </button>
+              );
+            })}
+          </div>
+
+          <div
+            id={`${baseId}-panel`}
+            role="tabpanel"
+            aria-labelledby={`${baseId}-tab-${activeIndex}`}
+            className="mt-8"
+          >
+            <ProcessStep
+              key={active.title}
+              index={activeIndex}
+              isLast
+              showEyebrow={false}
+              {...active}
+            />
+          </div>
+
+          <div className={`${imageWrapperClassName} mt-8`}>
+            <img
+              src={steps[0]!.imageSrc}
+              alt={steps[0]!.imageAlt}
+              width={960}
+              height={720}
+              loading="lazy"
+              decoding="async"
+              className="size-full object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="relative mt-10 hidden sm:mt-12 lg:block">
           {steps.map((step, index) => (
             <ProcessStep
               key={step.title}

@@ -47,7 +47,7 @@ export function CareerHero() {
             }}
           />
           <img
-            src="/pulsarmedical-jobcenter-2.jpg"
+            src="/pulsarmedical-jobcenter-2.webp"
             alt="Team von Pulsar Medical im Austausch"
             width={640}
             height={480}

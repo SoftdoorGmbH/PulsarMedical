@@ -1,6 +1,8 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { Check } from "lucide-react";
 import type { OfferUseCasesContent } from "@/content/offerUseCases";
+
+const DEFAULT_EYEBROW = "Einsatzfälle";
 
 function DotButton({
   active,
@@ -23,16 +25,39 @@ function DotButton({
   );
 }
 
+function moveActiveIndex(from: number, key: string, count: number) {
+  if (key === "ArrowDown" || key === "ArrowRight") return (from + 1) % count;
+  if (key === "ArrowUp" || key === "ArrowLeft") {
+    return (from - 1 + count) % count;
+  }
+  if (key === "Home") return 0;
+  if (key === "End") return count - 1;
+  return null;
+}
+
 export function OfferUseCasesSection({
   headingId,
   title,
   description,
+  eyebrow = DEFAULT_EYEBROW,
   image,
   items,
 }: OfferUseCasesContent) {
+  const listId = useId();
+  const [activeIndex, setActiveIndex] = useState(0);
   const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
   const mobileScrollRef = useRef<HTMLUListElement>(null);
   const mobileScrollRafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    setActiveIndex(0);
+    setMobileActiveIndex(0);
+  }, [headingId]);
+
+  const selectIndex = (index: number) => {
+    setActiveIndex(index);
+    document.getElementById(`${listId}-option-${index}`)?.focus();
+  };
 
   const syncMobileActiveIndex = useCallback(() => {
     const el = mobileScrollRef.current;
@@ -131,7 +156,7 @@ export function OfferUseCasesSection({
         <div
           className="mt-6 flex justify-center gap-2 md:hidden"
           role="tablist"
-          aria-label="Einsatzfälle"
+          aria-label={eyebrow}
         >
           {items.map((item, idx) => (
             <DotButton
@@ -143,44 +168,98 @@ export function OfferUseCasesSection({
           ))}
         </div>
 
-        <div className="mt-12 hidden gap-10 md:grid lg:mt-16 lg:grid-cols-2 lg:items-center lg:gap-14 xl:gap-20">
-          <ul className="flex flex-col">
-            {items.map((item) => (
-              <li
-                key={item.title}
-                className="flex items-center gap-4 border-b border-pm-light-container-border/60 py-4 first:pt-0 last:border-b-0 last:pb-0 sm:gap-5 lg:py-5"
-              >
-                <span
-                  className="flex size-8 shrink-0 items-center justify-center rounded-xl border border-pm-light-icon-border bg-pm-light-icon-bg text-pm-light-icon sm:size-9 md:size-11"
-                  aria-hidden
-                >
-                  <Check className="size-4 md:size-5" strokeWidth={2} />
-                </span>
-                <div>
-                  <h3 className="text-lg font-medium leading-tight tracking-tight text-pm-light-headline sm:text-xl">
-                    {item.title}
-                  </h3>
-                  <p className="mt-1 text-base leading-relaxed text-pm-light-text-1">
-                    {item.description}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-
-          <div className="relative mx-auto w-full max-w-md pb-3 pr-3 lg:mx-0 lg:max-w-none">
+        <div className="relative hidden w-full flex-col items-stretch justify-center md:flex lg:mt-10 lg:flex-row lg:items-center lg:justify-start lg:gap-8">
+          <div className="relative w-full min-w-0 lg:w-152.5 lg:shrink-0">
             <div
-              aria-hidden
-              className="absolute right-0 bottom-0 h-[calc(100%-0.75rem)] w-[calc(100%-0.75rem)] rounded-2xl bg-pm-dark-container"
-            />
-            <div className="relative overflow-hidden rounded-2xl border-6 border-pm-light-container-border bg-pm-light-container shadow-[0_14px_44px_-14px_rgb(2_52_78_/0.14)]">
-              <img
-                src={image.src}
-                alt={image.alt}
-                loading="lazy"
-                decoding="async"
-                className="aspect-4/5 w-full object-cover"
+              role="radiogroup"
+              aria-labelledby={headingId}
+              className="flex w-full flex-col gap-2.5"
+            >
+              {items.map((item, index) => {
+                const selected = index === activeIndex;
+                const optionId = `${listId}-option-${index}`;
+                const descriptionId = `${listId}-description-${index}`;
+
+                return (
+                  <div
+                    key={item.title}
+                    id={optionId}
+                    role="radio"
+                    aria-checked={selected}
+                    aria-labelledby={`${optionId}-label`}
+                    aria-describedby={selected ? descriptionId : undefined}
+                    tabIndex={selected ? 0 : -1}
+                    onClick={() => setActiveIndex(index)}
+                    onKeyDown={(event) => {
+                      const next = moveActiveIndex(
+                        index,
+                        event.key,
+                        items.length,
+                      );
+                      if (next == null) return;
+                      event.preventDefault();
+                      selectIndex(next);
+                    }}
+                    className={`relative cursor-pointer rounded-2xl border-2 border-pm-light-container-border px-5 py-4 transition-[background-color,box-shadow] duration-200 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pm-light-text-2 sm:px-6 sm:py-5 ${
+                      selected
+                        ? "bg-white shadow-[0_8px_24px_-12px_rgb(2_52_78_/0.12)]"
+                        : "hover:bg-pm-light-container/70"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span
+                        className="flex size-6 shrink-0 items-center justify-center rounded-full border border-pm-light-icon-border bg-pm-light-icon-bg text-pm-light-icon shadow-[0_1px_2px_rgb(2_52_78_/0.06)]"
+                        aria-hidden
+                      >
+                        <Check className="size-3.5" strokeWidth={2.25} />
+                      </span>
+                      <p
+                        id={`${optionId}-label`}
+                        className="min-w-0 text-sm font-medium leading-6 text-pm-light-headline sm:text-base md:text-lg md:leading-7"
+                      >
+                        {item.title}
+                      </p>
+                    </div>
+                    <div
+                      aria-hidden={!selected}
+                      className={`grid overflow-hidden transition-[grid-template-rows,opacity] duration-300 ease-in-out motion-reduce:transition-none ${
+                        selected
+                          ? "grid-rows-[1fr] opacity-100"
+                          : "grid-rows-[0fr] opacity-0"
+                      }`}
+                    >
+                      <div className="min-h-0 overflow-hidden">
+                        <p
+                          id={descriptionId}
+                          className="pt-3 text-base font-normal leading-6 text-pm-light-text-1"
+                        >
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="relative mx-auto hidden w-full max-w-md overflow-hidden rounded-2xl p-2 shadow-[0_8px_24px_-12px_rgb(2_52_78_/0.1)] sm:p-3 md:block lg:mx-0 lg:w-140 lg:max-w-140 lg:shrink-0">
+            <div className="relative w-full pb-3 pr-3">
+              <div
+                aria-hidden
+                className="absolute right-0 bottom-0 h-[calc(100%-0.75rem)] w-[calc(100%-0.75rem)] rounded-2xl bg-pm-dark-container"
               />
+              <div className="relative overflow-hidden rounded-2xl border-6 border-pm-light-container-border bg-pm-light-container shadow-[0_14px_44px_-14px_rgb(2_52_78_/0.14)]">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  width={640}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-4/5 w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>

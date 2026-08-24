@@ -97,6 +97,18 @@ export function AudienceWhyUsSection({
 
             <DarkAccordion items={items} className="mt-10" />
 
+            <div className="relative mt-8 aspect-4/3 overflow-hidden rounded-2xl ring-1 ring-white/10 md:hidden">
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                width={640}
+                height={480}
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 size-full object-cover"
+              />
+            </div>
+
             <div className="mt-8">
               <Button to={cta.to} variant="dark" fullWidth="md">
                 {cta.label}

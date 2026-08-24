@@ -216,6 +216,17 @@ export function HomeAssessmentCompare() {
             >
               {HOME_ASSESSMENT_BENEFITS.headline}
             </h2>
+            <div className="mt-8 overflow-hidden rounded-2xl ring-1 ring-white/10 md:hidden">
+              <img
+                src={HOME_ASSESSMENT_BENEFITS.image.src}
+                alt={HOME_ASSESSMENT_BENEFITS.image.alt}
+                width={800}
+                height={600}
+                loading="lazy"
+                decoding="async"
+                className="aspect-4/3 w-full object-cover"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-2 lg:gap-x-10 lg:gap-y-10">

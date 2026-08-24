@@ -29,10 +29,12 @@ export function BlogPostCard({ post }: { post: BlogPost }) {
         <>
           <img
             src={post.imageUrl}
-            alt=""
+            alt={post.imageAlt ?? post.title}
+            width={640}
+            height={800}
             className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#011f2f]/90 via-[#011f2f]/45 to-[#011f2f]/20" />
+          <div className="absolute inset-0 bg-linear-to-t from-pm-light-headline/90 via-pm-light-headline/45 to-pm-light-headline/20" />
         </>
       ) : (
         <div
@@ -41,7 +43,7 @@ export function BlogPostCard({ post }: { post: BlogPost }) {
             BLOG_CARD_GRADIENTS[post.category],
           ].join(" ")}
         >
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(1_31_47_/_0.15)_0%,rgb(1_31_47_/_0.55)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(1_31_47/0.15)_0%,rgb(1_31_47/0.55)_100%)]" />
           <div
             className="absolute inset-0 opacity-40"
             style={{
