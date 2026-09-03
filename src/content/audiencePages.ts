@@ -104,6 +104,40 @@ export function isAudiencePagePath(pathname: string): boolean {
   return isAudiencePageSlug(slug);
 }
 
+export const ABLAUF_RETURN_STORAGE_KEY = "pulsar.ablaufReturnTo";
+
+export type AudienceReturnTarget = {
+  to: string;
+  label: string;
+};
+
+function audienceSlugFromPath(pathOrUrl: string): AudiencePageSlug | null {
+  const pathname = (() => {
+    if (pathOrUrl.startsWith("http")) {
+      try {
+        return new URL(pathOrUrl).pathname;
+      } catch {
+        return pathOrUrl;
+      }
+    }
+    return pathOrUrl.split(/[?#]/)[0] ?? pathOrUrl;
+  })();
+  const slug = pathname.replace(/^\/+/, "").split("/")[0] ?? "";
+  return isAudiencePageSlug(slug) ? slug : null;
+}
+
+export function getAudienceReturnTarget(
+  pathOrUrl: string,
+): AudienceReturnTarget | null {
+  const slug = audienceSlugFromPath(pathOrUrl);
+  if (!slug) return null;
+
+  return {
+    to: `/${slug}#ablauf`,
+    label: `Zurück zu ${AUDIENCE_PAGES[slug].navLabel.replace(/^Für /, "")}`,
+  };
+}
+
 const AUDIENCE_HERO_BADGES = [
   "DSGVO-konforme Datenprozesse",
   "Medizinische und psychologische Expertise",

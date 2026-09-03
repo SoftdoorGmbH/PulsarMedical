@@ -1,6 +1,7 @@
 import {
   Brain,
   ClipboardList,
+  Clock,
   FileCheck,
   FileText,
   MonitorSmartphone,
@@ -13,6 +14,7 @@ import {
 } from "lucide-react";
 import type { OfferPageContent } from "@/content/offerPages";
 import { OFFER_PRIMARY_CTA, OFFER_SECONDARY_CTA } from "@/content/cta";
+import { OFFER_PROCESS_STEP_IMAGES } from "@/content/offerProcess";
 
 export const psychologischeBegutachtungen: OfferPageContent = {
   slug: "psychologische-begutachtungen",
@@ -86,7 +88,7 @@ export const psychologischeBegutachtungen: OfferPageContent = {
     title:
       "Was wird bei einer psychologischen oder psychiatrischen Begutachtung beurteilt?",
     description:
-      "Beurteilt werden psychische Belastungen, vorhandene Ressourcen, das individuelle Leistungsvermögen und die Auswirkungen auf Mitwirkung, berufliche Anforderungen oder leistungsrechtliche Fragestellungen.",
+      "Im Rahmen der Begutachtung werden psychische Belastungen und vorhandene Ressourcen differenziert betrachtet. Darauf aufbauend erfolgt eine fundierte Einschätzung des individuellen Leistungsvermögens sowie der möglichen Auswirkungen auf die Mitwirkungsfähigkeit, die Bewältigung beruflicher Anforderungen und leistungsrechtliche Fragestellungen.",
     variant: "positive",
     alternative: {
       title: "Was wir betrachten",
@@ -126,8 +128,7 @@ export const psychologischeBegutachtungen: OfferPageContent = {
           "Auf dieser Grundlage richten wir Auftrag, Kommunikation und Ablauf verbindlich ein.",
         ],
         icon: Send,
-        imageSrc:
-          "/offers/psychologische_begutachtungen/social-integration-working-team(1).webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[0],
         imageAlt: "Abstimmung der psychologischen Fragestellung",
       },
       {
@@ -139,8 +140,7 @@ export const psychologischeBegutachtungen: OfferPageContent = {
           "Bei komplexen Fällen können medizinische, psychiatrische und psychologische Perspektiven gezielt verbunden werden.",
         ],
         icon: Brain,
-        imageSrc:
-          "/offers/psychologische_begutachtungen/two-businesspeople-having-conversation-office.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[1],
         imageAlt: "Einsatz psychologischer oder psychiatrischer Expertise",
       },
       {
@@ -148,12 +148,11 @@ export const psychologischeBegutachtungen: OfferPageContent = {
         title: "Durchführung der Begutachtung",
         description: [
           "Die feste Projektkoordination organisiert Termine, Unterlagen und die Kommunikation zwischen allen Beteiligten.",
-          "Die Begutachtung erfolgt persönlich, telemedizinisch oder nach Aktenlage, soweit dies fachlich möglich ist.",
+          "Gerade bei psychischen Fragestellungen ermöglicht der persönliche Termin eine umfassende und vertrauensvolle Einschätzung. Sofern fachlich geeignet, kann die Begutachtung auch telemedizinisch oder nach Aktenlage erfolgen.",
           "Bei gebündelten Terminen oder größeren Auftragsvolumen kann die Durchführung bundesweit auch vor Ort erfolgen.",
         ],
         icon: ClipboardList,
-        imageSrc:
-          "/offers/psychologische_begutachtungen/unrecognizable-brunette-young-male-architect-sitting-desk-with-drawings-while-discussing-something-with-his-cheerful-mature-female-boss-who-is-smiling-him-approving-his-creative-ideas.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[2],
         imageAlt: "Durchführung der psychologischen Begutachtung",
       },
       {
@@ -165,7 +164,7 @@ export const psychologischeBegutachtungen: OfferPageContent = {
           "Die feste Projektkoordination bleibt für organisatorische Rückfragen und weitere Abstimmungen erreichbar.",
         ],
         icon: FileCheck,
-        imageSrc: "/pulsarmedical-jobcenter-2.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[3],
         imageAlt: "Bereitstellung der fachlichen Einschätzung",
       },
     ],
@@ -201,7 +200,7 @@ export const psychologischeBegutachtungen: OfferPageContent = {
   },
   benefits: {
     headingId: "psychologische-begutachtungen-benefits-heading",
-    title: "Warum mit PULSAR Medical?",
+    title: "Warum mit PULSAR Medical arbeiten?",
     subtitle:
       "PULSAR Medical organisiert psychologische und psychiatrische Begutachtungen von der Auswahl der passenden Fachkraft bis zur sicheren Bereitstellung der Ergebnisse.",
     cta: { label: "Unverbindlich anfragen", to: "/kontakt" },
@@ -246,6 +245,20 @@ export const psychologischeBegutachtungen: OfferPageContent = {
         description:
           "Sensible Gesundheitsdaten werden über abgestimmte, geschützte und datenschutzkonforme Wege verarbeitet und ausschließlich berechtigten Stellen bereitgestellt.",
         icon: ShieldCheck,
+        iconColor: "#93d9ff",
+      },
+      {
+        title: "Schneller Projektstart",
+        description:
+          "Vom gemeinsamen Projekt-Kick-off bis zum ersten Begutachtungstermin benötigt PULSAR Medical in der Regel nur vier Wochen – vorausgesetzt, die erforderlichen Unterlagen der zu begutachtenden Personen liegen vollständig vor.",
+        icon: Clock,
+        iconColor: "#7aaec4",
+      },
+      {
+        title: "Zeitnahe Bereitstellung der Gutachten",
+        description:
+          "Die fertiggestellten Gutachten werden dem Auftraggeber innerhalb von 10 bis 14 Tagen nach dem Begutachtungstermin über den vereinbarten sicheren Übermittlungsweg zur Verfügung gestellt.",
+        icon: FileCheck,
         iconColor: "#93d9ff",
       },
     ],

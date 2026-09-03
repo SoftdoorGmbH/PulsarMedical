@@ -12,3 +12,8 @@ export const AUDIENCE_SECONDARY_CTA = {
   label: "Lösungen entdecken",
   href: "#portfolio",
 } as const;
+
+export const PROCESS_DETAIL_CTA = {
+  label: "7 Schritte im Überblick",
+  to: "/ablauf",
+} as const;

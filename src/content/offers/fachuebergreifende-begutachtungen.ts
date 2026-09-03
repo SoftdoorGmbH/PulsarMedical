@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import type { OfferPageContent } from "@/content/offerPages";
 import { OFFER_PRIMARY_CTA, OFFER_SECONDARY_CTA } from "@/content/cta";
+import { OFFER_PROCESS_STEP_IMAGES } from "@/content/offerProcess";
 
 export const fachuebergreifendeBegutachtungen: OfferPageContent = {
   slug: "fachuebergreifende-begutachtungen",
@@ -124,7 +125,7 @@ export const fachuebergreifendeBegutachtungen: OfferPageContent = {
           "Auf dieser Grundlage richten wir Auftrag, Kommunikation und Ablauf verbindlich ein.",
         ],
         icon: Send,
-        imageSrc: "/offers/fachuebergreifende_begutachtungen/good-worker.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[0],
         imageAlt: "Klärung der erforderlichen Fachperspektiven",
       },
       {
@@ -136,8 +137,7 @@ export const fachuebergreifendeBegutachtungen: OfferPageContent = {
           "Die Projektkoordination sorgt dafür, dass alle Beteiligten auf dieselben Zielfragen und Abläufe ausgerichtet sind.",
         ],
         icon: Layers,
-        imageSrc:
-          "/offers/fachuebergreifende_begutachtungen/portrait-business-people-man-office-teamwork-lens-flare-with-cooperation-employees-group-coworkers-workplace-journalist-research-article-magazine-editor-copywriting.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[1],
         imageAlt: "Zusammenstellung der Fachrichtungen",
       },
       {
@@ -149,7 +149,7 @@ export const fachuebergreifendeBegutachtungen: OfferPageContent = {
           "Die Ergebnisse werden anschließend so zusammengeführt, dass Wechselwirkungen und Zusammenhänge sichtbar werden.",
         ],
         icon: ClipboardList,
-        imageSrc: "/pulsarmedical-jobcenter-3.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[2],
         imageAlt: "Verbindung der fachlichen Einzelperspektiven",
       },
       {
@@ -161,7 +161,7 @@ export const fachuebergreifendeBegutachtungen: OfferPageContent = {
           "Die feste Projektkoordination bleibt für organisatorische Rückfragen und weitere Abstimmungen erreichbar.",
         ],
         icon: FileCheck,
-        imageSrc: "/3.png.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[3],
         imageAlt: "Abgestimmte Gesamteinschätzung",
       },
     ],
@@ -197,7 +197,7 @@ export const fachuebergreifendeBegutachtungen: OfferPageContent = {
   },
   benefits: {
     headingId: "fachuebergreifende-begutachtungen-benefits-heading",
-    title: "Warum mit PULSAR Medical?",
+    title: "Warum mit PULSAR Medical arbeiten?",
     subtitle:
       "PULSAR Medical bringt die Fachrichtungen zusammen, die ein komplexer Fall benötigt, und organisiert ihren Einsatz als abgestimmten Auftrag.",
     cta: { label: "Unverbindlich anfragen", to: "/kontakt" },

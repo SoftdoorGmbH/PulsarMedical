@@ -22,6 +22,11 @@ const ABOUT_VALUES = [
       "Nicht jeder Fall ist eindeutig. Wenn Informationen fehlen, Fragen offen sind oder mehrere Perspektiven zusammenkommen, suchen wir nach einem strukturierten Weg, der die weitere Planung möglich macht.",
   },
   {
+    title: "Wir begegnen Menschen auf Augenhöhe",
+    content:
+      "Jeder Mensch bringt individuelle Erfahrungen, Voraussetzungen und Herausforderungen mit. Deshalb orientieren wir uns an der jeweiligen Lebenssituation, erklären unser Vorgehen verständlich und beziehen die Person aktiv in das Gespräch ein. So schaffen wir eine vertrauensvolle Grundlage, auf der sich Menschen ernst genommen, verstanden und dort abgeholt fühlen, wo sie aktuell stehen.",
+  },
+  {
     title: "Wir machen Zusammenarbeit einfach",
     content:
       "Hinter jedem Auftrag stehen viele Beteiligte, Termine und sensible Informationen. Wir wollen, dass Zusammenarbeit klar, verlässlich und unkompliziert bleibt – mit festen Ansprechpartner:innen und nachvollziehbaren Abläufen.",

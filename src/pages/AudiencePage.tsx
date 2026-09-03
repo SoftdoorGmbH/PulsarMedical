@@ -1,8 +1,5 @@
 import { AudiencePageLayout } from "@/components/audience/AudiencePageLayout";
-import {
-  AUDIENCE_PAGES,
-  type AudiencePageSlug,
-} from "@/content/audiencePages";
+import { AUDIENCE_PAGES, type AudiencePageSlug } from "@/content/audiencePages";
 
 type AudiencePageProps = {
   slug: AudiencePageSlug;

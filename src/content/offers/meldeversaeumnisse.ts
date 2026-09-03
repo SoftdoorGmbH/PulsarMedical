@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import type { OfferPageContent } from "@/content/offerPages";
 import { OFFER_PRIMARY_CTA, OFFER_SECONDARY_CTA } from "@/content/cta";
+import { OFFER_PROCESS_STEP_IMAGES } from "@/content/offerProcess";
 
 export const meldeversaeumnisse: OfferPageContent = {
   slug: "meldeversaeumnisse",
@@ -120,8 +121,7 @@ export const meldeversaeumnisse: OfferPageContent = {
           "Bei Bedarf werden Termine für mehrere leistungsberechtigte Personen gebündelt organisiert.",
         ],
         icon: Send,
-        imageSrc:
-          "/offers/meldeversauemnisse/colleague-talking-office-with-coffee-company-career-professional-planning-innovative-business-strategy-young-man-with-mature-person-analyst-break-job-feedback-profession.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[0],
         imageAlt: "Bündelung von Fällen und Fragestellungen",
       },
       {
@@ -133,8 +133,7 @@ export const meldeversaeumnisse: OfferPageContent = {
           "Die Vorstellung erfolgt respektvoll, empathisch und mit der erforderlichen fachlichen Objektivität.",
         ],
         icon: User,
-        imageSrc:
-          "/offers/meldeversauemnisse/social-integration-working-team.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[1],
         imageAlt: "Persönliche Vorstellung bei einer Fachkraft",
       },
       {
@@ -146,7 +145,7 @@ export const meldeversaeumnisse: OfferPageContent = {
           "Ergebnisse werden über vorab abgestimmte, geschützte und datenschutzkonforme Wege bereitgestellt.",
         ],
         icon: FileCheck,
-        imageSrc: "/pulsarmedical-jobcenter-3.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[2],
         imageAlt: "Bereitstellung der fachlichen Einschätzung",
       },
     ],
@@ -182,7 +181,7 @@ export const meldeversaeumnisse: OfferPageContent = {
   },
   benefits: {
     headingId: "meldeversaeumnisse-benefits-heading",
-    title: "Warum mit PULSAR Medical?",
+    title: "Warum mit PULSAR Medical arbeiten?",
     subtitle:
       "PULSAR Medical verbindet die passende fachliche Einschätzung mit einer Umsetzung, die sich in den Arbeitsalltag von Jobcentern integrieren lässt.",
     cta: { label: "Unverbindlich anfragen", to: "/kontakt" },

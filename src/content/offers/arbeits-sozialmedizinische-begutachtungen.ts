@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import type { OfferPageContent } from "@/content/offerPages";
 import { OFFER_PRIMARY_CTA, OFFER_SECONDARY_CTA } from "@/content/cta";
+import { OFFER_PROCESS_STEP_IMAGES } from "@/content/offerProcess";
 
 export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
   slug: "arbeits-sozialmedizinische-begutachtungen",
@@ -126,8 +127,7 @@ export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
           "Auf dieser Grundlage richten wir Auftrag, Kommunikation und Ablauf verbindlich ein.",
         ],
         icon: Send,
-        imageSrc:
-          "/offers/arbeits_sozialmedizinische_begutachtungen/magnific_documentarystyle-editoria_9ZAg56mNYZ.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[0],
         imageAlt: "Abstimmung der beruflichen Fragestellung",
       },
       {
@@ -139,8 +139,7 @@ export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
           "Bei komplexen Fällen verbinden wir arbeitsmedizinische, medizinische und psychologische Perspektiven gezielt miteinander.",
         ],
         icon: HeartPulse,
-        imageSrc:
-          "/offers/arbeits_sozialmedizinische_begutachtungen/magnific_documentarystyle-editoria_DoIGUXnpcl.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[1],
         imageAlt: "Einsatz arbeitsmedizinischer Expertise",
       },
       {
@@ -152,8 +151,7 @@ export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
           "Berufsbezogene Anforderungen, Belastungen und soziale Rahmenbedingungen werden in die Beurteilung einbezogen.",
         ],
         icon: ClipboardList,
-        imageSrc:
-          "/offers/arbeits_sozialmedizinische_begutachtungen/similar-258638884.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[2],
         imageAlt: "Beurteilung von Gesundheit und Arbeitsrealität",
       },
       {
@@ -165,7 +163,7 @@ export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
           "Die feste Projektkoordination bleibt für organisatorische Rückfragen und weitere Abstimmungen erreichbar.",
         ],
         icon: FileCheck,
-        imageSrc: "/pulsarmedical-jobcenter-3.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[3],
         imageAlt: "Ergebnisse für die berufliche Planung",
       },
     ],
@@ -201,7 +199,7 @@ export const arbeitsSozialmedizinischeBegutachtungen: OfferPageContent = {
   },
   benefits: {
     headingId: "arbeits-sozialmedizinische-begutachtungen-benefits-heading",
-    title: "Warum mit PULSAR Medical?",
+    title: "Warum mit PULSAR Medical arbeiten?",
     subtitle:
       "PULSAR Medical organisiert arbeits- und sozialmedizinische Begutachtungen von der beruflichen Fragestellung bis zur sicheren Bereitstellung der Ergebnisse.",
     cta: { label: "Unverbindlich anfragen", to: "/kontakt" },

@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { CookieConsentProvider } from "@/context/CookieConsentContext";
+import { AblaufPage } from "@/pages/AblaufPage";
 import { AboutPage } from "@/pages/AboutPage";
 import { BlogPage } from "@/pages/BlogPage";
 import { BlogPostPage } from "@/pages/BlogPostPage";
@@ -57,6 +58,7 @@ export default function App() {
           element={<OfferPage slug="meldeversaeumnisse" />}
         />
         <Route path="karriere" element={<CareerPage />} />
+        <Route path="ablauf" element={<AblaufPage />} />
         <Route path="ueber-uns" element={<AboutPage />} />
         <Route path="kontakt" element={<ContactPage />} />
         <Route path="blog" element={<BlogPage />} />

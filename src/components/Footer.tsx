@@ -9,6 +9,7 @@ const mainNav = [
   { to: "/berufsgenossenschaften", label: "Für Berufsgenossenschaften" },
   { to: "/rueckversicherer", label: "Für Rückversicherer" },
   { to: "/karriere", label: "Karriere" },
+  { to: "/ablauf", label: "Ablauf" },
   { to: "/ueber-uns", label: "Über uns" },
   { to: "/kontakt", label: "Kontakt" },
   { to: "/blog", label: "Blog" },

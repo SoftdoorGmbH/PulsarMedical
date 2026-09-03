@@ -59,10 +59,7 @@ export function AudiencePortfolioSection({
                 tabIndex={selected ? 0 : -1}
                 onClick={() => setActiveIndex(index)}
                 onKeyDown={(event) => {
-                  if (
-                    event.key !== "ArrowRight" &&
-                    event.key !== "ArrowLeft"
-                  ) {
+                  if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") {
                     return;
                   }
                   event.preventDefault();

@@ -32,9 +32,7 @@ export const HOME_FAQ: AudienceFaqContent = {
     {
       id: "welche-begutachtungen",
       question: "Welche Begutachtungen bietet PULSAR Medical an?",
-      answer: [
-        "PULSAR Medical bietet folgende Begutachtungsformen an:",
-      ],
+      answer: ["PULSAR Medical bietet folgende Begutachtungsformen an:"],
       bullets: [
         "Medizinische Begutachtungen",
         "Psychologische und psychiatrische Begutachtungen",
@@ -73,16 +71,14 @@ export const HOME_FAQ: AudienceFaqContent = {
     {
       id: "durchfuehrungsformen",
       question: "Welche Durchführungsformen sind möglich?",
-      answer: [
-        "PULSAR Medical führt Begutachtungen in drei Formen durch:",
-      ],
+      answer: ["PULSAR Medical führt Begutachtungen in drei Formen durch:"],
       bullets: [
-        "Persönlich mit Untersuchung oder fachlichem Gespräch",
+        "Persönliche Begutachtung mit Untersuchung",
         "Telemedizinisch per Video",
         "Nach Aktenlage auf Grundlage vorhandener Unterlagen und Befunde",
       ],
       closing:
-        "Welche Form eingesetzt wird, hängt von der Fragestellung, der vorhandenen Aktenlage, dem individuellen Fall und der fachlichen Erforderlichkeit ab. Nicht jede Begutachtung ist ohne persönliche Vorstellung möglich.",
+        "Die geeignete Form der Begutachtung wird individuell mit dem Auftraggeber abgestimmt. Sie richtet sich nach der konkreten Fragestellung, der Aktenlage und den Besonderheiten des Einzelfalls. Eine persönliche Vorstellung bietet dabei die Möglichkeit, die individuelle Situation besonders umfassend und differenziert einzuschätzen.",
     },
     {
       id: "datenschutz",

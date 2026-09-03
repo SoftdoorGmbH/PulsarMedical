@@ -7,7 +7,7 @@ const PILLARS = [
     id: "jobcenter",
     label: "Für Jobcenter",
     headline: "Den Weg zurück in Arbeit realistisch planen.",
-    body: "Wenn gesundheitliche oder psychische Belastungen die Integration erschweren, schafft PULSAR Medical Klarheit über Leistungsvermögen, Ressourcen und den konkreten Unterstützungsbedarf.",
+    body: "Wenn gesundheitliche oder psychische Herausforderungen den Weg in den Arbeitsmarkt beeinflussen, ermöglicht PULSAR Medical eine fundierte Einschätzung der individuellen Leistungsfähigkeit, vorhandener Ressourcen und passender Unterstützungsangebote.",
     cta: "Lösungen entdecken",
     to: "/jobcenter",
     icon: Building2,
@@ -16,7 +16,7 @@ const PILLARS = [
     id: "berufsgenossenschaften",
     label: "Für Berufsgenossenschaften",
     headline: "Arbeitsfähigkeit nach einem Unfall klar beurteilen.",
-    body: "PULSAR Medical ordnet Unfallfolgen, funktionelle Einschränkungen und die weitere Entwicklung fachlich ein – für eine gezielte Reha-Planung und berufliche Wiedereingliederung.",
+    body: "PULSAR Medical bewertet Unfallfolgen und funktionelle Einschränkungen fundiert und zeigt mögliche Entwicklungsperspektiven auf – als verlässliche Grundlage für eine gezielte Rehabilitationsplanung und eine nachhaltige berufliche Wiedereingliederung.",
     cta: "Lösungen entdecken",
     to: "/berufsgenossenschaften",
     icon: Shield,
@@ -25,7 +25,7 @@ const PILLARS = [
     id: "rueckversicherer",
     label: "Für Rückversicherer",
     headline: "Leistungsfälle sicher und nachvollziehbar bewerten.",
-    body: "PULSAR Medical bewertet die berufliche Leistungsfähigkeit, relevante funktionelle Einschränkungen und die Prognose – damit Leistungsentscheidungen auf einer fundierten medizinischen Grundlage entstehen.",
+    body: "PULSAR Medical erstellt eine differenzierte Einschätzung der beruflichen Leistungsfähigkeit, relevanter funktioneller Einschränkungen und der weiteren Entwicklung. So entstehen transparente und medizinisch fundierte Entscheidungsgrundlagen für die Leistungsprüfung.",
     cta: "Lösungen entdecken",
     to: "/rueckversicherer",
     icon: Landmark,
@@ -139,7 +139,7 @@ export function HomeAudiencePillars() {
             return (
               <article
                 key={pillar.id}
-                className="flex h-full min-h-140 md:min-h-0 w-[min(88vw,24rem)] max-w-md shrink-0 snap-center flex-col rounded-[1.75rem] border-6 border-pm-dark-container-border bg-pm-dark-container p-7 shadow-[0_14px_44px_-14px_rgb(2_52_78_/0.28)] duration-300 md:w-auto md:max-w-none md:snap-normal md:p-8"
+                className="flex h-full min-h-152 md:min-h-0 w-[min(88vw,24rem)] max-w-md shrink-0 snap-center flex-col rounded-[1.75rem] border-6 border-pm-dark-container-border bg-pm-dark-container p-7 shadow-[0_14px_44px_-14px_rgb(2_52_78_/0.28)] duration-300 md:w-auto md:max-w-none md:snap-normal md:p-8"
               >
                 <div className="inline-flex w-fit rounded-xl bg-white/10 p-2.5 ring-1 ring-white/10">
                   <Icon

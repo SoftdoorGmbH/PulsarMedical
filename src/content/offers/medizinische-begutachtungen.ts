@@ -1,5 +1,6 @@
 import {
   ClipboardList,
+  Clock,
   FileCheck,
   FileText,
   Globe,
@@ -14,6 +15,7 @@ import {
 } from "lucide-react";
 import type { OfferPageContent } from "@/content/offerPages";
 import { OFFER_PRIMARY_CTA, OFFER_SECONDARY_CTA } from "@/content/cta";
+import { OFFER_PROCESS_STEP_IMAGES } from "@/content/offerProcess";
 
 export const medizinischeBegutachtungen: OfferPageContent = {
   slug: "medizinische-begutachtungen",
@@ -57,7 +59,7 @@ export const medizinischeBegutachtungen: OfferPageContent = {
       {
         title: "Leistungsvermögen realistisch bewerten",
         description:
-          "Es muss geklärt werden, welche körperlichen Belastungen möglich sind und wo relevante Einschränkungen bestehen.",
+          "Ziel ist es, fundiert einzuschätzen, welches individuelle Leistungsvermögen unter Berücksichtigung der bestehenden körperlichen und psychischen Einschränkungen gegeben ist.",
       },
       {
         title: "Berufliche Anforderungen mit Gesundheit abgleichen",
@@ -77,7 +79,7 @@ export const medizinischeBegutachtungen: OfferPageContent = {
       {
         title: "Mögliche Entwicklung realistisch einschätzen",
         description:
-          "Es wird eine medizinische Einschätzung benötigt, wie sich Belastbarkeit und Leistungsfähigkeit voraussichtlich weiterentwickeln können.",
+          "Eine medizinische Einschätzung zeigt auf, wie sich die individuelle Belastbarkeit und Leistungsfähigkeit voraussichtlich entwickeln wird und welche Perspektiven sich daraus ableiten lassen.",
       },
     ],
   },
@@ -125,8 +127,7 @@ export const medizinischeBegutachtungen: OfferPageContent = {
           "Auf dieser Grundlage richten wir den Auftrag, die Kommunikation und den weiteren Ablauf verbindlich ein.",
         ],
         icon: Send,
-        imageSrc:
-          "/offers/medizinische_begutachtungen/magnific_documentarystyle-editoria_jU7FW8xLD0.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[0],
         imageAlt: "Abstimmung der medizinischen Fragestellung",
       },
       {
@@ -138,7 +139,7 @@ export const medizinischeBegutachtungen: OfferPageContent = {
           "Bei komplexen Fragestellungen beziehen wir bei Bedarf weitere medizinische oder psychologische Perspektiven ein.",
         ],
         icon: Stethoscope,
-        imageSrc: "/offers/medizinische_begutachtungen/similar-5535720.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[1],
         imageAlt: "Auswahl der medizinischen Fachkraft",
       },
       {
@@ -146,12 +147,11 @@ export const medizinischeBegutachtungen: OfferPageContent = {
         title: "Termine, Unterlagen und Durchführung zentral steuern",
         description: [
           "Die feste Projektkoordination organisiert Termine, bereitet Unterlagen vor und begleitet die Kommunikation zwischen allen Beteiligten.",
-          "Die Begutachtung erfolgt persönlich, telemedizinisch oder nach Aktenlage – abhängig von der Fragestellung und den fachlichen Anforderungen.",
+          "Die Form der Begutachtung – persönlich, telemedizinisch oder nach Aktenlage – richtet sich nach der konkreten Fragestellung, den fachlichen Anforderungen sowie den individuellen Wünschen des Auftraggebers.",
           "Bei gebündelten Terminen oder größeren Fallzahlen können Begutachtungen auch bundesweit direkt vor Ort umgesetzt werden.",
         ],
         icon: ClipboardList,
-        imageSrc:
-          "/offers/medizinische_begutachtungen/magnific_documentarystyle-editoria_P3Zsv3G42C.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[2],
         imageAlt: "Zentrale Steuerung von Terminen und Unterlagen",
       },
       {
@@ -163,7 +163,7 @@ export const medizinischeBegutachtungen: OfferPageContent = {
           "Ihre feste Projektkoordination bleibt auch nach Abschluss für organisatorische Rückfragen und weitere Abstimmungen erreichbar.",
         ],
         icon: FileCheck,
-        imageSrc: "/offers/medizinische_begutachtungen/similar-5535771.webp",
+        imageSrc: OFFER_PROCESS_STEP_IMAGES[3],
         imageAlt: "Bereitstellung der medizinischen Ergebnisse",
       },
     ],
@@ -199,7 +199,7 @@ export const medizinischeBegutachtungen: OfferPageContent = {
   },
   benefits: {
     headingId: "medizinische-begutachtungen-benefits-heading",
-    title: "Warum mit PULSAR Medical?",
+    title: "Warum mit PULSAR Medical arbeiten?",
     subtitle:
       "PULSAR Medical übernimmt die Organisation medizinischer Begutachtungen – von der Auswahl der passenden Fachrichtung über die Terminplanung bis zur sicheren Bereitstellung der Ergebnisse.",
     cta: { label: "Unverbindlich anfragen", to: "/kontakt" },
@@ -246,6 +246,20 @@ export const medizinischeBegutachtungen: OfferPageContent = {
         icon: ShieldCheck,
         iconColor: "#93d9ff",
       },
+      {
+        title: "Schneller Projektstart",
+        description:
+          "Vom gemeinsamen Projekt-Kick-off bis zum ersten Begutachtungstermin benötigt PULSAR Medical in der Regel nur vier Wochen – vorausgesetzt, die erforderlichen Unterlagen der zu begutachtenden Personen liegen vollständig vor.",
+        icon: Clock,
+        iconColor: "#4db8e8",
+      },
+      {
+        title: "Zeitnahe Bereitstellung der Gutachten",
+        description:
+          "Die fertiggestellten Gutachten werden dem Auftraggeber innerhalb von 10 bis 14 Tagen nach dem Begutachtungstermin über den vereinbarten sicheren Übermittlungsweg zur Verfügung gestellt.",
+        icon: FileCheck,
+        iconColor: "#93d9ff",
+      },
     ],
   },
   faq: {
@@ -288,7 +302,7 @@ export const medizinischeBegutachtungen: OfferPageContent = {
         id: "medizinische-begutachtungen-faq-3",
         question: "Was liefert eine medizinische Begutachtung?",
         answer: [
-          "Eine medizinische Begutachtung liefert eine fachliche Einschätzung der gesundheitlichen Situation und ihrer Auswirkungen auf die konkrete Fragestellung.",
+          "Eine medizinische Begutachtung liefert eine fundierte fachliche Einschätzung der gesundheitlichen Situation und ihrer Auswirkungen auf die konkrete Fragestellung. Dabei können auch individuelle Fragestellungen und Anforderungen des Auftraggebers berücksichtigt werden.",
           "Auftraggeber erhalten insbesondere Informationen zu:",
         ],
         bullets: [
@@ -330,8 +344,8 @@ export const medizinischeBegutachtungen: OfferPageContent = {
         id: "medizinische-begutachtungen-faq-7",
         question: "Wie läuft die Beauftragung medizinischer Begutachtungen ab?",
         answer: [
-          "Der Auftrag beginnt mit der Abstimmung von Zielfragen, Umfang, Unterlagen und Durchführungsform. PULSAR Medical setzt anschließend die passende medizinische Fachkraft ein und organisiert Termine, Unterlagen und Kommunikation.",
-          "Nach der Begutachtung wird geprüft, ob die vereinbarten Fragen vollständig beantwortet sind. Die Ergebnisse werden über abgestimmte und geschützte Übermittlungswege bereitgestellt.",
+          "Der Auftrag beginnt mit der gemeinsamen Abstimmung der Zielfragen, des Umfangs, der erforderlichen Unterlagen und der geeigneten Durchführungsform. Während des gesamten Projekts steht dem Auftraggeber eine feste Ansprechperson von PULSAR Medical zur Seite, die alle Abläufe koordiniert und für sämtliche organisatorischen Fragen erreichbar ist. Anschließend setzt PULSAR Medical die passende medizinische Fachkraft ein und organisiert die Termine, den Unterlagenaustausch sowie die weitere Kommunikation.",
+          "Nach der Begutachtung wird geprüft, ob die vereinbarten Fragestellungen vollständig und nachvollziehbar beantwortet wurden. Die Ergebnisse werden dem Auftraggeber anschließend über die abgestimmten, geschützten Übermittlungswege sicher zur Verfügung gestellt.",
         ],
       },
     ],
