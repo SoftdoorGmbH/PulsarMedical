@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import type {
   AudienceProcessStep,
   AudienceStepsTimelineContent,
@@ -158,14 +157,7 @@ export function AudienceStepsTimelineSection({
   subtitle,
   stepLabelPrefix = "Schritt",
   steps,
-  headingAs = "h2",
-  footer,
-}: AudienceStepsTimelineContent & {
-  headingAs?: "h1" | "h2";
-  footer?: ReactNode;
-}) {
-  const HeadingTag = headingAs;
-
+}: AudienceStepsTimelineContent) {
   return (
     <section
       className="bg-pm-light-bg py-16 sm:py-20 md:py-24"
@@ -173,12 +165,12 @@ export function AudienceStepsTimelineSection({
     >
       <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-10">
         <div className="mx-auto max-w-3xl text-left md:text-center">
-          <HeadingTag
+          <h2
             id={headingId}
             className="text-3xl font-semibold leading-tight tracking-tight text-pm-light-headline md:text-4xl lg:text-[2.5rem] lg:leading-[1.15]"
           >
             {title}
-          </HeadingTag>
+          </h2>
           <p className="mt-5 text-base leading-relaxed text-pm-light-text-1 md:mt-6 md:text-lg">
             {subtitle}
           </p>
@@ -217,12 +209,6 @@ export function AudienceStepsTimelineSection({
             </ol>
           </div>
         </div>
-
-        {footer ? (
-          <div className="mt-12 flex justify-start md:mt-16 md:justify-center">
-            {footer}
-          </div>
-        ) : null}
       </div>
     </section>
   );

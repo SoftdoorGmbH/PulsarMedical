@@ -1,9 +1,13 @@
 import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/Button";
+import {
+  getAssessmentOfferingAnchorId,
+  HOME_ASSESSMENT_OFFERINGS,
+} from "@/content/homeAssessmentOfferings";
 
 const HERO_OVERLINES = [
   "Für Jobcenter · Berufsgenossenschaften · Rückversicherer",
-  "Medizinische · psychologische · sozialmedizinische · psychiatrische Begutachtungen",
 ] as const;
 
 const HERO_BADGES = [
@@ -12,44 +16,80 @@ const HERO_BADGES = [
   "Persönlich, telemedizinisch oder nach Aktenlage",
 ] as const;
 
-const HERO_CAROUSEL_IMAGES = [
-  { src: "/1.png.webp", alt: "Mann mit einem Teller in der Hand" },
-  { src: "/2.png.webp", alt: "Frau reicht jemandem die Hand" },
-  { src: "/3.png.webp", alt: "Zwei Personen schauen auf einen Laptop" },
-  { src: "/4.png.webp", alt: "Lächelnde Frau" },
-  { src: "/5.png.webp", alt: "Mann und Frau lachen" },
-  { src: "/6.png.webp", alt: "Mann bedient ein Gerät" },
-  { src: "/7.png.webp", alt: "Frau unterrichtet drei Kinder" },
-  { src: "/8.png.webp", alt: "Frau geht einen Flur entlang" },
-] as const;
+type HeroOffer = (typeof HOME_ASSESSMENT_OFFERINGS)[number];
+
+function HeroOfferCard({
+  offer,
+  index,
+  ariaHidden,
+}: {
+  offer: HeroOffer;
+  index: number;
+  ariaHidden?: boolean;
+}) {
+  const card = (
+    <article className="flex h-full flex-col overflow-hidden rounded-2xl border-4 border-white/90 bg-white shadow-[0_10px_32px_-16px_rgb(2_52_78_/0.18)] transition-[transform,box-shadow] group-hover:shadow-[0_16px_40px_-14px_rgb(2_52_78_/0.24)]">
+      <div className="relative aspect-372/260 overflow-hidden">
+        <img
+          src={offer.imageSrc}
+          alt={ariaHidden ? "" : offer.imageAlt}
+          width={372}
+          height={260}
+          decoding="async"
+          fetchPriority={index < 3 && !ariaHidden ? "high" : undefined}
+          loading={index < 3 && !ariaHidden ? "eager" : "lazy"}
+          className="size-full object-cover"
+        />
+      </div>
+      <div className="flex flex-1 flex-col p-4">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-pm-light-text-2">
+          {offer.stageLabel}
+        </p>
+        <h3 className="mt-2 line-clamp-2 text-base font-semibold leading-snug tracking-tight text-pm-light-headline">
+          {offer.title}
+        </h3>
+      </div>
+    </article>
+  );
+
+  return (
+    <div className="w-[calc(50vw-32px)] shrink-0 md:w-[calc(33vw-28px)] lg:w-[calc(20vw-32px)]">
+      {ariaHidden ? (
+        card
+      ) : (
+        <Link
+          to={{
+            pathname: "/",
+            hash: getAssessmentOfferingAnchorId(offer.id),
+          }}
+          className="group block h-full no-underline"
+          tabIndex={ariaHidden ? -1 : undefined}
+        >
+          {card}
+        </Link>
+      )}
+    </div>
+  );
+}
 
 function HeroCarouselTrack({ ariaHidden }: { ariaHidden?: boolean }) {
   return (
     <>
-      {HERO_CAROUSEL_IMAGES.map((image, index) => (
-        <div
-          key={image.src}
-          className="w-[calc(50vw-32px)] shrink-0 md:w-[calc(33vw-28px)] lg:w-[calc(20vw-32px)]"
-        >
-          <img
-            src={image.src}
-            alt={ariaHidden ? "" : image.alt}
-            width={372}
-            height={260}
-            decoding="async"
-            fetchPriority={index < 3 && !ariaHidden ? "high" : undefined}
-            loading={index < 3 && !ariaHidden ? "eager" : "lazy"}
-            className="w-full rounded-2xl"
-          />
-        </div>
+      {HOME_ASSESSMENT_OFFERINGS.map((offer, index) => (
+        <HeroOfferCard
+          key={offer.id}
+          offer={offer}
+          index={index}
+          ariaHidden={ariaHidden}
+        />
       ))}
     </>
   );
 }
 
-function HomeHeroImageCarousel() {
+function HomeHeroOfferCarousel() {
   return (
-    <div className="overflow-hidden" aria-label="Impressionen">
+    <div className="overflow-hidden" aria-label="Angebote">
       <div className="flex w-max animate-pm-marquee motion-reduce:w-auto motion-reduce:max-w-full motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-6 motion-reduce:px-6 motion-reduce:animate-none">
         <div className="flex shrink-0 gap-10 pr-10">
           <HeroCarouselTrack />
@@ -75,14 +115,10 @@ export function HomeHero() {
       <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="mx-auto flex max-w-3xl flex-col items-start md:items-center text-left md:text-center">
           <div className="hidden md:grid motion-reduce:flex motion-reduce:flex-col motion-reduce:gap-2">
-            {HERO_OVERLINES.map((text, index) => (
+            {HERO_OVERLINES.map((text) => (
               <p
                 key={text}
-                className={`col-start-1 row-start-1 text-sm font-semibold uppercase tracking-[0.14em] text-pm-light-text-2 ${
-                  index === 0
-                    ? "animate-pm-overline"
-                    : "animate-pm-overline-delayed"
-                }`}
+                className="col-start-1 row-start-1 text-sm font-semibold uppercase tracking-[0.14em] text-pm-light-text-2"
               >
                 {text}
               </p>
@@ -132,7 +168,7 @@ export function HomeHero() {
       </div>
 
       <div className="hidden md:block mt-15 px-7.5 lg:px-0">
-        <HomeHeroImageCarousel />
+        <HomeHeroOfferCarousel />
       </div>
     </section>
   );

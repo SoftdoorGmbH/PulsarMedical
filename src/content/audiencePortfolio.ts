@@ -161,7 +161,7 @@ export const BERUFSGENOSSENSCHAFTEN_PORTFOLIO: AudiencePortfolioContent = {
       imageAlt: "Psychologische Begutachtung nach einem Unfall",
       cta: {
         to: "/psychologische-begutachtungen",
-        label: "Mehr zu psychologischen Begutachtungen erfahren",
+        label: "Unverbindlich anfragen",
       },
     },
     {

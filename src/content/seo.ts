@@ -64,7 +64,6 @@ export const STATIC_INDEXABLE_PATHS = [
   "/fachuebergreifende-begutachtungen",
   "/meldeversaeumnisse",
   "/karriere",
-  "/ablauf",
   "/ueber-uns",
   "/kontakt",
   "/blog",
@@ -84,11 +83,6 @@ const STATIC_PAGES: Record<string, PageSeoFields & { index?: boolean }> = {
     title: "Karriere",
     description:
       "Gestalten Sie mit PULSAR Medical Gesundheit, Teilhabe und gute Arbeit – offene Stellen in Beratung, Psychologie und medizinischer Expertise.",
-  },
-  "/ablauf": {
-    title: "Ablauf eines Begutachtungsauftrags",
-    description:
-      "Von der Anfrage bis zur Ergebnisübermittlung: so organisiert PULSAR Medical medizinische und psychologische Begutachtungen – in sieben klaren Schritten.",
   },
   "/ueber-uns": {
     title: "Über uns",
@@ -125,7 +119,6 @@ const NOT_FOUND_SEO: PageSeoFields = {
 
 const STATIC_BREADCRUMB_LABELS: Record<string, string> = {
   "/karriere": "Karriere",
-  "/ablauf": "Ablauf",
   "/ueber-uns": "Über uns",
   "/kontakt": "Kontakt",
   "/blog": "Blog",

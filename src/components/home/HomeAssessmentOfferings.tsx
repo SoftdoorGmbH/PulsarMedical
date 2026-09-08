@@ -1,8 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { CheckCircle2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/Button";
-import { HOME_ASSESSMENT_OFFERINGS } from "@/content/homeAssessmentOfferings";
+import {
+  getAssessmentOfferingAnchorId,
+  HOME_ASSESSMENT_OFFERINGS,
+} from "@/content/homeAssessmentOfferings";
 
 const checkClassName =
   "mt-0.5 size-6 shrink-0 text-pm-light-text-2 [&>circle]:fill-pm-light-icon-bg [&>circle]:stroke-pm-light-icon-border [&>path]:origin-[12px_12px] [&>path]:scale-[1.18] [&>path]:stroke-[1.75] [&>path]:stroke-pm-light-text-2";
@@ -94,7 +98,7 @@ function OfferingBlock({
 }: (typeof HOME_ASSESSMENT_OFFERINGS)[number] & {
   note?: string;
 }) {
-  const headingId = `assessment-offering-${id}`;
+  const headingId = getAssessmentOfferingAnchorId(id);
 
   return (
     <article
@@ -154,6 +158,7 @@ function OfferingBlock({
 
 /** Angebotsübersicht: fünf Begutachtungsarten als Split-Karten (Text links, Bild rechts). */
 export function HomeAssessmentOfferings() {
+  const { hash } = useLocation();
   const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
   const mobileScrollRef = useRef<HTMLDivElement>(null);
   const mobileScrollRafRef = useRef<number | null>(null);
@@ -208,6 +213,37 @@ export function HomeAssessmentOfferings() {
       inline: "center",
     });
   };
+
+  const scrollToOfferingFromHash = useCallback(() => {
+    const anchorId = hash.replace(/^#/, "");
+    if (!anchorId) return;
+
+    const idx = HOME_ASSESSMENT_OFFERINGS.findIndex(
+      (offering) => getAssessmentOfferingAnchorId(offering.id) === anchorId,
+    );
+    if (idx < 0) return;
+
+    const target = document.getElementById(anchorId);
+    if (!target) return;
+
+    const isMobileCarousel = window.matchMedia("(max-width: 767px)").matches;
+    if (isMobileCarousel) {
+      scrollMobileToIndex(idx);
+      return;
+    }
+
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [hash]);
+
+  useEffect(() => {
+    if (!hash) return;
+
+    const frameId = requestAnimationFrame(() => {
+      requestAnimationFrame(scrollToOfferingFromHash);
+    });
+
+    return () => cancelAnimationFrame(frameId);
+  }, [hash, scrollToOfferingFromHash]);
 
   return (
     <section

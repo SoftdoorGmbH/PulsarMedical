@@ -120,3 +120,11 @@ export const HOME_ASSESSMENT_OFFERINGS: AssessmentOffering[] = [
     panelClassName: "bg-pm-dark-container",
   },
 ];
+
+export function getAssessmentOfferingAnchorId(id: string) {
+  return `assessment-offering-${id}`;
+}
+
+export function getAssessmentOfferingHash(id: string) {
+  return `#${getAssessmentOfferingAnchorId(id)}`;
+}
