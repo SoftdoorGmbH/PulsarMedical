@@ -28,10 +28,7 @@ import {
   JOBCENTER_PROCESS,
   RUECKVERSICHERER_PROCESS,
 } from "@/content/audienceSteps";
-import {
-  AUDIENCE_SECONDARY_CTA,
-  OFFER_PRIMARY_CTA,
-} from "@/content/cta";
+import { AUDIENCE_SECONDARY_CTA, OFFER_PRIMARY_CTA } from "@/content/cta";
 import type { PageSeoFields } from "@/content/seoFields";
 
 export type AudiencePageSlug =
@@ -122,7 +119,7 @@ export const AUDIENCE_PAGES: Record<AudiencePageSlug, AudiencePageContent> = {
     hero: {
       ariaLabel: "Für Jobcenter",
       overline: "Für Jobcenter",
-      title: "Gesundheitliche Hürden erkennen. Integration realistisch planen",
+      title: "Gesundheitliche Hürden erkennen. Integration realistisch planen.",
       paragraphs: [
         "PULSAR Medical unterstützt Jobcenter mit medizinischen und psychologischen Begutachtungen, wenn gesundheitliche Einschränkungen die Mitwirkung, Leistungsfähigkeit oder berufliche Integration beeinflussen können.",
       ],
@@ -178,7 +175,7 @@ export const AUDIENCE_PAGES: Record<AudiencePageSlug, AudiencePageContent> = {
     hero: {
       ariaLabel: "Für Rückversicherer",
       overline: "Für Rückversicherer",
-      title: "Leistungsfälle medizinisch klar bewerten",
+      title: "Leistungsfälle medizinisch klar bewerten.",
       paragraphs: [
         "PULSAR Medical unterstützt Rückversicherer mit medizinischen und psychologischen Begutachtungen, wenn gesundheitliche Einschränkungen, berufliche Leistungsfähigkeit oder die weitere Prognose für Leistungsentscheidungen relevant sind.",
       ],

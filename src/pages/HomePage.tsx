@@ -6,7 +6,7 @@ import { HomeFaq } from "@/components/home/HomeFaq";
 // import { HomeFeatureCards } from "@/components/home/HomeFeatureCards";
 import { HomeHero } from "@/components/home/HomeHero";
 // import { HomeTabbedSection } from "@/components/home/HomeTabbedSection";
-import { HomeTestimonials } from "@/components/home/HomeTestimonials";
+// import { HomeTestimonials } from "@/components/home/HomeTestimonials";
 // import { HomeTrustBy } from "@/components/home/HomeTrustBy";
 
 export function HomePage() {
@@ -17,7 +17,7 @@ export function HomePage() {
       <HomeAudiencePillars />
       <HomeAssessmentOfferings />
       <HomeAssessmentCompare />
-      <HomeTestimonials />
+      {/* <HomeTestimonials /> */}
       {/* <HomeFeatureCards /> */}
       {/* <HomeTabbedSection /> */}
       <HomeFaq />

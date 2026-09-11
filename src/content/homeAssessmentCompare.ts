@@ -16,7 +16,7 @@ const PULSAR_ITEMS = [
 
 export const HOME_ASSESSMENT_COMPARE = {
   headline:
-    "Begutachtungen, die entlasten statt zusätzlichen Aufwand zu schaffen.",
+    "Begutachtungen, die entlasten statt zusätzlichen Aufwand zu schaffen",
   subheadline:
     "PULSAR Medical übernimmt die gesamte Organisation Ihrer Begutachtungsaufträge – von der passenden fachlichen Besetzung bis zur sicheren Bereitstellung der Ergebnisse.",
   traditionalLabel: "Klassische Begutachtungen",

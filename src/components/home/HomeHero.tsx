@@ -1,10 +1,10 @@
-import { Check } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowRightIcon, Check } from "lucide-react";
 import { Button } from "@/components/Button";
 import {
   getAssessmentOfferingAnchorId,
   HOME_ASSESSMENT_OFFERINGS,
 } from "@/content/homeAssessmentOfferings";
+import { Link } from "react-router";
 
 const HERO_OVERLINES = [
   "Für Jobcenter · Berufsgenossenschaften · Rückversicherer",
@@ -12,7 +12,7 @@ const HERO_OVERLINES = [
 
 const HERO_BADGES = [
   "DSGVO konform",
-  "Bundesweit verfügbare Expertise",
+  "Bundesweit verfügbar",
   "Persönlich, telemedizinisch oder nach Aktenlage",
 ] as const;
 
@@ -28,7 +28,7 @@ function HeroOfferCard({
   ariaHidden?: boolean;
 }) {
   const card = (
-    <article className="flex h-full flex-col overflow-hidden rounded-2xl border-4 border-white/90 bg-white shadow-[0_10px_32px_-16px_rgb(2_52_78_/0.18)] transition-[transform,box-shadow] group-hover:shadow-[0_16px_40px_-14px_rgb(2_52_78_/0.24)]">
+    <article className="flex h-full flex-col overflow-hidden rounded-2xl border-4 border-white/90 bg-white shadow-[0_10px_32px_-16px_rgb(2_52_78_/0.18)]">
       <div className="relative aspect-372/260 overflow-hidden">
         <img
           src={offer.imageSrc}
@@ -42,32 +42,24 @@ function HeroOfferCard({
         />
       </div>
       <div className="flex flex-1 flex-col p-4">
-        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-pm-light-text-2">
+        <h3 className="line-clamp-2 text-sm font-semibold leading-snug tracking-tight text-pm-light-headline min-h-10">
           {offer.stageLabel}
-        </p>
-        <h3 className="mt-2 line-clamp-2 text-base font-semibold leading-snug tracking-tight text-pm-light-headline">
-          {offer.title}
         </h3>
+        <div className="mt-4 text-pm-light-headline">
+          <Link
+            to={`#${getAssessmentOfferingAnchorId(offer.id)}`}
+            className="flex items-center gap-2 font-medium text-sm"
+          >
+            {offer.cta} <ArrowRightIcon className="size-4" />
+          </Link>
+        </div>
       </div>
     </article>
   );
 
   return (
     <div className="w-[calc(50vw-32px)] shrink-0 md:w-[calc(33vw-28px)] lg:w-[calc(20vw-32px)]">
-      {ariaHidden ? (
-        card
-      ) : (
-        <Link
-          to={{
-            pathname: "/",
-            hash: getAssessmentOfferingAnchorId(offer.id),
-          }}
-          className="group block h-full no-underline"
-          tabIndex={ariaHidden ? -1 : undefined}
-        >
-          {card}
-        </Link>
-      )}
+      {card}
     </div>
   );
 }
