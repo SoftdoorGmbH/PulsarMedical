@@ -42,7 +42,7 @@ export function ContactWegCard({
 
       {card.quote ? (
         <blockquote className="mt-6 border-t border-pm-light-container-border pt-5">
-          <p className="font-display-serif text-base italic leading-relaxed text-pm-light-text-1">
+          <p className="text-base italic leading-relaxed text-pm-light-text-1">
             {card.quote}
           </p>
           {card.attribution ? (

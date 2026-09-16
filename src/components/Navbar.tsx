@@ -15,7 +15,7 @@ type MegaItem = {
 const MEGA_MENU_ITEMS: MegaItem[] = OFFER_NAV_ITEMS;
 
 const MEGA_MENU_CTA = {
-  imageSrc: "/pulsarmedical-jobcenter-2.webp",
+  imageSrc: "/8.png.webp",
   eyebrow: "Kostenlose Erstberatung",
   title: "Unsicher, welches Gutachten Sie benötigen?",
   linkLabel: "Beratungstermin anfragen",
@@ -169,10 +169,6 @@ export function Navbar() {
                     <div className="overflow-hidden rounded-3xl border border-white/60 bg-white shadow-[0_8px_32px_-12px_rgb(2_52_78_/0.28)] backdrop-blur-xl">
                       <div className="flex min-h-80 items-stretch">
                         <div className="min-w-0 flex-3 bg-pm-light-container px-8 py-8 xl:px-10 xl:py-10">
-                          <p className="mb-6 font-display-serif text-2xl text-pm-light-headline xl:mb-8 xl:text-[1.75rem]">
-                            Unser Angebot
-                          </p>
-
                           <ul className="m-0 grid list-none grid-cols-2 gap-x-4 gap-y-2 p-0 xl:gap-x-6">
                             {MEGA_MENU_ITEMS.map((item) => (
                               <li key={item.label} className="m-0 min-w-0 p-0">
@@ -200,7 +196,7 @@ export function Navbar() {
                             <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-pm-light-text-2 xl:text-xs">
                               {MEGA_MENU_CTA.eyebrow}
                             </p>
-                            <p className="mt-3 max-w-xs font-display-serif text-xl leading-snug text-pm-light-headline xl:text-2xl">
+                            <p className="mt-3 max-w-xs text-xl leading-snug text-pm-light-headline">
                               {MEGA_MENU_CTA.title}
                             </p>
                             <Link
@@ -296,7 +292,7 @@ export function Navbar() {
               >
                 <div className="overflow-hidden">
                   <div className="space-y-1 px-2 pb-3 pt-1">
-                    <p className="hidden md:block px-2 font-display-serif text-lg text-pm-light-headline">
+                    <p className="hidden md:block px-2 text-lg text-pm-light-headline">
                       Unser Angebot
                     </p>
                     <ul className="mt-1 list-none p-0">

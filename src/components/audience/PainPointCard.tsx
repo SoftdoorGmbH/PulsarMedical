@@ -21,7 +21,7 @@ export function PainPointCard({
         <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-pm-dark-tag sm:text-xs">
           {painLabel}
         </p>
-        <blockquote className="mt-2.5 text-pretty font-display-serif text-base font-normal italic leading-snug text-pm-dark-text-2 sm:text-[1.05rem]">
+        <blockquote className="mt-2.5 text-pretty text-base font-normal italic leading-snug text-pm-dark-text-2 sm:text-[1.05rem]">
           {item.quote}
         </blockquote>
       </div>

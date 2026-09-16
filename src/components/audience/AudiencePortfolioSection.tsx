@@ -70,8 +70,8 @@ export function AudiencePortfolioSection({
                 }}
                 className={`shrink-0 rounded-full border px-3.5 py-2 text-center text-sm font-semibold tracking-wide whitespace-nowrap transition-[color,background-color,border-color,transform] duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pm-light-text-2 sm:px-4 sm:py-2.5 ${
                   selected
-                    ? "z-10 -rotate-2 border-pm-light-button bg-pm-light-button text-white shadow-md"
-                    : "rotate-0 border-pm-light-container-border bg-white/70 text-pm-light-text-1 hover:border-pm-light-text-2/55 hover:text-pm-light-headline"
+                    ? "z-10 border-pm-light-button bg-pm-light-button text-white shadow-md"
+                    : "border-pm-light-container-border bg-white/70 text-pm-light-text-1 hover:border-pm-light-text-2/55 hover:text-pm-light-headline"
                 }`}
               >
                 {item.chipTitle}
@@ -89,7 +89,7 @@ export function AudiencePortfolioSection({
         >
           <div className="grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr]">
             <div className="flex flex-col justify-center p-5 sm:p-6 md:p-7 lg:p-8">
-              <h3 className="font-display-serif text-xl font-semibold tracking-tight text-pm-light-headline sm:text-2xl">
+              <h3 className="text-xl font-semibold tracking-tight text-pm-light-headline sm:text-2xl">
                 {active.title}
               </h3>
               <p className="mt-1.5 text-sm font-semibold leading-relaxed text-pm-light-text-1 sm:text-base">
