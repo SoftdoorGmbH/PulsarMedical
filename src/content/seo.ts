@@ -18,8 +18,9 @@ export const DEFAULT_OG_IMAGE = "/og-default.webp";
 export const TITLE_SEPARATOR = " | ";
 
 function readEnvSiteUrl(): string | undefined {
-  const viteEnv = (import.meta as ImportMeta & { env?: { VITE_SITE_URL?: string } })
-    .env?.VITE_SITE_URL;
+  const viteEnv = (
+    import.meta as ImportMeta & { env?: { VITE_SITE_URL?: string } }
+  ).env?.VITE_SITE_URL;
   return typeof viteEnv === "string" && viteEnv.trim() ? viteEnv : undefined;
 }
 
@@ -72,7 +73,7 @@ export const STATIC_INDEXABLE_PATHS = [
 ] as const;
 
 const HOME_DESCRIPTION =
-  "PULSAR Medical erstellt medizinische und psychologische Begutachtungen für Jobcenter, Berufsgenossenschaften und Rückversicherer – bundesweit und DSGVO-konform.";
+  "PULSAR Medical erstellt medizinische und psychologische Begutachtungen für Jobcenter, Berufsgenossenschaften und Versicherer & Rückversicherer – bundesweit und DSGVO-konform.";
 
 const STATIC_PAGES: Record<string, PageSeoFields & { index?: boolean }> = {
   "/": {

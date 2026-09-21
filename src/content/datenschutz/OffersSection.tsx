@@ -183,9 +183,25 @@ export function OffersSection() {
         Einwilligung eingeholt und auf diese Datenschutzerklärung verwiesen.
         Alternativ ist eine Kontaktaufnahme über die bereitgestellte
         E-Mail-Adresse möglich. In diesem Fall werden die mit der E-Mail
-        übermittelten personenbezogenen Daten des Nutzers gespeichert. Es erfolgt
-        in diesem Zusammenhang keine Weitergabe der Daten an Dritte. Die Daten
+        übermittelten personenbezogenen Daten des Nutzers gespeichert. Die Daten
         werden ausschließlich für die Verarbeitung der Konversation verwendet.
+      </p>
+      <p>
+        Zur Zustellung der Anfrage per E-Mail setzen wir den Dienst Web3Forms
+        (Web3Forms,{" "}
+        <ExternalLink href="https://web3forms.com">
+          https://web3forms.com
+        </ExternalLink>
+        ) ein. Die von Ihnen im Kontaktformular eingegebenen Daten werden an
+        Web3Forms übermittelt, damit der Dienst die Nachricht an unsere
+        E-Mail-Adresse weiterleitet. Web3Forms verarbeitet die Daten
+        ausschließlich zu diesem Zweck der Zustellung und nicht für eigene
+        Zwecke. Weitere Informationen finden Sie in der Datenschutzerklärung von
+        Web3Forms:{" "}
+        <ExternalLink href="https://web3forms.com/privacy">
+          https://web3forms.com/privacy
+        </ExternalLink>
+        .
       </p>
 
       <LegalSubtitle>Rechtsgrundlage für die Datenverarbeitung</LegalSubtitle>

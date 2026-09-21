@@ -15,7 +15,7 @@ export const HOME_FAQ: AudienceFaqContent = {
       bullets: [
         "Jobcenter",
         "Berufsgenossenschaften",
-        "Rückversicherer",
+        "Versicherer & Rückversicherer",
         "Weitere Versicherungen, Unfallkassen und öffentliche Auftraggeber",
       ],
       closing:
@@ -26,7 +26,7 @@ export const HOME_FAQ: AudienceFaqContent = {
       question: "Für welche Organisationen arbeitet PULSAR Medical?",
       answer: [
         "PULSAR Medical arbeitet mit institutionellen Auftraggebern, die medizinische oder psychologische Fragen für ihre Entscheidungen fachlich einordnen müssen.",
-        "Jobcenter nutzen die Begutachtungen beispielsweise für Integrationsplanung, Leistungsfähigkeit oder die Einordnung von Meldeversäumnissen. Berufsgenossenschaften benötigen Einschätzungen zu Unfallfolgen, Arbeitsfähigkeit und Wiedereingliederung. Rückversicherer nutzen fachliche Beurteilungen für Leistungsprüfung, berufliche Leistungsfähigkeit und Prognosen.",
+        "Jobcenter nutzen die Begutachtungen beispielsweise für Integrationsplanung, Leistungsfähigkeit oder die Einordnung von Meldeversäumnissen. Berufsgenossenschaften benötigen Einschätzungen zu Unfallfolgen, Arbeitsfähigkeit und Wiedereingliederung. Versicherer & Rückversicherer nutzen fachliche Beurteilungen für Leistungsprüfung, berufliche Leistungsfähigkeit und Prognosen.",
       ],
     },
     {

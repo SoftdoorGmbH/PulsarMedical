@@ -26,7 +26,8 @@ export const CONTACT_PAGE = {
     {
       id: "jobcenter",
       title: "Für Jobcenter",
-      question: "Sie möchten gesundheitliche Fragen in der Fallarbeit fachlich klären?",
+      question:
+        "Sie möchten gesundheitliche Fragen in der Fallarbeit fachlich klären?",
       badge: "Weniger als 2 Minuten",
       description:
         "Gesundheitliche oder psychische Belastungen können Mitwirkung und Integration erschweren. Schildern Sie kurz Ihre Fragestellung – wir klären, welche Einschätzung oder Begutachtung passt.",
@@ -39,7 +40,8 @@ export const CONTACT_PAGE = {
     {
       id: "berufsgenossenschaften",
       title: "Für Berufsgenossenschaften",
-      question: "Sie möchten Unfallfolgen und Arbeitsfähigkeit sicher einordnen?",
+      question:
+        "Sie möchten Unfallfolgen und Arbeitsfähigkeit sicher einordnen?",
       badge: "Weniger als 2 Minuten",
       description:
         "Sie benötigen eine Einschätzung zu Unfallfolgen, Belastbarkeit oder Wiedereingliederung? Schildern Sie kurz Ihren Auftrag – wir stimmen die passende Begutachtung mit Ihnen ab.",
@@ -51,15 +53,16 @@ export const CONTACT_PAGE = {
     },
     {
       id: "rueckversicherer",
-      title: "Für Rückversicherer",
-      question: "Sie möchten einen komplexen Leistungsfall medizinisch bewerten?",
+      title: "Für Versicherer & Rückversicherer",
+      question:
+        "Sie möchten einen komplexen Leistungsfall medizinisch bewerten?",
       badge: "Weniger als 2 Minuten",
       description:
         "Sie möchten berufliche Leistungsfähigkeit, funktionelle Einschränkungen oder Prognosen beurteilen lassen? Schildern Sie kurz Ihre Fragestellung – wir organisieren die passende Expertise.",
       cta: "Unverbindlich anfragen",
       quote:
         "„Die Einschätzung hat die medizinisch relevanten Fragen klar strukturiert und unsere Leistungsprüfung wirkungsvoll unterstützt.“",
-      attribution: "Mitarbeitende:r eines Rückversicherers",
+      attribution: "Mitarbeitende:r eines Versichereres & Rückversichereres",
       icon: Landmark,
     },
     {

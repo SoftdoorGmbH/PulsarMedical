@@ -15,7 +15,7 @@ type MegaItem = {
 const MEGA_MENU_ITEMS: MegaItem[] = OFFER_NAV_ITEMS;
 
 const MEGA_MENU_CTA = {
-  imageSrc: "/8.png.webp",
+  imageSrc: "medium-shot-people-discussing.webp",
   eyebrow: "Kostenlose Erstberatung",
   title: "Unsicher, welches Gutachten Sie benötigen?",
   linkLabel: "Beratungstermin anfragen",
@@ -29,7 +29,7 @@ const NAV_LINKS = [
 
 function navItemClassName({ isActive }: { isActive: boolean }) {
   return [
-    "relative inline-flex items-center px-4 py-2 text-sm leading-5 text-pm-light-headline no-underline transition-[font-weight] duration-150 xl:px-5",
+    "relative inline-flex shrink-0 items-center whitespace-nowrap px-2.5 py-2 text-sm leading-5 text-pm-light-headline no-underline transition-[font-weight] duration-150 xl:px-3.5",
     isActive ? "font-semibold" : "font-medium hover:font-semibold",
   ].join(" ");
 }
@@ -114,12 +114,12 @@ export function Navbar() {
         <div
           className={`flex items-center justify-between gap-3 overflow-visible rounded-full border py-2.5 pl-4 pr-3 shadow-[0_8px_32px_-12px_rgb(2_52_78_/0.25)] md:pl-6 md:pr-4 ${
             mobileOpen
-              ? "border-white bg-white lg:border-white/50 lg:bg-white/60 lg:backdrop-blur-xl lg:supports-backdrop-filter:bg-white/55"
+              ? "border-white bg-white xl:border-white/50 xl:bg-white/60 xl:backdrop-blur-xl xl:supports-backdrop-filter:bg-white/55"
               : "border-white/50 bg-white/60 backdrop-blur-xl supports-backdrop-filter:bg-white/55"
           }`}
           role="presentation"
         >
-          <div className="flex min-w-0 items-center gap-2 lg:gap-6 xl:gap-16">
+          <div className="flex min-w-0 items-center gap-2 lg:gap-4 xl:gap-8">
             <NavLink
               to="/"
               className="flex shrink-0 items-center gap-2 no-underline"
@@ -134,7 +134,7 @@ export function Navbar() {
               />
             </NavLink>
 
-            <nav className="hidden lg:flex" aria-label="Hauptnavigation">
+            <nav className="hidden xl:flex" aria-label="Hauptnavigation">
               <ul className="flex list-none items-center gap-0.5 p-0">
                 <li
                   ref={megaWrapRef}
@@ -144,7 +144,7 @@ export function Navbar() {
                 >
                   <button
                     type="button"
-                    className="relative inline-flex items-center gap-1.5 bg-transparent px-4 py-2 text-sm leading-5 font-medium text-pm-light-headline transition-[font-weight] duration-150 group-hover/loesungen:font-semibold xl:px-5"
+                    className="relative inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap bg-transparent px-2.5 py-2 text-sm leading-5 font-medium text-pm-light-headline transition-[font-weight] duration-150 group-hover/loesungen:font-semibold xl:px-3.5"
                     aria-expanded={megaOpen}
                     aria-controls={megaRegionId}
                     aria-haspopup="true"
@@ -191,7 +191,7 @@ export function Navbar() {
                             decoding="async"
                             className="absolute inset-0 size-full object-cover"
                           />
-                          <div className="absolute inset-0 bg-linear-to-t from-white via-white/70 to-white/10" />
+                          <div className="absolute inset-0 bg-linear-to-t from-white via-white/60" />
                           <div className="relative flex h-full flex-col justify-end p-6 xl:p-8">
                             <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-pm-light-text-2 xl:text-xs">
                               {MEGA_MENU_CTA.eyebrow}
@@ -226,13 +226,13 @@ export function Navbar() {
 
           <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
             <div className="hidden sm:contents">
-              <Button to="/kontakt" size="sm">
+              <Button to="/kontakt" size="sm" className="whitespace-nowrap">
                 Beratungstermin anfragen
               </Button>
             </div>
             <button
               type="button"
-              className="inline-flex flex-col gap-1.5 rounded-full p-2 lg:hidden"
+              className="inline-flex flex-col gap-1.5 rounded-full p-2 xl:hidden"
               aria-expanded={mobileOpen}
               aria-controls="mobile-primary-nav"
               aria-label={
@@ -257,7 +257,7 @@ export function Navbar() {
       {mobileOpen ? (
         <button
           type="button"
-          className="pointer-events-auto fixed inset-0 z-30 bg-pm-light-headline/20 backdrop-blur-[2px] lg:hidden"
+          className="pointer-events-auto fixed inset-0 z-30 bg-pm-light-headline/20 backdrop-blur-[2px] xl:hidden"
           aria-label="Menü schließen"
           onClick={() => setMobileOpen(false)}
         />
@@ -265,7 +265,7 @@ export function Navbar() {
 
       <div
         id="mobile-primary-nav"
-        className={`pointer-events-auto fixed inset-x-0 top-32 z-40 mx-4 overflow-hidden rounded-3xl border border-pm-light-container-border bg-white shadow-xl transition-all duration-300 ease-out lg:hidden ${mobileOpen ? "visible max-h-[min(36rem,calc(100dvh-7rem))] opacity-100" : "invisible max-h-0 opacity-0"}`}
+        className={`pointer-events-auto fixed inset-x-0 top-32 z-40 mx-4 overflow-hidden rounded-3xl border border-pm-light-container-border bg-white shadow-xl transition-all duration-300 ease-out xl:hidden ${mobileOpen ? "visible max-h-[min(36rem,calc(100dvh-7rem))] opacity-100" : "invisible max-h-0 opacity-0"}`}
         aria-hidden={!mobileOpen}
       >
         <nav

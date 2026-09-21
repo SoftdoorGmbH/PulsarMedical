@@ -321,7 +321,7 @@ export const fachuebergreifendeBegutachtungen: OfferPageContent = {
         question:
           "Für welche Auftraggeber eignen sich fachübergreifende Begutachtungen?",
         answer: [
-          "Fachübergreifende Begutachtungen eignen sich für Jobcenter, Berufsgenossenschaften, Rückversicherer und weitere institutionelle Auftraggeber, die komplexe gesundheitliche Sachverhalte beurteilen müssen.",
+          "Fachübergreifende Begutachtungen eignen sich für Jobcenter, Berufsgenossenschaften, Versicherer & Rückversicherer und weitere institutionelle Auftraggeber, die komplexe gesundheitliche Sachverhalte beurteilen müssen.",
           "Sie sind besonders sinnvoll, wenn Entscheidungen zu Integration, Wiedereingliederung, Arbeitsfähigkeit, Rehabilitation oder Leistungsansprüchen mehrere Fachrichtungen erfordern.",
         ],
       },

@@ -219,8 +219,8 @@ export const RUECKVERSICHERER_PORTFOLIO: AudiencePortfolioContent = {
   headingId: "rueckversicherer-portfolio-heading",
   title: "Die passende Begutachtung für Ihre Leistungsfälle",
   subtitle:
-    "PULSAR Medical unterstützt Rückversicherer bei der Beurteilung von funktionellen Einschränkungen, beruflicher Leistungsfähigkeit und Prognosen – medizinisch, psychologisch und bei Bedarf fachübergreifend.",
-  ariaLabel: "Leistungsportfolio für Rückversicherer",
+    "PULSAR Medical unterstützt Versicherer & Rückversicherer bei der Beurteilung von funktionellen Einschränkungen, beruflicher Leistungsfähigkeit und Prognosen – medizinisch, psychologisch und bei Bedarf fachübergreifend.",
+  ariaLabel: "Leistungsportfolio für Versicherer & Rückversicherer",
   cta: CONTACT_CTA,
   items: [
     {
@@ -302,7 +302,7 @@ export const RUECKVERSICHERER_PORTFOLIO: AudiencePortfolioContent = {
         "Persönlich vor Ort oder digital durchführbar",
       ],
       imageSrc: AUDIENCE_PORTFOLIO_IMAGES.schulungen,
-      imageAlt: "Schulungen für Rückversicherer",
+      imageAlt: "Schulungen für Versicherer & Rückversicherer",
       cta: CONTACT_CTA,
     },
   ],

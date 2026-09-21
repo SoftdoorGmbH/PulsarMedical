@@ -113,7 +113,7 @@ export const BERUFSGENOSSENSCHAFTEN_WHY_US: AudienceWhyUsContent = {
 export const RUECKVERSICHERER_WHY_US: AudienceWhyUsContent = {
   headingId: "rueckversicherer-why-us-heading",
   title:
-    "Warum Rückversicherer PULSAR Medical klassischen Begutachtungen vorziehen",
+    "Warum Versicherer & Rückversicherer PULSAR Medical klassischen Begutachtungen vorziehen",
   subtitle:
     "PULSAR Medical organisiert Begutachtungen so, dass sie die Leistungsprüfung mit klaren medizinischen Einschätzungen unterstützen und sich in bestehende Abläufe einfügen.",
   ariaLabel: "Warum PULSAR Medical",

@@ -24,6 +24,9 @@ const INITIAL_FIELDS: FormFields = {
   privacy: false,
 };
 
+const SUBMIT_ERROR =
+  "Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt.";
+
 const fieldClassName =
   "w-full rounded-xl border border-pm-light-container-border bg-white px-4 py-3 text-base text-pm-light-headline placeholder:text-pm-light-text-1/45 transition-[border-color,box-shadow] focus:border-pm-light-text-2 focus:outline-none focus:ring-2 focus:ring-pm-light-tag-glow";
 
@@ -68,10 +71,59 @@ function buildMailto(card: ContactCard, fields: FormFields) {
   return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
 }
 
+async function submitToWeb3Forms(card: ContactCard, fields: FormFields) {
+  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+  if (!accessKey) {
+    throw new Error("missing access key");
+  }
+
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      access_key: accessKey,
+      subject: `Anfrage: ${card.title} – ${fields.name.trim()}`,
+      from_name: fields.name.trim(),
+      name: fields.name.trim(),
+      email: fields.email.trim(),
+      ...(fields.organization.trim()
+        ? { organization: fields.organization.trim() }
+        : {}),
+      ...(fields.phone.trim() ? { phone: fields.phone.trim() } : {}),
+      message: fields.message.trim(),
+      thema: card.title,
+      botcheck: false,
+    }),
+  });
+
+  const data = (await response.json()) as {
+    success?: boolean;
+    message?: string;
+  };
+
+  if (!response.ok || !data.success) {
+    throw new Error(data.message ?? "submit failed");
+  }
+}
+
 export function ContactForm({ card }: { card: ContactCard }) {
   const [fields, setFields] = useState<FormFields>(INITIAL_FIELDS);
   const [errors, setErrors] = useState<FormErrors>({});
+  const [botcheck, setBotcheck] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [sent, setSent] = useState(false);
+
+  const resetForm = () => {
+    setFields(INITIAL_FIELDS);
+    setErrors({});
+    setBotcheck("");
+    setSubmitError(null);
+    setSent(false);
+  };
 
   const update = <K extends keyof FormFields>(key: K, value: FormFields[K]) => {
     setFields((current) => ({ ...current, [key]: value }));
@@ -83,14 +135,27 @@ export function ContactForm({ card }: { card: ContactCard }) {
     });
   };
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const nextErrors = validate(fields);
     setErrors(nextErrors);
+    setSubmitError(null);
     if (Object.keys(nextErrors).length > 0) return;
 
-    window.location.href = buildMailto(card, fields);
-    setSent(true);
+    if (botcheck.trim()) {
+      setSent(true);
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      await submitToWeb3Forms(card, fields);
+      setSent(true);
+    } catch {
+      setSubmitError(SUBMIT_ERROR);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (sent) {
@@ -103,29 +168,10 @@ export function ContactForm({ card }: { card: ContactCard }) {
           Vielen Dank für Ihre Nachricht
         </h3>
         <p className="mt-3 text-base leading-relaxed text-pm-light-text-1">
-          Ihr E-Mail-Programm sollte sich mit der vorausgefüllten Anfrage zu
-          „{card.title}“ geöffnet haben. Senden Sie die Nachricht ab — wir
-          melden uns in der Regel innerhalb von zwei Werktagen.
+          Ihre Anfrage zu „{card.title}“ ist bei uns eingegangen. Wir melden uns
+          in der Regel innerhalb von zwei Werktagen.
         </p>
-        <p className="mt-3 text-sm text-pm-light-text-1">
-          Falls sich kein Fenster öffnet, schreiben Sie uns direkt an{" "}
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="font-semibold text-pm-light-text-2 no-underline hover:underline"
-          >
-            {CONTACT_EMAIL}
-          </a>
-          .
-        </p>
-        <Button
-          type="button"
-          className="mt-8"
-          onClick={() => {
-            setFields(INITIAL_FIELDS);
-            setErrors({});
-            setSent(false);
-          }}
-        >
+        <Button type="button" className="mt-8" onClick={resetForm}>
           Weitere Nachricht schreiben
         </Button>
       </div>
@@ -133,7 +179,24 @@ export function ContactForm({ card }: { card: ContactCard }) {
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="grid gap-5">
+    <form
+      onSubmit={onSubmit}
+      noValidate
+      className="relative grid gap-5"
+      aria-busy={submitting}
+    >
+      <div className="pointer-events-none absolute -left-[9999px] h-px w-px overflow-hidden opacity-0" aria-hidden>
+        <input
+          id="contact-botcheck"
+          name="botcheck"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={botcheck}
+          onChange={(event) => setBotcheck(event.target.value)}
+        />
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="contact-name" className={labelClassName}>
@@ -274,8 +337,32 @@ export function ContactForm({ card }: { card: ContactCard }) {
         ) : null}
       </div>
 
-      <Button type="submit" size="lg" fullWidth>
-        Nachricht senden
+      {submitError ? (
+        <div
+          role="alert"
+          className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm leading-relaxed text-red-800"
+        >
+          <p>{submitError}</p>
+          <p className="mt-2">
+            <a
+              href={buildMailto(card, fields)}
+              className="font-semibold text-red-900 underline underline-offset-2"
+            >
+              Nachricht stattdessen per E-Mail senden
+            </a>{" "}
+            an {CONTACT_EMAIL}.
+          </p>
+        </div>
+      ) : null}
+
+      <Button
+        type="submit"
+        size="lg"
+        fullWidth
+        disabled={submitting}
+        className="disabled:pointer-events-none disabled:opacity-60"
+      >
+        {submitting ? "Wird gesendet…" : "Nachricht senden"}
       </Button>
     </form>
   );

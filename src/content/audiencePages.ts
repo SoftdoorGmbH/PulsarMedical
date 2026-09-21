@@ -166,18 +166,18 @@ export const AUDIENCE_PAGES: Record<AudiencePageSlug, AudiencePageContent> = {
   },
   rueckversicherer: {
     slug: "rueckversicherer",
-    navLabel: "Für Rückversicherer",
+    navLabel: "Für Versicherer & Rückversicherer",
     seo: {
-      title: "Begutachtungen für Rückversicherer",
+      title: "Begutachtungen für Versicherer & Rückversicherer",
       description:
         "PULSAR Medical bewertet Leistungsfälle medizinisch und psychologisch – für klare Einschätzungen zu Leistungsfähigkeit, Prognose und beruflicher Belastbarkeit.",
     },
     hero: {
-      ariaLabel: "Für Rückversicherer",
-      overline: "Für Rückversicherer",
+      ariaLabel: "Für Versicherer & Rückversicherer",
+      overline: "Für Versicherer & Rückversicherer",
       title: "Leistungsfälle medizinisch klar bewerten.",
       paragraphs: [
-        "PULSAR Medical unterstützt Rückversicherer mit medizinischen und psychologischen Begutachtungen, wenn gesundheitliche Einschränkungen, berufliche Leistungsfähigkeit oder die weitere Prognose für Leistungsentscheidungen relevant sind.",
+        "PULSAR Medical unterstützt Versicherer & Rückversicherer mit medizinischen und psychologischen Begutachtungen, wenn gesundheitliche Einschränkungen, berufliche Leistungsfähigkeit oder die weitere Prognose für Leistungsentscheidungen relevant sind.",
       ],
       badges: [...AUDIENCE_HERO_BADGES],
       primaryCta: OFFER_PRIMARY_CTA,

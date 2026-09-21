@@ -7,7 +7,7 @@ const mainNav = [
   { to: "/", label: "Home" },
   { to: "/jobcenter", label: "Für Jobcenter" },
   { to: "/berufsgenossenschaften", label: "Für Berufsgenossenschaften" },
-  { to: "/rueckversicherer", label: "Für Rückversicherer" },
+  { to: "/rueckversicherer", label: "Für Versicherer & Rückversicherer" },
   { to: "/karriere", label: "Karriere" },
   { to: "/ueber-uns", label: "Über uns" },
   { to: "/kontakt", label: "Kontakt" },
@@ -46,8 +46,8 @@ export function Footer() {
               />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-pm-light-text-1">
-              Wir unterstützen Jobcenter, Berufsgenossenschaften und
-              Rückversicherer mit medizinischen und psychologischen
+              Wir unterstützen Jobcenter, Berufsgenossenschaften und Versicherer
+              & Rückversicherer mit medizinischen und psychologischen
               Begutachtungen.
             </p>
           </div>
@@ -74,10 +74,7 @@ export function Footer() {
             </ul>
           </nav>
 
-          <nav
-            className="sm:col-span-1 lg:col-span-3"
-            aria-label="Angebote"
-          >
+          <nav className="sm:col-span-1 lg:col-span-3" aria-label="Angebote">
             <h2 className="text-xs font-semibold uppercase tracking-wider text-pm-light-headline">
               Angebote
             </h2>

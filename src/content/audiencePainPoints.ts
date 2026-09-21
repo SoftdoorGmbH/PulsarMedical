@@ -94,7 +94,7 @@ export const RUECKVERSICHERER_PAIN_POINTS: AudiencePainPointsContent = {
   headingId: "rueckversicherer-pain-points-heading",
   title: "Wenn medizinische Fragen die Leistungsprüfung erschweren",
   subtitle:
-    "PULSAR Medical hilft Rückversicherern, funktionelle Einschränkungen einzuordnen, die berufliche Leistungsfähigkeit zu beurteilen und Begutachtungsaufträge zentral zu organisieren.",
+    "PULSAR Medical hilft Versicherern & Rückversicherern, funktionelle Einschränkungen einzuordnen, die berufliche Leistungsfähigkeit zu beurteilen und Begutachtungsaufträge zentral zu organisieren.",
   items: [
     {
       quote:

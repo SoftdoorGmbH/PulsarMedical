@@ -23,7 +23,7 @@ const PILLARS = [
   },
   {
     id: "rueckversicherer",
-    label: "Für Rückversicherer",
+    label: "Für Versicherer & Rückversicherer",
     headline: "Leistungsfälle sicher und nachvollziehbar bewerten.",
     body: "PULSAR Medical erstellt eine differenzierte Einschätzung der beruflichen Leistungsfähigkeit, relevanter funktioneller Einschränkungen und der weiteren Entwicklung. So entstehen transparente und medizinisch fundierte Entscheidungsgrundlagen für die Leistungsprüfung.",
     cta: "Lösungen entdecken",
@@ -53,7 +53,7 @@ function DotButton({
   );
 }
 
-/** Zielgruppen-Säulen: Jobcenter, BG, Rückversicherer — Kartenraster mit Mobile-Carousel. */
+/** Zielgruppen-Säulen: Jobcenter, BG, Versicherer & Rückversicherer — Kartenraster mit Mobile-Carousel. */
 export function HomeAudiencePillars() {
   const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
   const mobileScrollRef = useRef<HTMLDivElement>(null);

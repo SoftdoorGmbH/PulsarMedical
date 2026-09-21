@@ -147,7 +147,8 @@ export const BERUFSGENOSSENSCHAFTEN_FAQ_ITEMS: readonly AudienceFaqItem[] = [
   },
   {
     id: "bg-faq-2",
-    question: "Welche Fragen beantworten Begutachtungen für Berufsgenossenschaften?",
+    question:
+      "Welche Fragen beantworten Begutachtungen für Berufsgenossenschaften?",
     answer: [
       "Begutachtungen für Berufsgenossenschaften beantworten konkrete medizinische, psychologische und arbeitsbezogene Zielfragen. Sie helfen dabei, Unfallfolgen und deren Bedeutung für Arbeitsfähigkeit, Rehabilitation und Wiedereingliederung fachlich einzuordnen.",
       "Typische Fragen sind:",
@@ -165,7 +166,8 @@ export const BERUFSGENOSSENSCHAFTEN_FAQ_ITEMS: readonly AudienceFaqItem[] = [
     id: "bg-faq-3",
     question:
       "Welche Begutachtungsformen bietet PULSAR Medical für Berufsgenossenschaften?",
-    answer: "PULSAR Medical stellt je nach Fall die passende Fachperspektive bereit:",
+    answer:
+      "PULSAR Medical stellt je nach Fall die passende Fachperspektive bereit:",
     bullets: [
       "Medizinische Begutachtungen bei Unfallfolgen, körperlichen Einschränkungen und Leistungsvermögen",
       "Psychologische und psychiatrische Begutachtungen bei psychischen Unfallfolgen, Belastungen oder Erkrankungen",
@@ -203,7 +205,8 @@ export const BERUFSGENOSSENSCHAFTEN_FAQ_ITEMS: readonly AudienceFaqItem[] = [
   },
   {
     id: "bg-faq-6",
-    question: "Wie unterstützt PULSAR Medical die berufliche Wiedereingliederung?",
+    question:
+      "Wie unterstützt PULSAR Medical die berufliche Wiedereingliederung?",
     answer: [
       "PULSAR Medical beurteilt, wie sich Unfallfolgen und gesundheitliche Einschränkungen auf Belastbarkeit, Arbeitsfähigkeit und die bisherige berufliche Tätigkeit auswirken.",
       "Die Begutachtung kann Hinweise darauf geben:",
@@ -237,9 +240,10 @@ export const BERUFSGENOSSENSCHAFTEN_FAQ_ITEMS: readonly AudienceFaqItem[] = [
 export const RUECKVERSICHERER_FAQ_ITEMS: readonly AudienceFaqItem[] = [
   {
     id: "rv-faq-1",
-    question: "Wie unterstützt PULSAR Medical Rückversicherer bei Leistungsfällen?",
+    question:
+      "Wie unterstützt PULSAR Medical Versicherer & Rückversicherer bei Leistungsfällen?",
     answer: [
-      "PULSAR Medical unterstützt Rückversicherer mit medizinischen, psychologischen und fachübergreifenden Begutachtungen. Die Leistungen helfen dabei, funktionelle Einschränkungen, berufliche Leistungsfähigkeit und die weitere Prognose in komplexen Leistungsfällen fachlich einzuordnen.",
+      "PULSAR Medical unterstützt Versicherer & Rückversicherer mit medizinischen, psychologischen und fachübergreifenden Begutachtungen. Die Leistungen helfen dabei, funktionelle Einschränkungen, berufliche Leistungsfähigkeit und die weitere Prognose in komplexen Leistungsfällen fachlich einzuordnen.",
       "Im Mittelpunkt stehen insbesondere:",
     ],
     bullets: [
@@ -254,7 +258,7 @@ export const RUECKVERSICHERER_FAQ_ITEMS: readonly AudienceFaqItem[] = [
   {
     id: "rv-faq-2",
     question:
-      "Welche medizinischen Fragen können Rückversicherer mit PULSAR Medical klären?",
+      "Welche medizinischen Fragen können Versicherer & Rückversicherer mit PULSAR Medical klären?",
     answer: [
       "PULSAR Medical beurteilt die Fragen, die für eine medizinisch fundierte Leistungsprüfung relevant sind. Die konkrete Zielfrage wird vor Beginn des Auftrags abgestimmt.",
       "Mögliche Fragen sind:",
@@ -270,9 +274,10 @@ export const RUECKVERSICHERER_FAQ_ITEMS: readonly AudienceFaqItem[] = [
   },
   {
     id: "rv-faq-3",
-    question: "Welche Begutachtungen bietet PULSAR Medical für Rückversicherer?",
+    question:
+      "Welche Begutachtungen bietet PULSAR Medical für Versicherer & Rückversicherer?",
     answer:
-      "PULSAR Medical bietet Rückversicherern unterschiedliche Begutachtungsformen, die sich an Leistungsfall und Zielfrage orientieren:",
+      "PULSAR Medical bietet Versichereren & Rückversichereren unterschiedliche Begutachtungsformen, die sich an Leistungsfall und Zielfrage orientieren:",
     bullets: [
       "Medizinische Begutachtungen zur Beurteilung von Befunden, Einschränkungen und Leistungsvermögen",
       "Psychologische und psychiatrische Begutachtungen bei psychischen Erkrankungen, Belastungen oder prognoserelevanten Fragen",
@@ -319,7 +324,7 @@ export const RUECKVERSICHERER_FAQ_ITEMS: readonly AudienceFaqItem[] = [
   {
     id: "rv-faq-6",
     question:
-      "Können Begutachtungen für Rückversicherer nach Aktenlage oder telemedizinisch erfolgen?",
+      "Können Begutachtungen für Versicherer & Rückversicherer nach Aktenlage oder telemedizinisch erfolgen?",
     answer: [
       "Ja, wenn die Fragestellung und die vorhandenen Unterlagen dies zulassen. PULSAR Medical kann Begutachtungen persönlich, telemedizinisch oder nach Aktenlage organisieren.",
       "Eine Begutachtung nach Aktenlage kann sinnvoll sein, wenn Befunde, Berichte und sonstige Unterlagen die vereinbarten Zielfragen ausreichend beantworten. Eine telemedizinische Vorstellung kann geeignet sein, wenn ein fachliches Gespräch erforderlich ist, aber keine persönliche Untersuchung notwendig ist.",
@@ -332,7 +337,7 @@ export const RUECKVERSICHERER_FAQ_ITEMS: readonly AudienceFaqItem[] = [
       "Wie organisiert PULSAR Medical größere oder wiederkehrende Begutachtungsaufträge?",
     answer: [
       "PULSAR Medical plant einzelne Leistungsfälle, gebündelte Termine und langfristige Aufträge mit einer festen Projektkoordination. Fachkräfte, Kapazitäten, Unterlagen, Termine und Übermittlungswege werden projektbezogen abgestimmt.",
-      "Das unterstützt Rückversicherer insbesondere bei:",
+      "Das unterstützt Versicherer & Rückversicherer insbesondere bei:",
     ],
     bullets: [
       "Wiederkehrenden Falltypen",

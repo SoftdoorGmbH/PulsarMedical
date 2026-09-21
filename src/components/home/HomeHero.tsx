@@ -7,7 +7,7 @@ import {
 import { Link } from "react-router";
 
 const HERO_OVERLINES = [
-  "Für Jobcenter · Berufsgenossenschaften · Rückversicherer",
+  "Für Jobcenter · Berufsgenossenschaften · Versicherer & Rückversicherer",
 ] as const;
 
 const HERO_BADGES = [
