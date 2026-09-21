@@ -27,10 +27,22 @@ const INITIAL_FIELDS: FormFields = {
 const SUBMIT_ERROR =
   "Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt.";
 
+const EMAIL_PATTERN =
+  /^(?!\.)(?!.*\.\.)[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z]{2,})+$/;
+
+const PHONE_PATTERN = /^\+?\d+$/;
+
 const fieldClassName =
   "w-full rounded-xl border border-pm-light-container-border bg-white px-4 py-3 text-base text-pm-light-headline placeholder:text-pm-light-text-1/45 transition-[border-color,box-shadow] focus:border-pm-light-text-2 focus:outline-none focus:ring-2 focus:ring-pm-light-tag-glow";
 
 const labelClassName = "mb-2 block text-sm font-semibold text-pm-light-headline";
+
+function sanitizePhone(value: string) {
+  const cleaned = value.replace(/[^\d+]/g, "");
+  const hasPlus = cleaned.includes("+");
+  const digits = cleaned.replace(/\+/g, "");
+  return hasPlus ? `+${digits}` : digits;
+}
 
 function validate(fields: FormFields): FormErrors {
   const errors: FormErrors = {};
@@ -39,8 +51,14 @@ function validate(fields: FormFields): FormErrors {
     errors.name = "Bitte geben Sie Ihren Namen an.";
   }
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email.trim())) {
+  if (!EMAIL_PATTERN.test(fields.email.trim())) {
     errors.email = "Bitte geben Sie eine gültige E-Mail-Adresse an.";
+  }
+
+  const phone = fields.phone.trim();
+  if (phone && !PHONE_PATTERN.test(phone)) {
+    errors.phone =
+      "Die Telefonnummer darf nur Ziffern und ein führendes Plus enthalten.";
   }
 
   if (fields.message.trim().length < 10) {
@@ -272,12 +290,21 @@ export function ContactForm({ card }: { card: ContactCard }) {
             id="contact-phone"
             name="phone"
             type="tel"
+            inputMode="tel"
             autoComplete="tel"
+            pattern="\\+?[0-9]*"
             value={fields.phone}
-            onChange={(event) => update("phone", event.target.value)}
+            onChange={(event) => update("phone", sanitizePhone(event.target.value))}
+            aria-invalid={Boolean(errors.phone)}
+            aria-describedby={errors.phone ? "contact-phone-error" : undefined}
             className={fieldClassName}
             placeholder="+49 …"
           />
+          {errors.phone ? (
+            <p id="contact-phone-error" className="mt-2 text-sm text-red-700">
+              {errors.phone}
+            </p>
+          ) : null}
         </div>
       </div>
 
