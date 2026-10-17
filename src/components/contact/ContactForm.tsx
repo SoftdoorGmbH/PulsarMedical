@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/Button";
 import { CONTACT_EMAIL, type ContactCard } from "@/content/contact";
+import { trackContactFormSubmit } from "@/lib/analytics";
 
 type FormFields = {
   name: string;
@@ -168,6 +169,7 @@ export function ContactForm({ card }: { card: ContactCard }) {
     setSubmitting(true);
     try {
       await submitToWeb3Forms(card, fields);
+      trackContactFormSubmit(card.title);
       setSent(true);
     } catch {
       setSubmitError(SUBMIT_ERROR);

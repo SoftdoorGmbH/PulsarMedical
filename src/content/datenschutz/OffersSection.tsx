@@ -13,7 +13,9 @@ export function OffersSection() {
 
       <LegalH3>Newsletter</LegalH3>
 
-      <LegalSubtitle>Beschreibung und Umfang der Datenverarbeitung</LegalSubtitle>
+      <LegalSubtitle>
+        Beschreibung und Umfang der Datenverarbeitung
+      </LegalSubtitle>
       <p>
         Auf unserer Internetseite besteht die Möglichkeit einen kostenfreien
         Newsletter zu abonnieren. Dabei werden bei der Anmeldung zum Newsletter
@@ -71,8 +73,8 @@ export function OffersSection() {
         Stornierung vornehmen. Durch den Widerruf bleibt die Rechtmäßigkeit der
         aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitungen
         unberührt. Hierdurch wird ebenfalls ein Widerruf der Einwilligung der
-        Speicherung der während des Anmeldevorgangs erhobenen
-        personenbezogenen Daten ermöglicht.
+        Speicherung der während des Anmeldevorgangs erhobenen personenbezogenen
+        Daten ermöglicht.
       </p>
 
       <LegalSubtitle>Weitere Informationen</LegalSubtitle>
@@ -80,11 +82,11 @@ export function OffersSection() {
         Wir verwenden Hubspot für den Versand von Newslettern. HubSpot ist ein
         Software-Unternehmen aus den USA mit einer Niederlassung in Irland;
         HubSpot, 2nd Floor 30 North Wall Quay, Dublin 1, Ireland (im Folgenden
-        »Hubspot«). Hierbei handelt es sich um eine integrierte
-        Software-Lösung, mit der wir verschiedene Aspekte unseres Online
-        Marketings abdecken. Wenn Sie Daten zum Zwecke des Newsletterbezugs
-        eingeben (z. B. E-Mail-Adresse), werden diese auf den Servern von
-        Hubspot (siehe dazu auch den Abschnitt »
+        »Hubspot«). Hierbei handelt es sich um eine integrierte Software-Lösung,
+        mit der wir verschiedene Aspekte unseres Online Marketings abdecken.
+        Wenn Sie Daten zum Zwecke des Newsletterbezugs eingeben (z. B.
+        E-Mail-Adresse), werden diese auf den Servern von Hubspot (siehe dazu
+        auch den Abschnitt »
         <strong>Hinweis zur Datenweitergabe in die USA</strong>«).
       </p>
       <p>
@@ -93,8 +95,8 @@ export function OffersSection() {
         abbestellen. Hierfür stellen wir in jeder Newsletternachricht einen
         entsprechenden Link zur Verfügung. Der Versanddienstleister kann die
         Daten der Empfänger in pseudonymer Form, d. h. ohne Zuordnung zu einem
-        Nutzer, zur Optimierung oder Verbesserung der eigenen Services nutzen, z.
-        B. zur technischen Optimierung des Versandes und der Darstellung des
+        Nutzer, zur Optimierung oder Verbesserung der eigenen Services nutzen,
+        z. B. zur technischen Optimierung des Versandes und der Darstellung des
         Newsletters oder für statistische Zwecke.
       </p>
       <p>
@@ -135,15 +137,15 @@ export function OffersSection() {
       <p>
         Nach Ihrer Austragung aus der Newsletterverteilerliste wird Ihre
         E-Mail-Adresse bei uns bzw. dem Newsletterdiensteanbieter ggf. in einer
-        Blockinglist gespeichert, sofern dies zur Verhinderung künftiger Mailings
-        erforderlich ist. Die Daten aus der Blockinglist werden nur für diesen
-        Zweck verwendet und nicht mit anderen Daten zusammengeführt. Dies dient
-        sowohl Ihrem Interesse als auch unserem Interesse an der Einhaltung der
-        gesetzlichen Vorgaben beim Versand von Newslettern (berechtigtes
-        Interesse im Sinne des Art. 6 Abs. 1 lit. f DSGVO). Die Speicherung in
-        der Blockinglist ist zeitlich nicht befristet. Sie können der Speicherung
-        widersprechen, sofern Ihre Interessen unser berechtigtes Interesse
-        überwiegen.
+        Blockinglist gespeichert, sofern dies zur Verhinderung künftiger
+        Mailings erforderlich ist. Die Daten aus der Blockinglist werden nur für
+        diesen Zweck verwendet und nicht mit anderen Daten zusammengeführt. Dies
+        dient sowohl Ihrem Interesse als auch unserem Interesse an der
+        Einhaltung der gesetzlichen Vorgaben beim Versand von Newslettern
+        (berechtigtes Interesse im Sinne des Art. 6 Abs. 1 lit. f DSGVO). Die
+        Speicherung in der Blockinglist ist zeitlich nicht befristet. Sie können
+        der Speicherung widersprechen, sofern Ihre Interessen unser berechtigtes
+        Interesse überwiegen.
       </p>
       <p>
         Näheres entnehmen Sie den Datenschutzbestimmungen von Hubspot unter:{" "}
@@ -163,7 +165,9 @@ export function OffersSection() {
 
       <LegalH3>Kontaktformular und E-Mail-Kontakt</LegalH3>
 
-      <LegalSubtitle>Beschreibung und Umfang der Datenverarbeitung</LegalSubtitle>
+      <LegalSubtitle>
+        Beschreibung und Umfang der Datenverarbeitung
+      </LegalSubtitle>
       <p>
         Auf unserer Internetseite ist ein Kontaktformular vorhanden, welches für
         die elektronische Kontaktaufnahme genutzt werden kann. Nimmt ein Nutzer
@@ -211,11 +215,11 @@ export function OffersSection() {
         eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher
         Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die
         Verarbeitung auf unserem berechtigten Interesse an der effektiven
-        Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f
-        DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern
-        diese abgefragt wurde. Rechtsgrundlage für die Verarbeitung der Daten,
-        die im Zuge einer Übersendung einer E-Mail übermittelt werden, ist Art.
-        6 Abs. 1 lit. f DSGVO.
+        Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO)
+        oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese
+        abgefragt wurde. Rechtsgrundlage für die Verarbeitung der Daten, die im
+        Zuge einer Übersendung einer E-Mail übermittelt werden, ist Art. 6 Abs.
+        1 lit. f DSGVO.
       </p>
 
       <LegalSubtitle>Zweck der Datenverarbeitung</LegalSubtitle>
@@ -224,8 +228,8 @@ export function OffersSection() {
         uns allein zur Bearbeitung der Kontaktaufnahme. Im Falle einer
         Kontaktaufnahme per E-Mail liegt hieran auch das erforderliche
         berechtigte Interesse an der Verarbeitung der Daten. Die sonstigen
-        während des Absendevorgangs verarbeiteten personenbezogenen Daten
-        dienen dazu, einen Missbrauch des Kontaktformulars zu verhindern und die
+        während des Absendevorgangs verarbeiteten personenbezogenen Daten dienen
+        dazu, einen Missbrauch des Kontaktformulars zu verhindern und die
         Sicherheit unserer informationstechnischen Systeme sicherzustellen.
       </p>
 
@@ -256,7 +260,9 @@ export function OffersSection() {
 
       <LegalH3>Anfragen per Telefon</LegalH3>
 
-      <LegalSubtitle>Beschreibung und Umfang der Datenverarbeitung</LegalSubtitle>
+      <LegalSubtitle>
+        Beschreibung und Umfang der Datenverarbeitung
+      </LegalSubtitle>
       <p>
         Wenn Sie uns per Telefon kontaktieren, wird Ihre Anfrage inklusive aller
         daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke
@@ -296,10 +302,10 @@ export function OffersSection() {
         Gebrauch machen, indem Sie sich an die o. g. Kontaktdaten wenden.
       </p>
       <p>
-        Alle personenbezogenen Daten, die im Zuge der Kontaktaufnahme gespeichert
-        wurden, werden in diesem Fall gelöscht. Zwingende gesetzliche
-        Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben
-        unberührt.
+        Alle personenbezogenen Daten, die im Zuge der Kontaktaufnahme
+        gespeichert wurden, werden in diesem Fall gelöscht. Zwingende
+        gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen
+        – bleiben unberührt.
       </p>
 
       <LegalH3>Microsoft Bookings</LegalH3>
@@ -338,10 +344,10 @@ export function OffersSection() {
         DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst
         unkomplizierten Terminvereinbarung mit Interessenten und Kunden. Sofern
         eine entsprechende Einwilligung abgefragt wurde, erfolgt die
-        Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a
-        DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung
-        von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers
-        (z. B. für Device-Fingerprinting) im Sinne des TTDSG umfasst. Die
+        Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO
+        und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von
+        Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z.
+        B. für Device-Fingerprinting) im Sinne des TTDSG umfasst. Die
         Einwilligung ist jederzeit widerrufbar.
       </p>
       <p>
