@@ -8,10 +8,9 @@ const mainNav = [
   { to: "/jobcenter", label: "Für Jobcenter" },
   { to: "/berufsgenossenschaften", label: "Für Berufsgenossenschaften" },
   { to: "/rueckversicherer", label: "Für Versicherer & Rückversicherer" },
-  { to: "/karriere", label: "Karriere" },
   { to: "/ueber-uns", label: "Über uns" },
   { to: "/kontakt", label: "Kontakt" },
-  { to: "/blog", label: "Blog" },
+  // { to: "/blog", label: "Blog" },
 ] as const;
 
 function footerLinkClass({ isActive }: { isActive: boolean }) {
